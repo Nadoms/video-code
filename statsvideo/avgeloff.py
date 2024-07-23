@@ -6,7 +6,7 @@ import os
 class ScatterPlotScene(Scene):
 
     def construct(self):
-        data_file = os.path.join("statsvideo", "avgeloff.csv")
+        data_file = os.path.join("statsvideo", "data", "avgeloff.csv")
         df = pd.read_csv(data_file)
 
         # Add the Axes
@@ -64,12 +64,9 @@ class ScatterPlotAnimatedScene(Scene):
 
             colour = ManimColor.from_rgb((int(ffl * 2.55), 50, int((100-ffl) * 2.55)), 1.0)
             
-            if [avg * 1000 * 60, elo] in players:
+            if [int(avg * 1000 * 60), elo] in players:
                 special_dot  = Dot(ax.c2p(elo, avg), color=colour, radius=0.02)
                 special_dots.append(special_dot)
-
-            if elo % 20 != 0:
-                continue
 
             dot = Dot(ax.c2p(elo, avg), color=colour, radius=0.02)
             dots.append(dot)
@@ -90,16 +87,22 @@ class ScatterPlotAnimatedScene(Scene):
 
         self.play(group.animate.shift(0.5*LEFT).shift(2*UP))
         self.wait(duration=2)
-        self.play(Indicate(special_dots[3]), Circumscribe(special_dots[3], Circle))
-        self.wait(duration=4)
-        self.play(Indicate(special_dots[2]), Circumscribe(special_dots[2], Circle))
-        self.wait(duration=2)
+        highlight(self, special_dots[3])
+        highlight(self, special_dots[2])
 
         self.play(group.animate.shift(3.5*LEFT))
         self.wait(duration=2)
-        self.play(Indicate(special_dots[0]), Circumscribe(special_dots[0], Circle))
-        self.play(Indicate(special_dots[1]), Circumscribe(special_dots[1], Circle))
+        highlight(self, *special_dots[0:2])
         self.wait(duration=2)
+
+
+def highlight(self, *mobs):
+    self.play([ScaleInPlace(mob, 3) for mob in mobs])
+    self.play([Circumscribe(mob, Circle) for mob in mobs] + [Indicate(mob) for mob in mobs])
+    self.wait(duration=2)
+    self.play([ScaleInPlace(mob, 1/3) for mob in mobs])
+    self.wait(duration=2)
+    
 
 
 # Execute rendering
