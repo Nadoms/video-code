@@ -6,78 +6,81 @@ import os
 class PlayerCount(Scene):
 
     def construct(self):
-        # data_file = os.path.join("statsvideo", "avgeloff.csv")
-        data_file = os.path.join("avgeloff.csv")
+        data_file = os.path.join("statsvideo", "data", "playercount.csv")
         df = pd.read_csv(data_file)
 
-        # Animate the creation of Axes
-        ax = Axes(x_range=[600, 2400, 100],
-                  y_range=[10, 30, 2],
-                  tips=True,
-                  axis_config={"include_numbers": True, "font_size": 20}
+        values = df.iloc[0]
+        bar_names = ["S0", "S1", "S2", "S3", "S4", "S5"]
+        chart = BarChart(bar_names=bar_names,
+                        values=values,
+                        y_range=[0, 8000, 2000],
+                        axis_config={"font_size": 20}
         )
 
-        labels = ax.get_axis_labels(
-            Tex("Elo").scale(0.5),
-            Tex("Avg Completion (min)").scale(0.5)
+        labels = chart.get_axis_labels(
+            Tex("Season").scale(0.5),
+            Tex("Player Count").scale(0.5)
         )
 
-
-        dots = []
-        special_dots = []
-        players = [[623463, 2193],
-                   [647236, 2253],
-                   [648489, 1269],
-                   [1024111, 1370]]
-
-        for avg, elo, ffl in df.values:
-            avg = avg / 1000 / 60
-            if avg >= 30:
-                continue
-
-            colour = ManimColor.from_rgb((int(ffl * 2.55), 50, int((100-ffl) * 2.55)), 1.0)
-            
-            if [int(avg * 1000 * 60), elo] in players:
-                special_dot  = Dot(ax.c2p(elo, avg), color=colour, radius=0.02)
-                special_dots.append(special_dot)
-
-            dot = Dot(ax.c2p(elo, avg), color=colour, radius=0.02)
-            dots.append(dot)
-        
-        group = VGroup(ax, labels, *dots, *special_dots)
-
-        self.play(Write(ax))
+        self.play(Write(chart))
         self.play(Write(labels))
-        self.wait()
-            
-        self.play([Write(dot) for dot in dots + special_dots])
-        self.wait(duration=2)
 
-        self.play(group.animate.scale(1.3))
-        self.play(group.animate.shift(2*RIGHT).shift(DOWN))
-        self.wait(duration=4)
-
-
-        self.play(group.animate.shift(0.5*LEFT).shift(2*UP))
-        self.wait(duration=2)
-        highlight(self, special_dots[3])
-        highlight(self, special_dots[2])
-
-        self.play(group.animate.shift(3.5*LEFT))
-        self.wait(duration=2)
-        highlight(self, *special_dots[0:2])
         self.wait(duration=2)
 
 
-def highlight(self, *mobs):
-    self.play([ScaleInPlace(mob, 3) for mob in mobs])
-    self.play([Circumscribe(mob, Circle) for mob in mobs] + [Indicate(mob) for mob in mobs])
-    self.wait(duration=2)
-    self.play([ScaleInPlace(mob, 1/3) for mob in mobs])
-    self.wait(duration=2)
-    
+class MatchCount(Scene):
+
+    def construct(self):
+        data_file = os.path.join("statsvideo", "data", "playercount.csv")
+        df = pd.read_csv(data_file)
+
+        areas = df.iloc[1]
+        widths = df.iloc[2]
+        rect_names = ["S0", "S1", "S2", "S3", "S4", "S5"]
+        rect_colors = ["#003f5c", "#58508d", "#bc5090", "#ff6361", "#ffa600"]
+        chart = Axes(x_range=[0, 680, 0],
+                    y_range=[0, 2500, 500],
+                    x_axis_config={"include_ticks": False,
+                                   "include_numbers": False},
+                    axis_config={"font_size": 20}
+        )
+
+        labels = chart.get_axis_labels(
+            Tex("Season").scale(0.5),
+            Tex("Match Density").scale(0.5)
+        )
+
+        x_offset = 0
+        padding = 0.1
+        rects = []
+        rect_labels = VGroup()
+        for i, width in enumerate(widths):
+            height = areas[i] / width
+            rect = Rectangle(
+                width=chart.x_axis.n2p(width)[0] - chart.x_axis.n2p(0)[0] - padding,
+                height=chart.y_axis.n2p(height)[1] - chart.y_axis.n2p(0)[1] - padding,
+                fill_opacity=0.8,
+                fill_color=BLUE,
+                stroke_color="#ffffff"
+            )
+            rect.move_to(chart.c2p(x_offset + width / 2, height/2))
+            rects.append(rect)
+
+            rect_label = Text(rect_names[i], font_size=24)
+            edge = rect.get_edge_center(DOWN)
+            edge[1] -= 0.4
+            rect_label.move_to(edge)
+            rect_labels.add(rect_label)
+
+            x_offset += width
+
+        chart.add(*rects)
+        self.add(chart)
+        self.add(labels)
+        self.add(rect_labels)
 
 
 # Execute rendering
 if __name__ == "__main__":
-    os.system(r"manim -qk -v WARNING -p --disable_caching -o PlayerCount.mp4 .\statsvideo\playercount.py PlayerCount")
+    # os.system(r"manim -qk -v WARNING -p --disable_caching -o PlayerCount.mp4 .\statsvideo\playercount.py PlayerCount")
+    os.system(r"manim -qk -v WARNING -p --disable_caching -o MatchCount.png .\statsvideo\playercount.py MatchCount")
