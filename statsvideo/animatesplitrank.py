@@ -71,7 +71,7 @@ class ThreeD(ThreeDScene):
         self.wait(1)
         self.begin_ambient_camera_rotation(0.4)
         self.play(Write(bars))
-        self.wait(8)
+        self.wait(16)
         self.stop_ambient_camera_rotation()
 
 

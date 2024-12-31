@@ -34,7 +34,7 @@ class ScatterPlotAnimatedScene(Scene):
 
     def construct(self):
         # data_file = os.path.join("statsvideo", "avgeloff.csv")
-        data_file = os.path.join("avgeloff.csv")
+        data_file = os.path.join("statsvideo", "data", "avgeloff2.csv")
         df = pd.read_csv(data_file)
 
         # Animate the creation of Axes
@@ -52,19 +52,23 @@ class ScatterPlotAnimatedScene(Scene):
 
         dots = []
         special_dots = []
-        players = [[623463, 2193],
-                   [647236, 2253],
-                   [648489, 1269],
-                   [1024111, 1370]]
+        players = [[517263, 904],
+                   [623818, 2323],
+                   [637555, 2202],
+                   [1057864, 1256]]
 
-        for avg, elo, ffl in df.values:
+        for avg, elo, ff, loss in df.values:
+            if loss == 0:
+                ffl = 0
+            else:
+                ffl = ff / loss * 100
             avg = avg / 1000 / 60
             if avg >= 30:
                 continue
 
             colour = ManimColor.from_rgb((int(ffl * 2.55), 50, int((100-ffl) * 2.55)), 1.0)
             
-            if [int(avg * 1000 * 60), elo] in players:
+            if [round(avg * 1000 * 60), elo] in players:
                 special_dot  = Dot(ax.c2p(elo, avg), color=colour, radius=0.02)
                 special_dots.append(special_dot)
 
@@ -88,19 +92,20 @@ class ScatterPlotAnimatedScene(Scene):
         self.play(group.animate.shift(0.5*LEFT).shift(2*UP))
         self.wait(duration=2)
         highlight(self, special_dots[3])
-        highlight(self, special_dots[2])
+        self.play(group.animate.shift(0.5*RIGHT).shift(UP))
+        highlight(self, special_dots[0])
 
-        self.play(group.animate.shift(3.5*LEFT))
+        self.play(group.animate.shift(5*LEFT))
         self.wait(duration=2)
-        highlight(self, *special_dots[0:2])
+        highlight(self, *special_dots[1:3])
         self.wait(duration=2)
 
 
 def highlight(self, *mobs):
-    self.play([ScaleInPlace(mob, 3) for mob in mobs])
-    self.play([Circumscribe(mob, Circle) for mob in mobs] + [Indicate(mob) for mob in mobs])
+    self.play([ScaleInPlace(mob, 5) for mob in mobs])
+    self.play([Circumscribe(mob, Circle, time_width=1) for mob in mobs] + [Indicate(mob) for mob in mobs])
     self.wait(duration=2)
-    self.play([ScaleInPlace(mob, 1/3) for mob in mobs])
+    self.play([ScaleInPlace(mob, 1/5) for mob in mobs])
     self.wait(duration=2)
     
 
