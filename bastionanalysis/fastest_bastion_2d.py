@@ -48,13 +48,10 @@ class FastestBastion(Scene):
 
         self.wait(duration=1)
 
-        group = VGroup(title, chart, labels, lines)
-        self.play(group.animate.scale(1.5))
-
         bars = chart.get_bars()
         for i, bar in enumerate(bars):
             bar_time = digital_time(values[i])
-            bar_label = Tex(f"{bar_time}").scale(0.8).next_to(bar, UP)
+            bar_label = Tex(f"{bar_time}").scale(0.5).next_to(bar, UP)
             self.play(Write(bar_label))
 
         self.wait(duration=2)

@@ -1,0 +1,98 @@
+{
+    "lowk3y": {
+        "games": 785,
+        "playtime": 1000,
+        "elo": 1600,
+        "avg": 600000
+    },
+    "doogile": {
+        "games": 383,
+        "playtime": 1000,
+        "elo": 1687,
+        "avg": 700000
+    },
+    "silverruns": {
+        "games": 909,
+        "playtime": 1000,
+        "elo": 1890,
+        "avg": 760000
+    },
+    "hackingnoises": {
+        "games": 200,
+        "playtime": 1000,
+        "elo": 1890,
+        "avg": 660000
+    },
+    "5": {
+        "games": 609,
+        "playtime": 1000,
+        "elo": 1890,
+        "avg": 570000
+    },
+    "6": {
+        "games": 809,
+        "playtime": 1000,
+        "elo": 400,
+        "avg": 780000
+    },
+    "7": {
+        "games": 309,
+        "playtime": 1000,
+        "elo": 1640,
+        "avg": 720000
+    },
+    "8": {
+        "games": 409,
+        "playtime": 1000,
+        "elo": 1570,
+        "avg": 740000
+    },
+    "9": {
+        "games": 109,
+        "playtime": 1000,
+        "elo": 2430,
+        "avg": 640000
+    },
+    "10": {
+        "games": 609,
+        "playtime": 1000,
+        "elo": 2319,
+        "avg": 690000
+    },
+    "11": {
+        "games": 709,
+        "playtime": 1000,
+        "elo": 2143,
+        "avg": 800000
+    },
+    "12": {
+        "games": 509,
+        "playtime": 1000,
+        "elo": 2157,
+        "avg": 780000
+    },
+    "13": {
+        "games": 209,
+        "playtime": 1000,
+        "elo": 2256,
+        "avg": 760000
+    },
+    "14": {
+        "games": 509,
+        "playtime": 1000,
+        "elo": 1946,
+        "avg": 810000
+    },
+    "15": {
+        "games": 709,
+        "playtime": 1000,
+        "elo": 1946,
+        "avg": 750000
+    },
+    "16": {
+        "games": 909,
+        "playtime": 1000,
+        "elo": 1999,
+        "avg": 670000
+    }
+}
