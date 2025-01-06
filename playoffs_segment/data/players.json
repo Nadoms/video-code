@@ -1,98 +1,98 @@
 {
-    "lowk3y": {
-        "games": 785,
-        "playtime": 1000,
-        "elo": 1600,
-        "avg": 600000
-    },
     "doogile": {
-        "games": 383,
-        "playtime": 1000,
-        "elo": 1687,
-        "avg": 700000
+        "games": 646,
+        "playtime": 374977048,
+        "elo": 2413,
+        "avg": 601078
     },
-    "silverruns": {
-        "games": 909,
-        "playtime": 1000,
-        "elo": 1890,
-        "avg": 760000
+    "lowk3y_": {
+        "games": 684,
+        "playtime": 397137755,
+        "elo": 2413,
+        "avg": 603844
     },
     "hackingnoises": {
-        "games": 200,
-        "playtime": 1000,
-        "elo": 1890,
-        "avg": 660000
+        "games": 618,
+        "playtime": 357460450,
+        "elo": 2352,
+        "avg": 609502
     },
-    "5": {
-        "games": 609,
-        "playtime": 1000,
-        "elo": 1890,
-        "avg": 570000
+    "bing_pigs": {
+        "games": 2069,
+        "playtime": 1110709239,
+        "elo": 2295,
+        "avg": 625023
     },
-    "6": {
-        "games": 809,
-        "playtime": 1000,
-        "elo": 400,
-        "avg": 780000
+    "7rowl": {
+        "games": 1381,
+        "playtime": 727961517,
+        "elo": 2291,
+        "avg": 644585
     },
-    "7": {
-        "games": 309,
-        "playtime": 1000,
-        "elo": 1640,
-        "avg": 720000
+    "Oxidiot": {
+        "games": 615,
+        "playtime": 376076006,
+        "elo": 2149,
+        "avg": 636171
     },
-    "8": {
-        "games": 409,
-        "playtime": 1000,
-        "elo": 1570,
-        "avg": 740000
+    "BeefSalad": {
+        "games": 1908,
+        "playtime": 1150076225,
+        "elo": 2329,
+        "avg": 654173
     },
-    "9": {
-        "games": 109,
-        "playtime": 1000,
-        "elo": 2430,
-        "avg": 640000
+    "silverrruns": {
+        "games": 391,
+        "playtime": 240786616,
+        "elo": 2283,
+        "avg": 637540
     },
-    "10": {
-        "games": 609,
-        "playtime": 1000,
-        "elo": 2319,
-        "avg": 690000
+    "Feinberg": {
+        "games": 592,
+        "playtime": 346180305,
+        "elo": 2276,
+        "avg": 643014
     },
-    "11": {
-        "games": 709,
-        "playtime": 1000,
-        "elo": 2143,
-        "avg": 800000
+    "Ayreliaa": {
+        "games": 1014,
+        "playtime": 655155170,
+        "elo": 2260,
+        "avg": 705185
     },
-    "12": {
-        "games": 509,
-        "playtime": 1000,
-        "elo": 2157,
-        "avg": 780000
+    "MrBudgiee": {
+        "games": 880,
+        "playtime": 515980601,
+        "elo": 2248,
+        "avg": 658352
     },
-    "13": {
-        "games": 209,
-        "playtime": 1000,
-        "elo": 2256,
-        "avg": 760000
+    "DziabaDziuba": {
+        "games": 244,
+        "playtime": 154602902,
+        "elo": 2241,
+        "avg": 672489
     },
-    "14": {
-        "games": 509,
-        "playtime": 1000,
-        "elo": 1946,
-        "avg": 810000
+    "ELO_PLUMBER4444": {
+        "games": 1412,
+        "playtime": 822889223,
+        "elo": 1576,
+        "avg": 684297
     },
-    "15": {
-        "games": 709,
-        "playtime": 1000,
-        "elo": 1946,
-        "avg": 750000
+    "TUDORULE": {
+        "games": 843,
+        "playtime": 499840195,
+        "elo": 2212,
+        "avg": 636999
     },
-    "16": {
-        "games": 909,
-        "playtime": 1000,
-        "elo": 1999,
-        "avg": 670000
+    "Erikfzf": {
+        "games": 581,
+        "playtime": 357690437,
+        "elo": 1984,
+        "avg": 673893
+    },
+    "dandannyboy": {
+        "games": 1412,
+        "playtime": 846348561,
+        "elo": 1881,
+        "avg": 667504
     }
 }

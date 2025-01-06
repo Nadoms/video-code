@@ -16,7 +16,7 @@ X_MIN = 8
 X_MAX = 30
 STEP = 0.25
 CLASSES = int(X_MAX / STEP)
-ICON_SIZE = 0.15
+ICON_SIZE = 0.10
 
 
 class Avg(Scene):
@@ -65,7 +65,7 @@ class Avg(Scene):
 
         # Player icons
         player_histogram = [0] * CLASSES
-        bars = chart.get_bars()
+        bars = chart.bars
         player_icons = Group()
         for value, player in zip(values, players):
             if not (ASSETS_DIR / f"{player}.png").exists():
@@ -88,7 +88,7 @@ class Avg(Scene):
         self.wait()
         self.play(FadeIn(player_icons))
         self.wait()
-        self.play(group.animate.scale(1.5).shift(RIGHT * 4))
+        self.play(group.animate.scale(2.5).shift(RIGHT * 10 + 3 * UP))
         self.wait()
 
 
@@ -103,4 +103,4 @@ def digital_time(raw_time):
 
 if __name__ == "__main__":
     name = os.path.basename(__file__)[:-3]
-    os.system(rf"manim -qk -v WARNING -p --disable_caching -r 1440,1080 -o {name}.mp4 .\{name}.py {name.capitalize()}")
+    os.system(rf"manim -qk -v WARNING -p --disable_caching -r 1440,1080 -o {name}.mp4 {name}.py {name.capitalize()}")

@@ -11,8 +11,8 @@ ROOT = Path(__file__).parent
 ASSETS_DIR = ROOT / "assets"
 DATA_DIR = ROOT / "data"
 Y_MIN = 0
-Y_MAX = 1000
-STEP = 100
+Y_MAX = 2000
+STEP = 200
 TIME_PER_GAME = 16.2
 
 
@@ -56,7 +56,7 @@ class Games(Scene):
             lines.add(line)
 
         # Player icons
-        bars = chart.get_bars()
+        bars = chart.bars
         player_icons = Group()
         for player, bar in zip(players, bars):
             if not (ASSETS_DIR / f"{player}.png").exists():
@@ -95,4 +95,4 @@ class Games(Scene):
 
 if __name__ == "__main__":
     name = os.path.basename(__file__)[:-3]
-    os.system(rf"manim -qk -v WARNING -p --disable_caching -r 1440,1080 -o {name}.mp4 .\{name}.py {name.capitalize()}")
+    os.system(rf"manim -qk -v WARNING -p --disable_caching -r 1440,1080 -o {name}.mp4 {name}.py {name.capitalize()}")

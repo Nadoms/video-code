@@ -15,7 +15,7 @@ X_MIN = 0
 X_MAX = 2500
 STEP = 20
 CLASSES = int(X_MAX / STEP)
-ICON_SIZE = 0.15
+ICON_SIZE = 0.10
 
 
 class Elo(Scene):
@@ -64,7 +64,7 @@ class Elo(Scene):
 
         # Player icons
         player_histogram = [0] * CLASSES
-        bars = chart.get_bars()
+        bars = chart.bars
         player_icons = Group()
         for value, player in zip(values, players):
             if not (ASSETS_DIR / f"{player}.png").exists():
@@ -87,10 +87,10 @@ class Elo(Scene):
         self.wait()
         self.play(FadeIn(player_icons))
         self.wait()
-        self.play(group.animate.scale(1.5).shift(LEFT * 4))
+        self.play(group.animate.scale(2.2).shift(LEFT * 8 + 3 * UP))
         self.wait()
 
 
 if __name__ == "__main__":
     name = os.path.basename(__file__)[:-3]
-    os.system(rf"manim -qk -v WARNING -p --disable_caching -r 1440,1080 -o {name}.mp4 .\{name}.py {name.capitalize()}")
+    os.system(rf"manim -qk -v WARNING -p --disable_caching -r 1440,1080 -o {name}.mp4 {name}.py {name.capitalize()}")
