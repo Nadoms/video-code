@@ -68,10 +68,6 @@ class Avg(Scene):
         bars = chart.bars
         player_icons = Group()
         for value, player in zip(values, players):
-            if not (ASSETS_DIR / f"{player}.png").exists():
-                image = requests.get(f"https://mc-heads.net/avatar/{player}").content
-                image = Image.open(BytesIO(image))
-                image.save(ASSETS_DIR / f"{player}.png")
             player_class = math.floor((value - X_MIN) / STEP)
             bar = bars[player_class]
             player_icon = ImageMobject(ASSETS_DIR / f"{player}.png")

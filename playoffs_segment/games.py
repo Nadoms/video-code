@@ -59,10 +59,6 @@ class Games(Scene):
         bars = chart.bars
         player_icons = Group()
         for player, bar in zip(players, bars):
-            if not (ASSETS_DIR / f"{player}.png").exists():
-                image = requests.get(f"https://mc-heads.net/avatar/{player}").content
-                image = Image.open(BytesIO(image))
-                image.save(ASSETS_DIR / f"{player}.png")
             player_icon = ImageMobject(ASSETS_DIR / f"{player}.png")
             player_icon.scale(0.4).next_to(bar, DOWN)
             player_icons.add(player_icon)
