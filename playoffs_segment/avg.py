@@ -15,8 +15,8 @@ DATA_DIR = ROOT / "data"
 X_MIN = 8
 X_MAX = 30
 STEP = 0.25
-CLASSES = int(X_MAX / STEP)
-ICON_SIZE = 0.10
+CLASSES = int((X_MAX - X_MIN) / STEP)
+ICON_SIZE = 0.08
 
 
 class Avg(Scene):
@@ -63,6 +63,33 @@ class Avg(Scene):
             Tex("Player Density (/min)").scale(0.5)
         )
 
+        bars = chart.bars
+        x_axis_labels = chart.x_axis.labels
+
+        # Bar names
+        for label in x_axis_labels:
+            label.shift(LEFT / 2 * STEP / 2 * 1.06)
+
+        # Ticks
+        ticks = VGroup()
+        for i in range(CLASSES):
+            if i % (2 / STEP) == 0 == 0:
+                tick = Line(
+                    start=x_axis_labels[i].get_top() + UP * 0.15,
+                    end=x_axis_labels[i].get_top() + UP * 0.25,
+                    color=WHITE,
+                    stroke_width=2
+                )
+                ticks.add(tick)
+            elif i % (1 / STEP) == 0:
+                tick = Line(
+                    start=x_axis_labels[i-int(1/STEP)].get_top() + UP * 0.20 + RIGHT * 0.55,
+                    end=x_axis_labels[i-int(1/STEP)].get_top() + UP * 0.25 + RIGHT * 0.55,
+                    color=WHITE,
+                    stroke_width=2
+                )
+                ticks.add(tick)
+
         # Player icons
         player_histogram = [0] * CLASSES
         bars = chart.bars
@@ -77,14 +104,14 @@ class Avg(Scene):
             player_icons.add(player_icon)
 
         # Animation
-        group = Group(title, chart, labels, player_icons)
+        group = Group(title, chart, labels, player_icons, ticks)
         self.play(Write(title))
-        self.play(Write(chart))
+        self.play(Write(chart), Write(ticks))
         self.play(Write(labels))
         self.wait()
         self.play(FadeIn(player_icons))
         self.wait()
-        self.play(group.animate.scale(2.5).shift(RIGHT * 10 + 3 * UP))
+        self.play(group.animate.scale(2.7).shift(RIGHT * 12 + 3.5 * UP))
         self.wait()
 
 

@@ -15,7 +15,7 @@ X_MIN = 0
 X_MAX = 2500
 STEP = 20
 CLASSES = int(X_MAX / STEP)
-ICON_SIZE = 0.10
+ICON_SIZE = 0.09
 
 
 class Elo(Scene):
@@ -62,9 +62,35 @@ class Elo(Scene):
             Tex("Player Density (/Elo)").scale(0.5)
         )
 
+        bars = chart.bars
+        x_axis_labels = chart.x_axis.labels
+
+        # Bar names
+        for label in x_axis_labels:
+            label.shift(LEFT / 200 * STEP / 2)
+
+        # Ticks
+        ticks = VGroup()
+        for i in range(CLASSES):
+            if i % (200 / STEP) == 0:
+                tick = Line(
+                    start=x_axis_labels[i].get_top() + UP * 0.15,
+                    end=x_axis_labels[i].get_top() + UP * 0.25,
+                    color=WHITE,
+                    stroke_width=2
+                )
+                ticks.add(tick)
+            elif i % (100 / STEP) == 0:
+                tick = Line(
+                    start=x_axis_labels[i-5].get_top() + UP * 0.20 + RIGHT / 2,
+                    end=x_axis_labels[i-5].get_top() + UP * 0.25 + RIGHT / 2,
+                    color=WHITE,
+                    stroke_width=2
+                )
+                ticks.add(tick)
+
         # Player icons
         player_histogram = [0] * CLASSES
-        bars = chart.bars
         player_icons = Group()
         for value, player in zip(values, players):
             player_class = min(math.floor(value / STEP), CLASSES - 1)
@@ -76,14 +102,14 @@ class Elo(Scene):
             player_icons.add(player_icon)
 
         # Animation
-        group = Group(title, chart, labels, player_icons)
+        group = Group(title, chart, labels, player_icons, ticks)
         self.play(Write(title))
-        self.play(Write(chart))
+        self.play(Write(chart), Write(ticks))
         self.play(Write(labels))
         self.wait()
         self.play(FadeIn(player_icons))
         self.wait()
-        self.play(group.animate.scale(2.2).shift(LEFT * 8 + 3 * UP))
+        self.play(group.animate.scale(2.4).shift(LEFT * 9 + 4 * UP))
         self.wait()
 
 
