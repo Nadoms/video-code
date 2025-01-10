@@ -40,6 +40,12 @@ class Avg(Scene):
                 avg_class = math.floor((avg - X_MIN) / STEP)
                 if 0 <= avg_class < CLASSES:
                     histogram[avg_class] += 1 / STEP
+        median_position = math.ceil(sum(histogram) / 2)
+        for i, bar in enumerate(histogram):
+            median_position -= bar
+            if median_position <= 0:
+                median_bar_no = i
+                break
 
         # Title
         title = Text("Season 6 Average Completion Distribution (5+ Completions)", font_size=24)
@@ -65,6 +71,7 @@ class Avg(Scene):
 
         bars = chart.bars
         x_axis_labels = chart.x_axis.labels
+        median_bar = chart.bars[median_bar_no]
 
         # Bar names
         for label in x_axis_labels:
@@ -108,6 +115,8 @@ class Avg(Scene):
         self.play(Write(title))
         self.play(Write(chart), Write(ticks))
         self.play(Write(labels))
+        self.wait()
+        self.play(Indicate(median_bar), run_time=3)
         self.wait()
         self.play(FadeIn(player_icons))
         self.wait()
