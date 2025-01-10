@@ -30,6 +30,7 @@ def get_player_data(nick):
     ).json()["data"]
     season_data = response_data["statistics"]["season"]
     stats = {
+        "uuid": response_data["uuid"],
         "games": season_data["playedMatches"]["ranked"],
         "playtime": season_data["playtime"]["ranked"],
         "elo": response_data["seasonResult"]["last"]["eloRate"],
@@ -38,8 +39,8 @@ def get_player_data(nick):
     return stats
 
 
-def save_head(nick):
-    image = requests.get(f"https://mc-heads.net/avatar/{nick}").content
+def save_head(nick, uuid):
+    image = requests.get(f"https://mc-heads.net/avatar/{uuid}").content
     image = Image.open(BytesIO(image))
     image.save(ASSETS_DIR / f"{nick}.png")
 
@@ -147,8 +148,8 @@ def main():
     player_data = {}
 
     for nick in nicks:
-        save_head(nick)
         player_data[nick] = get_player_data(nick)
+        save_head(nick, player_data[nick]["uuid"])
 
     # save_versus(nicks)
     save_history(nicks)
