@@ -44,6 +44,14 @@ class Games(Scene):
             Tex("Games Played (S6)").scale(0.5)
         )
 
+        # Bar names
+        x_labels = VGroup()
+        for i, player in enumerate(players):
+            label = Text(player.replace("_", " ")).scale(0.18)
+            label.rotate(PI / 2)
+            label.next_to(chart.bars[i], DOWN, buff=0.9)
+            x_labels.add(label)
+
         # Horizontal grid lines
         lines = VGroup()
         for y in range(Y_MIN, Y_MAX, STEP):
@@ -83,7 +91,8 @@ class Games(Scene):
         self.play(Write(title))
         self.play(Write(chart))
         self.play(Write(labels), Write(lines))
-        self.play(FadeIn(player_icons))
+        self.wait()
+        self.play(FadeIn(player_icons), FadeIn(x_labels))
         self.wait()
         self.play(Write(bar_labels))
         self.wait()
@@ -91,4 +100,4 @@ class Games(Scene):
 
 if __name__ == "__main__":
     name = os.path.basename(__file__)[:-3]
-    os.system(rf"manim -qk -v WARNING -p --disable_caching -r 1440,1080 -o {name}.mp4 {name}.py {name.capitalize()}")
+    os.system(rf"manim -qk -v WARNING -p --disable_caching -r 1920,1080 -o {name}.mp4 {name}.py {name.capitalize()}")

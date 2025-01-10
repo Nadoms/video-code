@@ -99,4 +99,4 @@ def digital_time(raw_time):
 
 if __name__ == "__main__":
     name = os.path.basename(__file__)[:-3]
-    os.system(rf"manim -qk -v WARNING -p --disable_caching -r 1440,1080 -o {name}.mp4 {name}.py {name.capitalize()}")
+    os.system(rf"manim -qk -v WARNING -p --disable_caching -r 1920,1080 -o {name}.mp4 {name}.py {name.capitalize()}")
