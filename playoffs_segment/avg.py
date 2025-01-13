@@ -3,6 +3,7 @@ from io import BytesIO
 import json
 import math
 from manim import *
+import numpy as np
 import os
 from pathlib import Path
 from PIL import Image
@@ -31,21 +32,19 @@ class Avg(Scene):
         values = [data[player]["avg"] / 60000 for player in players]
 
         histogram = [0] * CLASSES
+        avgs = []
         with open(DATA_DIR / "avg.txt") as f:
             while True:
                 line = f.readline()
                 if not line:
                     break
                 avg = int(line.strip()) / 60000
+                avgs.append(avg)
                 avg_class = math.floor((avg - X_MIN) / STEP)
                 if 0 <= avg_class < CLASSES:
                     histogram[avg_class] += 1 / STEP
-        median_position = math.ceil(sum(histogram) / 2)
-        for i, bar in enumerate(histogram):
-            median_position -= bar
-            if median_position <= 0:
-                median_bar_no = i
-                break
+        median = np.median(avgs)
+        median_class = math.floor((median - X_MIN) / STEP)
 
         # Title
         title = Text("Season 6 Average Completion Distribution (5+ Completions)", font_size=24)
@@ -71,7 +70,7 @@ class Avg(Scene):
 
         bars = chart.bars
         x_axis_labels = chart.x_axis.labels
-        median_bar = chart.bars[median_bar_no]
+        median_bar = chart.bars[median_class]
 
         # Bar names
         for label in x_axis_labels:

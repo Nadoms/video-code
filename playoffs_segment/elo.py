@@ -2,6 +2,7 @@ from io import BytesIO
 import json
 import math
 from manim import *
+import numpy as np
 import os
 from pathlib import Path
 from PIL import Image
@@ -30,21 +31,19 @@ class Elo(Scene):
         values = [data[player]["elo"] for player in players]
 
         histogram = [0] * CLASSES
+        elos = []
         with open(DATA_DIR / "elo.txt") as f:
             while True:
                 line = f.readline()
                 if not line:
                     break
                 elo = int(line.strip())
+                elos.append(elo)
                 elo_class = math.floor((elo - X_MIN) / STEP)
                 if 0 <= elo_class < CLASSES:
                     histogram[elo_class] += 1 / STEP
-        median_position = math.ceil(sum(histogram) / 2)
-        for i, bar in enumerate(histogram):
-            median_position -= bar
-            if median_position <= 0:
-                median_bar_no = i
-                break
+        median = np.median(elos)
+        median_class = math.floor((median - X_MIN) / STEP)
 
         # Title
         title = Text("Season 6 Elo Distribution", font_size=24)
@@ -70,7 +69,7 @@ class Elo(Scene):
 
         bars = chart.bars
         x_axis_labels = chart.x_axis.labels
-        median_bar = chart.bars[median_bar_no]
+        median_bar = chart.bars[median_class]
 
         # Bar names
         for label in x_axis_labels:
