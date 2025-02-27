@@ -1,58 +1,94 @@
 {
     "bridge": {
-        "mean": 256514,
-        "median": 220000,
-        "count": 64874,
-        "high_run": 647000,
-        "ranks": {
-            "coal": 376494,
-            "iron": 345862,
-            "gold": 297690,
-            "emerald": 240931,
-            "diamond": 203613,
-            "netherite": 181607
+        "mean": 249392,
+        "comps": 58704,
+        "deaths": 25647,
+        "entries": 92454,
+        "death_rate": 0.277,
+        "rank_means": {
+            "coal": 359151,
+            "iron": 343157,
+            "gold": 272831,
+            "emerald": 213352,
+            "diamond": 180386,
+            "netherite": 166747
+        },
+        "rank_death_rates": {
+            "coal": 0.511,
+            "iron": 0.422,
+            "gold": 0.297,
+            "emerald": 0.19,
+            "diamond": 0.123,
+            "netherite": 0.07
         }
     },
     "housing": {
-        "mean": 244351,
-        "median": 207000,
-        "count": 64609,
-        "high_run": 643000,
-        "ranks": {
-            "coal": 374593,
-            "iron": 341747,
-            "gold": 287156,
-            "emerald": 228133,
-            "diamond": 191808,
-            "netherite": 174469
+        "mean": 238901,
+        "comps": 58027,
+        "deaths": 24999,
+        "entries": 90936,
+        "death_rate": 0.275,
+        "rank_means": {
+            "coal": 369627,
+            "iron": 340663,
+            "gold": 262866,
+            "emerald": 202601,
+            "diamond": 173035,
+            "netherite": 163233
+        },
+        "rank_death_rates": {
+            "coal": 0.546,
+            "iron": 0.445,
+            "gold": 0.29,
+            "emerald": 0.174,
+            "diamond": 0.11,
+            "netherite": 0.087
         }
     },
     "stables": {
-        "mean": 275167,
-        "median": 238000,
-        "count": 62087,
-        "high_run": 665000,
-        "ranks": {
-            "coal": 431871,
-            "iron": 385831,
-            "gold": 322956,
-            "emerald": 259678,
-            "diamond": 217050,
-            "netherite": 194333
+        "mean": 268750,
+        "comps": 56388,
+        "deaths": 29387,
+        "entries": 93197,
+        "death_rate": 0.315,
+        "rank_means": {
+            "coal": 400597,
+            "iron": 380627,
+            "gold": 300504,
+            "emerald": 228303,
+            "diamond": 192794,
+            "netherite": 181161
+        },
+        "rank_death_rates": {
+            "coal": 0.565,
+            "iron": 0.464,
+            "gold": 0.335,
+            "emerald": 0.219,
+            "diamond": 0.161,
+            "netherite": 0.099
         }
     },
     "treasure": {
-        "mean": 266002,
-        "median": 223000,
-        "count": 58174,
-        "high_run": 665000,
-        "ranks": {
-            "coal": 413137,
-            "iron": 363856,
-            "gold": 316345,
-            "emerald": 252431,
-            "diamond": 212063,
-            "netherite": 190329
+        "mean": 253018,
+        "comps": 53595,
+        "deaths": 29386,
+        "entries": 93982,
+        "death_rate": 0.313,
+        "rank_means": {
+            "coal": 378548,
+            "iron": 359436,
+            "gold": 281472,
+            "emerald": 217469,
+            "diamond": 188463,
+            "netherite": 175151
+        },
+        "rank_death_rates": {
+            "coal": 0.518,
+            "iron": 0.483,
+            "gold": 0.345,
+            "emerald": 0.207,
+            "diamond": 0.127,
+            "netherite": 0.089
         }
     }
 }

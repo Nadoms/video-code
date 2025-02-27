@@ -2,3 +2,4 @@ media/
 __pycache__/
 venv
 .env
+ranked.db

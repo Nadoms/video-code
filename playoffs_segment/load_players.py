@@ -20,7 +20,9 @@ HEADERS = {
     "API-Key": API_KEY,
 }
 SEASON_START = 1724198400
+SEASON_END = 1734741040
 DAY = 86400
+SEASON = 6
 
 
 def get_player_data(nick):
@@ -80,56 +82,64 @@ def process_versus(player_1, player_2):
     return winrate, wins
 
 
-def save_history(nicks):
+def save_history(nicks, full=False):
     history_df = pd.DataFrame(columns=nicks)
     for nick in nicks:
         print(f"Checking {nick}'s history")
-        history = get_history(nick)
-        print(history)
-        history_df[nick] = pd.Series(history)
+        if full:
+            mega_history = []
+            for s in reversed(range(1, SEASON + 1)):
+                print(f"season {s}")
+                mega_history += get_history(nick, s, len(mega_history))
+            print(mega_history)
+        else:
+            mega_history = get_history(nick)
+        history_df[nick] = pd.Series(mega_history)
 
-    history_df.to_csv(DATA_DIR / "history.csv")
+    history_df.to_csv(DATA_DIR / f"history_{full}.csv")
 
 
-def get_history(nick):
+def get_history(nick, season=6, start_day=0):
     i = 0
     last_day = -1
-    history = [None] * 122
+    day = -1
+    history = []
     response_data = None
     uuid = requests.get(
-        f"{API_URL}/users/{nick}?season=6",
+        f"{API_URL}/users/{nick}",
         headers=HEADERS,
     ).json()["data"]["uuid"]
 
     while response_data != []:
-        url = f"{API_URL}/users/{nick}/matches?page={i}&season=6&type=2&count=50"
+        url = f"{API_URL}/users/{nick}/matches?page={i}&season={season}&type=2&count=50"
         response_data = requests.get(
             url,
             headers=HEADERS,
         ).json()["data"]
 
         for match in response_data:
-            assert match["date"] >= SEASON_START
-            day = (match["date"] - SEASON_START) // DAY
-            if day >= 122:
-                print("Snapped", match["id"])
-                day = 121
+            assert match["date"] <= SEASON_END
+            day = (SEASON_END - match["date"]) // DAY
 
             if day != last_day:
+                if day - last_day >= 1:
+                    for _ in range(day - last_day - 1):
+                        history.append(None)
                 try:
                     if match["changes"][0]["uuid"] == uuid:
                         elo = match["changes"][0]["eloRate"] + match["changes"][0]["change"]
                     else:
                         elo = match["changes"][1]["eloRate"] + match["changes"][1]["change"]
-                    history[day] = elo
+                    history.append(elo)
+                    assert len(history) == day - start_day
                     last_day = day
                 except:
                     last_day = day
-
         i += 1
+        print(f"day {day}")
 
     last_elo = -1
-    for i in range(len(history)):
+    for i in reversed(range(len(history))):
         if history[i] is None:
             history[i] = last_elo
         last_elo = history[i]
@@ -152,7 +162,7 @@ def main():
         save_head(nick, player_data[nick]["uuid"])
 
     # save_versus(nicks)
-    save_history(nicks)
+    save_history(nicks, True)
 
     with open(DATA_DIR / "players.json", "w") as f:
         json.dump(player_data, f, indent=4)
