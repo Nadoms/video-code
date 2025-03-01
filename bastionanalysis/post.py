@@ -13,24 +13,20 @@ class Plot(Scene):
         with open(data_file, "r") as f:
             data = json.load(f)
 
-        title = Text("Loot Quality Timesave Per Bastion at 2000+ Elo", font_size=24)
+        title = Text("Mean Post-Bastion Split Times at 2000+ Elo", font_size=24)
         title.move_to(ORIGIN).shift(UP * 3)
 
         bar_names = list(data.keys())
-        runs = [data[bastion]["high_run"] / 1000 for bastion in data]
-        bastions = [data[bastion]["rank_means"]["netherite"] / 1000 for bastion in data]
-        diffs = [run - bastion for run, bastion in zip(runs, bastions)]
-        worst = max(diffs)
-        diffs = [worst - diff for diff in diffs]
+        posts = [data[bastion]["rank_post_means"]["netherite"] / 1000 for bastion in data]
         chart = BarChart(
             bar_names=bar_names,
-            values=diffs,
-            y_range=[0, 10, 2],
+            values=posts,
+            y_range=[300, 315, 2],
             axis_config={"font_size": 20}
         )
 
         lines = VGroup()
-        for y in range(0, 11, 2):
+        for y in range(300, 315, 2):
             line = Line(
                 start=chart.c2p(0, y),
                 end=chart.c2p(4, y),
@@ -41,21 +37,19 @@ class Plot(Scene):
 
         labels = chart.get_axis_labels(
             Tex("Bastion").scale(0.5),
-            Tex("Timesave (sec)").scale(0.5)
+            Tex("Split Time (sec)").scale(0.5)
         )
 
         self.play(Write(title))
-        self.play(Write(chart))
-        self.play(Write(labels))
-        self.play(Write(lines))
+        self.play(Write(chart), Write(lines), Write(labels))
 
         self.wait()
 
         bars = chart.get_bars()
         for i, bar in enumerate(bars):
-            bar_time = diffs[i]
-            bar_label = Tex(f"{round(bar_time)}s").scale(0.5).next_to(bar, DOWN)
-            # self.play(Write(bar_label))
+            bar_time = posts[i]
+            bar_label = Tex(f"{round(bar_time, 1)}s").scale(0.5).next_to(bar, UP)
+            self.play(Write(bar_label))
 
         self.wait()
 
