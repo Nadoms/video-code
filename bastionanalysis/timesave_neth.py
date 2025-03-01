@@ -6,7 +6,7 @@ import pandas as pd
 import os
 
 
-class FastestBastion(Scene):
+class Plot(Scene):
 
     def construct(self):
         data_file = Path(__file__).parent / "data" / "bastion_pace.json"
@@ -18,7 +18,7 @@ class FastestBastion(Scene):
 
         bar_names = list(data.keys())
         runs = [data[bastion]["high_run"] / 1000 for bastion in data]
-        bastions = [data[bastion]["ranks"]["netherite"] / 1000 for bastion in data]
+        bastions = [data[bastion]["rank_means"]["netherite"] / 1000 for bastion in data]
         diffs = [run - bastion for run, bastion in zip(runs, bastions)]
         worst = max(diffs)
         diffs = [worst - diff for diff in diffs]
@@ -71,4 +71,5 @@ def digital_time(raw_time):
 
 # Execute rendering
 if __name__ == "__main__":
-    os.system(r"manim -qk -v WARNING -p --disable_caching -r 1280,720 -o FastestBastion.mp4 .\timesave_neth.py FastestBastion")
+    name = os.path.basename(__file__)[:-3]
+    os.system(fr"manim -qk -v WARNING -p --disable_caching -r 1920,1080 -o {name}.mp4 {name}.py Plot")

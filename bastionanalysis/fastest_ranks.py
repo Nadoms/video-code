@@ -10,7 +10,7 @@ RANKS = ["coal", "iron", "gold", "emerald", "diamond", "netherite"]
 BASTIONS = ["bridge", "housing", "stables", "treasure"]
 
 
-class FastestBastion(Scene):
+class Plot(Scene):
 
     def construct(self):
         data_file = Path(__file__).parent / "data" / "bastion_pace.json"
@@ -53,7 +53,7 @@ class FastestBastion(Scene):
         for i, rank in enumerate(RANKS):
             bars = VGroup()
             for j, bastion in enumerate(BASTIONS):
-                value = data[bastion]["ranks"][rank] / 60000
+                value = data[bastion]["rank_means"][rank] / 60000
                 value *= 0.75
                 bar = Rectangle(
                     width=bar_width,
@@ -79,9 +79,8 @@ class FastestBastion(Scene):
 
         # self.wait(duration=1)
         self.play(Write(title))
-        self.play(Write(axes))
+        self.play(Write(axes), Write(lines), Write(labels))
         self.play(Write(labels))
-        self.play(Write(lines))
         self.play(Write(all_bars))
 
         bar_labels = VGroup()
@@ -91,10 +90,13 @@ class FastestBastion(Scene):
             bar_labels.add(bar_label)
 
         self.play(Write(bar_labels))
+        self.wait()
 
         group = VGroup(axes, labels, lines, all_bars, bar_labels, title)
         self.play(group.animate.scale(1.5))
         self.play(group.animate.shift(UP * 2 + LEFT * 6.2))
+
+        self.wait()
 
 
 def digital_time(raw_time):
@@ -108,4 +110,5 @@ def digital_time(raw_time):
 
 # Execute rendering
 if __name__ == "__main__":
-    os.system(r"manim -qk -v WARNING -p --disable_caching -r 1280,720 -o FastestBastion.mp4 .\fastest_bastion_2d_ranks.py FastestBastion")
+    name = os.path.basename(__file__)[:-3]
+    os.system(fr"manim -qk -v WARNING -p --disable_caching -r 1920,1080 -o {name}.mp4 {name}.py Plot")

@@ -6,14 +6,14 @@ import pandas as pd
 import os
 
 
-class FastestBastion(Scene):
+class Plot(Scene):
 
     def construct(self):
         data_file = Path(__file__).parent / "data" / "bastion_pace.json"
         with open(data_file, "r") as f:
             data = json.load(f)
 
-        title = Text("Mean Bastion Split Times in Season 6", font_size=24)
+        title = Text("Mean Bastion Split Times", font_size=24)
         title.move_to(ORIGIN).shift(UP * 3)
 
         bar_names = list(data.keys())
@@ -42,11 +42,9 @@ class FastestBastion(Scene):
         )
 
         self.play(Write(title))
-        self.play(Write(chart))
-        self.play(Write(labels))
-        self.play(Write(lines))
+        self.play(Write(chart), Write(lines), Write(labels))
 
-        self.wait(duration=1)
+        self.wait()
 
         bars = chart.get_bars()
         for i, bar in enumerate(bars):
@@ -54,7 +52,7 @@ class FastestBastion(Scene):
             bar_label = Tex(f"{bar_time}").scale(0.5).next_to(bar, UP)
             self.play(Write(bar_label))
 
-        self.wait(duration=2)
+        self.wait()
 
 
 def digital_time(raw_time):
@@ -68,4 +66,5 @@ def digital_time(raw_time):
 
 # Execute rendering
 if __name__ == "__main__":
-    os.system(r"manim -qk -v WARNING -p --disable_caching -r 1280,720 -o FastestBastion.mp4 .\fastest_bastion_2d.py FastestBastion")
+    name = os.path.basename(__file__)[:-3]
+    os.system(fr"manim -qk -v WARNING -p --disable_caching -r 1920,1080 -o {name}.mp4 {name}.py Plot")

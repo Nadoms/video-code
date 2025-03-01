@@ -10,7 +10,7 @@ RANKS = ["coal", "iron", "gold", "emerald", "diamond", "netherite"]
 BASTIONS = ["bridge", "housing", "stables", "treasure"]
 
 
-class FastestBastion(ThreeDScene):
+class Plot(ThreeDScene):
 
     def construct(self):
         data_file = Path(__file__).parent / "data" / "bastion_pace.json"
@@ -46,7 +46,7 @@ class FastestBastion(ThreeDScene):
 
         for x, rank in enumerate(RANKS):
             for y, bastion in enumerate(BASTIONS):
-                z = data[bastion]["ranks"][rank]
+                z = data[bastion]["rank_means"][rank]
                 bar = Prism(
                     dimensions=[0.5, 0.5, z / z_scale],
                     fill_color=ManimColor.from_rgb((int(x * 40), 50, int(y * 30)), 1.0),
@@ -81,4 +81,5 @@ def digital_time(raw_time):
 
 # Execute rendering
 if __name__ == "__main__":
-    os.system(r"manim -qk -v WARNING -p --disable_caching -r 1280,720 -o FastestBastion.mp4 .\fastest_bastion_3d.py FastestBastion")
+    name = os.path.basename(__file__)[:-3]
+    os.system(fr"manim -qk -v WARNING -p --disable_caching -r 1920,1080 -o {name}.mp4 {name}.py Plot")

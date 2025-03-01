@@ -6,7 +6,7 @@ import pandas as pd
 import os
 
 
-class FastestBastion(Scene):
+class Plot(Scene):
 
     def construct(self):
         data_file = Path(__file__).parent / "data" / "bastion_pace.json"
@@ -42,9 +42,7 @@ class FastestBastion(Scene):
         )
 
         self.play(Write(title))
-        self.play(Write(chart))
-        self.play(Write(labels))
-        self.play(Write(lines))
+        self.play(Write(chart), Write(lines), Write(labels))
 
         self.wait()
 
@@ -68,4 +66,5 @@ def digital_time(raw_time):
 
 # Execute rendering
 if __name__ == "__main__":
-    os.system(r"manim -qk -v WARNING -p --disable_caching -r 1280,720 -o FastestBastion.mp4 .\fastest_run_neth.py FastestBastion")
+    name = os.path.basename(__file__)[:-3]
+    os.system(fr"manim -qk -v WARNING -p --disable_caching -r 1920,1080 -o {name}.mp4 {name}.py Plot")
