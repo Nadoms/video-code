@@ -75,19 +75,32 @@ class Plot(Scene):
         self.play(Write(charts[0].axes), Write(labels), Write(title_top), Write(title_bottom))
 
         last_bars = VMobject()
+        charts = charts + [charts[0]]
         for i, chart in enumerate(charts):
+            i = i % 4
             bars = chart.bars
             median_bar = bars[median_classes[BASTIONS[i]]]
             bastion_name = BASTIONS[charts.index(chart)].capitalize()
+
+            highroll = np.percentile(bastion_times[BASTIONS[i]], 10) / 60000
+            median = medians[BASTIONS[i]]
+            lowroll = np.percentile(bastion_times[BASTIONS[i]], 90) / 60000
+            std = np.std(bastion_times[BASTIONS[i]]) / 60000
+
+            highroll_txt = Text(f"Highroll: {digital_time(highroll)}\n", font_size=18)
+            median_txt = Text(f"Median: {digital_time(median)}\n", font_size=18)
+            lowroll_txt = Text(f"Lowroll: {digital_time(lowroll)}\n", font_size=18)
+            std_txt = Text(f"Std Deviation: {std:.2f}\n", font_size=18)
+            stats_text = VGroup(highroll_txt, median_txt, lowroll_txt, std_txt).arrange(DOWN, aligned_edge=RIGHT)
+            stats_text.shift(RIGHT * 5 + UP * 2.5)
+
             title_middle = Text(
                 f"{bastion_name} Bastion Splits",
                 font_size=24
             ).move_to(ORIGIN).shift(UP * 3)
-            self.play(FadeIn(bars), FadeOut(last_bars), Write(title_middle), run_time=1)
-            self.wait()
-            self.play(Indicate(median_bar, 1), run_time=2)
-            self.wait()
-            self.play(Unwrite(title_middle), run_time=0.3)
+            self.play(FadeIn(bars), FadeOut(last_bars), Write(title_middle), Write(stats_text), run_time=1)
+            self.play(Indicate(median_bar, 1), run_time=3)
+            self.play(Unwrite(title_middle), Unwrite(stats_text), run_time=0.3)
             last_bars = bars
 
 
