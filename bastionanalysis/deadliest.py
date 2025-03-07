@@ -26,7 +26,7 @@ class Plot(ThreeDScene):
             z_range=[0, 100, 10],
             x_length=x_length,
             y_length=y_length,
-            z_length=5,
+            z_length=4,
         )
 
         bars = VGroup()
@@ -36,12 +36,11 @@ class Plot(ThreeDScene):
             y = 1
             for rank, death_rate in data[bastion]["rank_death_rates"].items():
                 bar = Prism(
-                    dimensions=[0.5, 0.5, death_rate * 10],
+                    dimensions=[0.5, 0.5, death_rate * 6],
                     fill_color=ManimColor.from_rgb(
-                        (death_rate * 1.3, (0.6 - death_rate) * 1.7, (0.6 - death_rate) * 0.7),
-                        1.0,
+                        (death_rate * 1.1, (0.6 - death_rate) * 0.7, (0.6 - death_rate) * 1.7),
+                        0.5,
                     ),
-                    fill_opacity=0.7,
                 ).move_to(chart.c2p(x, y, 0), aligned_edge=IN)
                 bar_label = Tex(f"{death_rate}%").scale(0.5).next_to(bar, OUT)
                 bars.add(bar)
@@ -78,9 +77,10 @@ class Plot(ThreeDScene):
             Tex("Death Rate").scale(0.5),
         )
 
-        phi = 70 * DEGREES
+        phi = 50 * DEGREES
         theta = -35 * DEGREES
         self.set_camera_orientation(phi=phi, theta=theta, zoom=0.9)
+        self.move_camera
         self.play(Write(title))
         self.play(Write(chart), Write(grid), Write(labels), Write(tick_labels))
         self.play(Write(bars))
