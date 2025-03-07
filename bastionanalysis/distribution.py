@@ -104,16 +104,6 @@ class Plot(Scene):
             last_bars = bars
 
 
-def get_raw_time(time):
-    raw_time = 0
-    time = list(reversed(time.split(":")))
-
-    for i, value in enumerate(time):
-        raw_time += int(value) * (60 ** i)
-
-    return raw_time * 1000
-
-
 def digital_time(raw_time):
     time = str(timedelta(minutes=raw_time))[2:7]
     if time[0] == "0":
