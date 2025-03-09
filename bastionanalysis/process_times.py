@@ -24,6 +24,7 @@ def process(bastion):
     rank_times = {"coal": 0, "iron": 0, "gold": 0, "emerald": 0, "diamond": 0, "netherite": 0}
     rank_comps = {"coal": 0, "iron": 0, "gold": 0, "emerald": 0, "diamond": 0, "netherite": 0}
     rank_deaths = {"coal": 0, "iron": 0, "gold": 0, "emerald": 0, "diamond": 0, "netherite": 0}
+    rank_death_opps = {"coal": 0, "iron": 0, "gold": 0, "emerald": 0, "diamond": 0, "netherite": 0}
     rank_entries = {"coal": 0, "iron": 0, "gold": 0, "emerald": 0, "diamond": 0, "netherite": 0}
     rank_post_times = {"coal": 0, "iron": 0, "gold": 0, "emerald": 0, "diamond": 0, "netherite": 0}
     rank_comp_times = {"coal": 0, "iron": 0, "gold": 0, "emerald": 0, "diamond": 0, "netherite": 0}
@@ -42,12 +43,13 @@ def process(bastion):
         for run in runs:
             elo, timeline, uuid = run
             time = match[2] if match[1] == uuid and not match[3] else None
-            total_time, deaths, completions, entries, post_time, comp_time, full_comp, times = process_timeline(json.loads(timeline), time)
+            total_time, deaths, completions, death_opps, entries, post_time, comp_time, full_comp, times = process_timeline(json.loads(timeline), time)
             if elo:
                 rank = convert_to_rank(elo)
                 rank_times[rank] += total_time
                 rank_deaths[rank] += deaths
                 rank_comps[rank] += completions
+                rank_death_opps[rank] += death_opps
                 rank_entries[rank] += entries
                 rank_post_times[rank] += post_time
                 rank_comp_times[rank] += comp_time
@@ -57,6 +59,7 @@ def process(bastion):
             all_times += total_time
             all_comps += completions
             all_deaths += deaths
+            all_death_opps += death_opps
             all_entries += entries
             all_post_times += post_time
             all_comp_times += comp_time
@@ -65,7 +68,7 @@ def process(bastion):
     print(rank_times)
     print(rank_comps)
     print(rank_deaths)
-    print(rank_entries)
+    print(rank_death_opps)
     bastion_dict = {
         "mean": int(all_times / all_comps),
         "comps": all_comps,
@@ -75,15 +78,16 @@ def process(bastion):
         "post_mean": int(all_post_times / all_comp_full),
         "comp_mean": int(all_comp_times / all_comp_full),
         "rank_means": {rank: int(rank_times[rank] / rank_comps[rank]) for rank in RANKS},
-        "rank_death_rates": {rank: round(rank_deaths[rank] / rank_entries[rank], 3) for rank in RANKS},
+        "rank_death_rates": {rank: round(rank_deaths[rank] / rank_death_opps[rank], 3) for rank in RANKS},
         "rank_post_means": {rank: int(rank_post_times[rank] / rank_comp_full[rank]) for rank in RANKS},
         "rank_comp_means": {rank: int(rank_comp_times[rank] / rank_comp_full[rank]) for rank in RANKS},
     }
     return bastion_dict, sorted(netherite_times)
 
 
-def process_timeline(timeline, time):
+def process_timeline(timeline, time, opponent_ended):
     deaths = 0
+    death_opps = 0
     total_time = 0
     entries = 0
     completions = 0
@@ -100,6 +104,7 @@ def process_timeline(timeline, time):
         if event["type"] == "nether.find_bastion":
             bastion_entry = event["time"]
             entries += 1
+            death_opps += 1
 
         elif event["type"] == "projectelo.timeline.reset":
             bastion_entry = 0
@@ -115,6 +120,10 @@ def process_timeline(timeline, time):
                 times.append(bastion_exit - bastion_entry)
                 completions += 1
 
+    else:
+        if opponent_ended and bastion_entry and not bastion_exit:
+            death_opps -= 1
+
     if time and bastion_exit:
         post_time = time - bastion_exit
         full_comp = 1
@@ -123,7 +132,7 @@ def process_timeline(timeline, time):
         full_comp = 0
         time = 0
 
-    return total_time, deaths, completions, entries, post_time, time, full_comp, times
+    return total_time, deaths, completions, death_opps, entries, post_time, time, full_comp, times
 
 
 def convert_to_rank(elo):
