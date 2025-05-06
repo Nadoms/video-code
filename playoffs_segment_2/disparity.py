@@ -38,7 +38,7 @@ class Plot(Scene):
 
     def construct(self):
         # Data
-        data_file = DATA_DIR / "completions.csv"
+        data_file = DATA_DIR / "disparity.csv"
         data_points = pd.read_csv(data_file).values.tolist()
         first_match = round(int(data_points[0][0]) / 60 / 60 / 24, 3)
         now = round(datetime.now().timestamp() / 60 / 60 / 24, 3)
