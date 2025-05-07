@@ -1,24 +1,27 @@
+from math import isnan
 from manim import *
 import os
 from pathlib import Path
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 ROOT = Path(__file__).parent
 ASSETS_DIR = ROOT / "assets"
 DATA_DIR = ROOT / "data"
-Y_MIN = 0
+Y_MIN = 300
 Y_MAX = 1800
 Y_STEP = 300
 X_MIN = 0
-X_MAX = 730
-X_STEP = 30.4
+X_MAX = 791
+X_STEP = 791 / 13
 DAY = 60 * 60 * 24
 
 
-def compute_moving_average(data_points, start, end, window_size=100, step=10):
+def compute_moving_average(data_points, window_size=5, step=1):
     data_points.sort(key=lambda x: x[0])
+    start = int(data_points[0][0] + window_size / 2)
+    end = int(data_points[-1][0] - window_size / 2)
     smoothed_date = []
     smoothed_time = []
 
@@ -34,21 +37,38 @@ def compute_moving_average(data_points, start, end, window_size=100, step=10):
     return smoothed_date, smoothed_time
 
 
+def format_time(raw_time):
+    time = str(timedelta(seconds=raw_time))[2:7]
+    if time[0] == "0":
+        time = time[1:]
+    return time
+
+
 class Plot(Scene):
 
     def construct(self):
         # Data
         data_file = DATA_DIR / "completions.csv"
         data_points = pd.read_csv(data_file).values.tolist()
-        first_match = round(int(data_points[0][0]) / 60 / 60 / 24, 3)
-        now = round(datetime.now().timestamp() / 60 / 60 / 24, 3)
+        first_match = data_points[0][0]
+        data_points = [
+            (
+                round((data[0] - first_match) / 60 / 60 / 24, 3),
+                data[1],
+                data[2],
+                data[3],
+                data[4]
+            )
+            for data in data_points
+            if data[1] > 360000
+        ]
 
         # Axes
         plane = NumberPlane(
             x_range=[X_MIN, X_MAX, X_STEP],
             y_range=[Y_MIN, Y_MAX, Y_STEP],
             axis_config={
-                "include_numbers": True,
+                "include_numbers": False,
                 "font_size": 20,
                 "include_tip": False,
             },
@@ -61,15 +81,34 @@ class Plot(Scene):
                 "label_direction": DOWN,
             },
             background_line_style={
-                "stroke_color": LIGHT_GRAY,
-                "stroke_width": 1,
-            },
-            faded_line_style={
                 "stroke_color": DARK_GRAY,
                 "stroke_width": 1,
             },
-            faded_line_ratio=3,
+            faded_line_style={
+                "stroke_color": DARKER_GRAY,
+                "stroke_width": 1,
+            },
+            faded_line_ratio=2,
         )
+
+        def format_date(month, year):
+            date = datetime(year=year, month=month, day=1)
+            days_since = round((date.timestamp() - first_match) / 60 / 60 / 24, 3)
+            return date.strftime("%b %y"), days_since
+
+        x_labels = VGroup()
+        for x in range(2, 15):
+            month, days_since = format_date(x * 2 % 12 + 1, 2023 + x * 2 // 12)
+            label = Tex(month).scale(0.3).next_to(
+                plane.x_axis.n2p(days_since), DOWN, buff=0.2
+            )
+            x_labels.add(label)
+        y_labels = VGroup()
+        for y in range(Y_MIN, Y_MAX + 1, Y_STEP):
+            label = Tex(format_time(y)).scale(0.3).next_to(
+                plane.y_axis.n2p(y), LEFT, buff=0.2
+            )
+            y_labels.add(label)
 
         # Axes labels
         labels = plane.get_axis_labels(
@@ -102,52 +141,60 @@ class Plot(Scene):
         }
         for i, (date, time, elo, bastion, ow) in enumerate(data_points):
             time = time / 1000
-            colour_scale = max((elo - 600), 0) / 2550
+            if not isnan(elo):
+                colour_scale = min(max((elo - 600), 0) / 2000, 1)
+            else:
+                colour_scale = 0
             alpha_scale = max(min(1, ((1800 - time) / 300)), 0)
             colour = ManimColor.from_rgb((
                 int((1 - colour_scale) * 255),
                 100,
                 int(colour_scale * 255)
             ), 1)
-            day = round(first_match + date, 3)
 
-            dot = Dot(plane.c2p(day, time), color=colour, radius=0.015).set_opacity(alpha_scale)
+            dot = Dot(plane.c2p(date, time), color=colour, radius=0.007).set_opacity(alpha_scale)
             if i % 1000 == 0:
                 print(i)
             dots.add(dot)
             for max_elo in rank_dots:
-                if elo < max_elo:
+                if not isnan(elo) and elo < max_elo:
                     rank_dots[max_elo].add(dot)
-            bastion_dots[bastion].add(dot)
-            ow_dots[ow].add(dot)
+                    break
+            if bastion in bastion_dots:
+                bastion_dots[bastion].add(dot)
+            if ow in ow_dots:
+                ow_dots[ow].add(dot)
 
         # Lineage
-        rank_lines = VDict(mapping_or_iterable={
-            600: None,
+        rank_lines = {
             900: None,
             1200: None,
             1500: None,
             2000: None,
             3000: None,
-        })
-        bastion_lines = VDict(mapping_or_iterable={
+        }
+        bastion_lines = {
             "BRIDGE": None,
             "HOUSING": None,
             "STABLES": None,
             "TREASURE": None,
-        })
-        ow_lines = VDict(mapping_or_iterable={
+        }
+        ow_lines = {
             "BURIED_TREASURE": None,
             "DESERT_TEMPLE": None,
             "RUINED_PORTAL": None,
             "SHIPWRECK": None,
             "VILLAGE": None,
-        })
+        }
 
         min_elo = 0
         for max_elo in rank_lines:
             smoothed_date, smoothed_time = compute_moving_average(
-                [(int(data[0]), int(data[1])) for data in data_points if min_elo <= int(data[2]) < max_elo]
+                [
+                    (data[0], data[1])
+                    for data in data_points
+                    if not isnan(data[2]) and min_elo <= int(data[2]) < max_elo
+                ]
             )
             min_elo = max_elo
             rank_lines[max_elo] = plane.plot_line_graph(
@@ -158,7 +205,7 @@ class Plot(Scene):
             )
         for bastion in bastion_lines:
             smoothed_date, smoothed_time = compute_moving_average(
-                [(int(data[0]), int(data[1])) for data in data_points if data[3] == bastion]
+                [(data[0], data[1]) for data in data_points if data[3] == bastion]
             )
             bastion_lines[bastion] = plane.plot_line_graph(
                 x_values=smoothed_date,
@@ -168,7 +215,7 @@ class Plot(Scene):
             )
         for ow in ow_lines:
             smoothed_date, smoothed_time = compute_moving_average(
-                [(int(data[0]), int(data[1])) for data in data_points if data[3] == ow]
+                [(data[0], data[1]) for data in data_points if data[4] == ow]
             )
             ow_lines[ow] = plane.plot_line_graph(
                 x_values=smoothed_date,
@@ -177,7 +224,7 @@ class Plot(Scene):
                 add_vertex_dots=False,
             )
         smoothed_date, smoothed_time = compute_moving_average(
-            [(int(data[0]), int(data[1])) for data in data_points]
+            [(data[0], data[1]) for data in data_points]
         )
         line = plane.plot_line_graph(
             x_values=smoothed_date,
@@ -187,8 +234,8 @@ class Plot(Scene):
         )
 
         # Animation
-        self.play(Write(plane), Write(labels))
-        self.play(Write(dots))
+        self.play(Write(plane), Write(labels), Write(x_labels), Write(y_labels))
+        self.play(Write(dots), run_time=2)
         self.play(Write(line), run_time=6)
 
 

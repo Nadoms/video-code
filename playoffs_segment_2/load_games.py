@@ -1,14 +1,13 @@
 import asyncio
 import csv
+from datetime import timedelta
 import json
 from pathlib import Path
 import sys
 
-import db
-
-
 ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.append(str(ROOT_DIR))
+import db
 import api
 
 
@@ -69,13 +68,18 @@ async def find_completions():
             global eos
             if eos:
                 season += 1
+                current_id -= BATCH * INCREMENT
                 eos = False
                 if season > CURRENT_SEASON:
                     reached_end = True
             all_matches.update(matches)
         current_id += BATCH * INCREMENT
 
-    return sorted(list(all_matches.values()), key=lambda x: x["date"])
+    total_time = timedelta(milliseconds=sum(
+        match["time"] for match in all_matches.values()
+    )).days
+
+    return total_time, sorted(list(all_matches.values()), key=lambda x: x["date"])
 
 
 async def find_disparity():
@@ -117,11 +121,12 @@ async def find_disparity():
 
 
 def main():
-    all_matches = asyncio.run(find_completions())
+    total_time, all_matches = asyncio.run(find_completions())
     with open(ROOT_DIR / "playoffs_segment_2" / "data" / "completions.csv", mode="w", newline="") as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=["date", "time", "elo", "bastion", "ow"])
         writer.writeheader()
         writer.writerows(all_matches)
+    print(f"Total time: {total_time} days")
 
 if __name__ == "__main__":
     main()
