@@ -13,8 +13,8 @@ Y_MIN = 300
 Y_MAX = 1800
 Y_STEP = 300
 X_MIN = 0
-X_MAX = 791
-X_STEP = 791 / 13
+X_MAX = 771
+X_STEP = X_MAX * 4
 DAY = 60 * 60 * 24
 
 
@@ -59,9 +59,13 @@ class Plot(Scene):
                 data[3],
                 data[4]
             )
-            for data in data_points
+            for data in data_points[-5000:]
             if data[1] > 360000
         ]
+
+        # Title
+        title = Text("Completion Times Throughout Ranked History", font_size=24)
+        title.move_to(ORIGIN).shift(UP * 1)
 
         # Axes
         plane = NumberPlane(
@@ -94,7 +98,7 @@ class Plot(Scene):
         def format_date(month, year):
             date = datetime(year=year, month=month, day=1)
             days_since = round((date.timestamp() - first_match) / 60 / 60 / 24, 3)
-            return date.strftime("%b %y"), days_since
+            return date.strftime("%b '%y"), days_since
 
         x_labels = VGroup()
         for x in range(2, 15):
@@ -112,8 +116,8 @@ class Plot(Scene):
 
         # Axes labels
         labels = plane.get_axis_labels(
-            Tex("Date").scale(0.5),
-            Tex("Completion Time").scale(0.5)
+            Tex("Month").scale(0.4),
+            Tex("Completion Time").scale(0.4)
         )
 
         # Dottage
@@ -142,7 +146,7 @@ class Plot(Scene):
         for i, (date, time, elo, bastion, ow) in enumerate(data_points):
             time = time / 1000
             if not isnan(elo):
-                colour_scale = min(max((elo - 600), 0) / 2000, 1)
+                colour_scale = min(max((elo - 600), 0) / 1500, 1)
             else:
                 colour_scale = 0
             alpha_scale = max(min(1, ((1800 - time) / 300)), 0)
@@ -234,9 +238,21 @@ class Plot(Scene):
         )
 
         # Animation
-        self.play(Write(plane), Write(labels), Write(x_labels), Write(y_labels))
-        self.play(Write(dots), run_time=2)
+        self.play(Write(title), Write(plane))
+        self.play(Write(labels), Write(x_labels), Write(y_labels))
+        self.wait()
+        self.play(FadeIn(dots), run_time=1)
         self.play(Write(line), run_time=6)
+        self.wait()
+        self.play(FadeOut(dots, line))
+        self.wait()
+        self.play(FadeIn(rank_dots[3000], rank_lines[3000]))
+        self.wait()
+        self.play(*[FadeIn(rank_dots[max_elo], rank_lines[max_elo]) for max_elo in rank_lines if max_elo != 3000])
+        self.wait()
+        self.play(*[FadeOut(rank_dots[max_elo], rank_lines[max_elo]) for max_elo in rank_lines])
+        self.wait()
+        self.play(*[FadeIn(bastion_dots[bastion], bastion_lines[bastion]) for bastion in bastion_lines])
 
 
 if __name__ == "__main__":
