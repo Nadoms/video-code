@@ -1,3 +1,4 @@
+from math import isnan
 from manim import *
 import os
 from pathlib import Path
@@ -32,8 +33,10 @@ class Plot(Scene):
         }
         data_file = DATA_DIR / "disparity.csv"
         data_points = pd.read_csv(data_file).values.tolist()
-        for elo, _, o_type, overworld, _, _, _, _, _, _ in data_points:
+        for elo, _, o_type, overworld, _, _, _, _, _ in data_points:
             overworld = overworld / 1000
+            if isnan(overworld):
+                continue
             overworld_class = int((overworld - X_MIN) // X_STEP)
             if 0 <= overworld_class < CLASSES:
                 histogram[overworld_class] += 1
@@ -61,7 +64,17 @@ class Plot(Scene):
         chart = BarChart(
             bar_names=[f"{digital_time(i * X_STEP + X_MIN)}" if i % (10 / X_STEP) == 0 else "" for i in range(CLASSES)],
             values=histogram,
-            y_range=[0, 75, 10],
+            y_range=[0, 200, 25],
+            axis_config={"font_size": 20},
+            x_axis_config={
+                "include_ticks": False,
+                "include_numbers": False
+            }
+        )
+        chart_po = BarChart(
+            bar_names=[f"{digital_time(i * X_STEP + X_MIN)}" if i % (10 / X_STEP) == 0 else "" for i in range(CLASSES)],
+            values=histogram_po,
+            y_range=[0, 30, 5],
             axis_config={"font_size": 20},
             x_axis_config={
                 "include_ticks": False,
@@ -78,6 +91,9 @@ class Plot(Scene):
         # Animation
         self.play(Write(chart), Write(title))
         self.play(Write(labels))
+
+        self.play(Unwrite(chart))
+        self.play(Write(chart_po))
 
 
 def digital_time(raw_time):
