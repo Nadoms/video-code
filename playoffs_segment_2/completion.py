@@ -9,21 +9,32 @@ from datetime import datetime, timedelta
 ROOT = Path(__file__).parent
 ASSETS_DIR = ROOT / "assets"
 DATA_DIR = ROOT / "data"
-Y_MIN = 300
-Y_MAX = 1800
-Y_STEP = 300
+Y_MIN = 480
+Y_MAX = 1560
+Y_STEP = 120
 X_MIN = 0
 X_MAX = 771
 X_STEP = X_MAX * 4
 DAY = 60 * 60 * 24
+RANK_COLOURS = {
+    900: "#bdbdbd",
+    1200: "#fad43d",
+    1500: "#30e858",
+    2000: "#37dcdd",
+    3000: "#3e3a3e",
+}
+ANY_COLOURS = [YELLOW, PURPLE_D, BLUE_B, RED_D, GREEN_B]
 
 
-def compute_moving_average(data_points, window_size=5, step=1):
+def compute_moving_average(data_points, window_size=30, step=1):
     data_points.sort(key=lambda x: x[0])
     start = int(data_points[0][0] + window_size / 2)
     end = int(data_points[-1][0] - window_size / 2)
+    smoothed_dates = []
+    smoothed_times = []
     smoothed_date = []
     smoothed_time = []
+    nan_streak = False
 
     for date in range(start, end, step):
         lower_bound = date - window_size / 2
@@ -31,10 +42,20 @@ def compute_moving_average(data_points, window_size=5, step=1):
 
         filtered_points = [point[1] for point in data_points if lower_bound <= point[0] <= upper_bound]
         average_time = np.median(filtered_points)
-        smoothed_date.append(date)
-        smoothed_time.append(average_time / 1000)
+        if not isnan(average_time):
+            nan_streak = False
+            smoothed_date.append(date)
+            smoothed_time.append(average_time / 1000)
+        elif not nan_streak:
+            nan_streak = True
+            smoothed_dates.append(smoothed_date)
+            smoothed_times.append(smoothed_time)
+            smoothed_date = []
+            smoothed_time = []
+    smoothed_dates.append(smoothed_date)
+    smoothed_times.append(smoothed_time)
 
-    return smoothed_date, smoothed_time
+    return smoothed_dates, smoothed_times
 
 
 def format_time(raw_time):
@@ -59,13 +80,14 @@ class Plot(Scene):
                 data[3],
                 data[4]
             )
-            for data in data_points[-5000:]
+            for i, data in enumerate(data_points)
             if data[1] > 360000
+            and i % 10 == 0
         ]
 
         # Title
         title = Text("Completion Times Throughout Ranked History", font_size=24)
-        title.move_to(ORIGIN).shift(UP * 1)
+        title.move_to(ORIGIN).shift(UP * 2.2)
 
         # Axes
         plane = NumberPlane(
@@ -110,7 +132,7 @@ class Plot(Scene):
         y_labels = VGroup()
         for y in range(Y_MIN, Y_MAX + 1, Y_STEP):
             label = Tex(format_time(y)).scale(0.3).next_to(
-                plane.y_axis.n2p(y), LEFT, buff=0.2
+                plane.y_axis.n2p(y), LEFT, buff=0.1
             )
             y_labels.add(label)
 
@@ -122,14 +144,15 @@ class Plot(Scene):
 
         # Dottage
         dots = VGroup()
+        unranked_dots = VGroup()
         rank_dots = {
-            600: VGroup(),
             900: VGroup(),
             1200: VGroup(),
             1500: VGroup(),
             2000: VGroup(),
             3000: VGroup(),
         }
+        unbastion_dots = VGroup()
         bastion_dots = {
             "BRIDGE": VGroup(),
             "HOUSING": VGroup(),
@@ -149,10 +172,10 @@ class Plot(Scene):
                 colour_scale = min(max((elo - 600), 0) / 1500, 1)
             else:
                 colour_scale = 0
-            alpha_scale = max(min(1, ((1800 - time) / 300)), 0)
+            alpha_scale = max(min(1, ((1680 - time) / 240)), 0)
             colour = ManimColor.from_rgb((
                 int((1 - colour_scale) * 255),
-                100,
+                int(50 + colour_scale * 100),
                 int(colour_scale * 255)
             ), 1)
 
@@ -160,39 +183,44 @@ class Plot(Scene):
             if i % 1000 == 0:
                 print(i)
             dots.add(dot)
-            for max_elo in rank_dots:
-                if not isnan(elo) and elo < max_elo:
-                    rank_dots[max_elo].add(dot)
-                    break
-            if bastion in bastion_dots:
+            if isnan(elo):
+                unranked_dots.add(dot)
+            else:
+                for max_elo in rank_dots:
+                    if elo < max_elo:
+                        rank_dots[max_elo].add(dot)
+                        break
+            if bastion not in bastion_dots:
+                unbastion_dots.add(dot)
+            else:
                 bastion_dots[bastion].add(dot)
             if ow in ow_dots:
                 ow_dots[ow].add(dot)
 
         # Lineage
         rank_lines = {
-            900: None,
-            1200: None,
-            1500: None,
-            2000: None,
-            3000: None,
+            900: VGroup(),
+            1200: VGroup(),
+            1500: VGroup(),
+            2000: VGroup(),
+            3000: VGroup(),
         }
         bastion_lines = {
-            "BRIDGE": None,
-            "HOUSING": None,
-            "STABLES": None,
-            "TREASURE": None,
+            "BRIDGE": VGroup(),
+            "HOUSING": VGroup(),
+            "STABLES": VGroup(),
+            "TREASURE": VGroup(),
         }
         ow_lines = {
-            "BURIED_TREASURE": None,
-            "DESERT_TEMPLE": None,
-            "RUINED_PORTAL": None,
-            "SHIPWRECK": None,
-            "VILLAGE": None,
+            "BURIED_TREASURE": VGroup(),
+            "DESERT_TEMPLE": VGroup(),
+            "RUINED_PORTAL": VGroup(),
+            "SHIPWRECK": VGroup(),
+            "VILLAGE": VGroup(),
         }
 
         min_elo = 0
-        for max_elo in rank_lines:
+        for i, max_elo in enumerate(rank_lines):
             smoothed_date, smoothed_time = compute_moving_average(
                 [
                     (data[0], data[1])
@@ -200,59 +228,110 @@ class Plot(Scene):
                     if not isnan(data[2]) and min_elo <= int(data[2]) < max_elo
                 ]
             )
+            colour = ManimColor.from_hex(RANK_COLOURS[max_elo])
+            for j in range(len(smoothed_date)):
+                if max_elo == 3000:
+                    rank_lines[max_elo].add(plane.plot_line_graph(
+                        x_values=smoothed_date[j],
+                        y_values=smoothed_time[j],
+                        stroke_width=4,
+                        add_vertex_dots=False,
+                        line_color=ManimColor.from_hex(GOLD),
+                    ))
+                rank_lines[max_elo].add(plane.plot_line_graph(
+                    x_values=smoothed_date[j],
+                    y_values=smoothed_time[j],
+                    stroke_width=2,
+                    add_vertex_dots=False,
+                    line_color=colour,
+                ))
+            square = Square(
+                side_length=0.2,
+                fill_color=colour,
+                fill_opacity=1
+            ).to_edge(UP + RIGHT).shift(DOWN + 0.5 * RIGHT + DOWN * 0.4 * i)
+            rank_lines[max_elo].add(square)
+            legend_str = "2000+" if max_elo == 3000 else f"{min_elo}-{max_elo}"
+            legend = Text(legend_str, font_size=16, color=colour).next_to(square, LEFT, buff=0.2)
+            rank_lines[max_elo].add(legend)
             min_elo = max_elo
-            rank_lines[max_elo] = plane.plot_line_graph(
-                x_values=smoothed_date,
-                y_values=smoothed_time,
-                stroke_width=2,
-                add_vertex_dots=False,
-            )
-        for bastion in bastion_lines:
+
+        for i, bastion in enumerate(bastion_lines):
             smoothed_date, smoothed_time = compute_moving_average(
                 [(data[0], data[1]) for data in data_points if data[3] == bastion]
             )
-            bastion_lines[bastion] = plane.plot_line_graph(
-                x_values=smoothed_date,
-                y_values=smoothed_time,
-                stroke_width=2,
-                add_vertex_dots=False,
-            )
-        for ow in ow_lines:
+            colour = ManimColor.from_hex(ANY_COLOURS[i])
+            for j in range(len(smoothed_date)):
+                bastion_lines[bastion].add(plane.plot_line_graph(
+                    x_values=smoothed_date[j],
+                    y_values=smoothed_time[j],
+                    stroke_width=2,
+                    add_vertex_dots=False,
+                    line_color=colour,
+                ))
+            square = Square(
+                side_length=0.2,
+                fill_color=colour,
+                fill_opacity=1
+            ).to_edge(UP + RIGHT).shift(DOWN + 0.5 * RIGHT + DOWN * 0.4 * i)
+            bastion_lines[bastion].add(square)
+            legend = Text(bastion.capitalize(), font_size=16, color=colour).next_to(square, LEFT, buff=0.2)
+            bastion_lines[bastion].add(legend)
+
+        for i, ow in enumerate(ow_lines):
             smoothed_date, smoothed_time = compute_moving_average(
                 [(data[0], data[1]) for data in data_points if data[4] == ow]
             )
-            ow_lines[ow] = plane.plot_line_graph(
-                x_values=smoothed_date,
-                y_values=smoothed_time,
-                stroke_width=2,
-                add_vertex_dots=False,
-            )
+            colour = ManimColor.from_hex(ANY_COLOURS[i])
+            for j in range(len(smoothed_date)):
+                ow_lines[ow].add(plane.plot_line_graph(
+                    x_values=smoothed_date[j],
+                    y_values=smoothed_time[j],
+                    stroke_width=2,
+                    add_vertex_dots=False,
+                    line_color=colour,
+                ))
+            square = Square(
+                side_length=0.2,
+                fill_color=colour,
+                fill_opacity=1
+            ).to_edge(UP + RIGHT).shift(DOWN + 0.5 * RIGHT + DOWN * 0.4 * i)
+            ow_lines[ow].add(square)
+            legend = Text(ow.capitalize(), font_size=16, color=colour).next_to(square, LEFT, buff=0.2)
+            ow_lines[ow].add(legend)
+
         smoothed_date, smoothed_time = compute_moving_average(
             [(data[0], data[1]) for data in data_points]
         )
         line = plane.plot_line_graph(
-            x_values=smoothed_date,
-            y_values=smoothed_time,
+            x_values=smoothed_date[0],
+            y_values=smoothed_time[0],
             stroke_width=2,
             add_vertex_dots=False,
+            line_color=WHITE,
         )
 
         # Animation
         self.play(Write(title), Write(plane))
         self.play(Write(labels), Write(x_labels), Write(y_labels))
         self.wait()
-        self.play(FadeIn(dots), run_time=1)
-        self.play(Write(line), run_time=6)
+        self.play(Write(dots), run_time=1)
+        self.play(Write(line), run_time=4)
         self.wait()
-        self.play(FadeOut(dots, line))
+        self.play(*[FadeOut(rank_dots[max_elo]) for max_elo in rank_lines if max_elo != 3000], FadeOut(unranked_dots), Unwrite(line))
+        self.play(Write(rank_lines[3000]), run_time=4)
         self.wait()
-        self.play(FadeIn(rank_dots[3000], rank_lines[3000]))
+        self.play(*[FadeIn(rank_dots[max_elo]) for max_elo in rank_lines if max_elo != 3000], FadeIn(unranked_dots))
+        self.play(*[Write(rank_lines[max_elo]) for max_elo in rank_lines], run_time=4)
         self.wait()
-        self.play(*[FadeIn(rank_dots[max_elo], rank_lines[max_elo]) for max_elo in rank_lines if max_elo != 3000])
+        self.play(*[Unwrite(rank_lines[max_elo]) for max_elo in rank_lines])
+        self.play(*[Write(ow_lines[ow]) for ow in ow_lines], run_time=4)
         self.wait()
-        self.play(*[FadeOut(rank_dots[max_elo], rank_lines[max_elo]) for max_elo in rank_lines])
+        self.play(*[Unwrite(ow_lines[ow]) for ow in ow_lines])
+        self.play(FadeOut(dots))
         self.wait()
-        self.play(*[FadeIn(bastion_dots[bastion], bastion_lines[bastion]) for bastion in bastion_lines])
+        self.play(*[FadeIn(bastion_dots[bastion]) for bastion in bastion_lines])
+        self.play(*[Write(bastion_lines[bastion]) for bastion in bastion_lines], run_time=6)
 
 
 if __name__ == "__main__":

@@ -38,8 +38,7 @@ async def get_interest(id, season):
             global eos
             eos = True
         winner_uuid = match["result"]["uuid"]
-        winner_elo = next((player["eloRate"] for player in match["players"] if player["uuid"] == winner_uuid))
-
+        winner_elo = next((change["eloRate"] for change in match["changes"] if change["uuid"] == winner_uuid))
         cut_matches[match["id"]] = {
             "date": match["date"],
             "time": match["result"]["time"],
