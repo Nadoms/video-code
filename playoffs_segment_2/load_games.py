@@ -20,7 +20,7 @@ SPLIT_MAP = {
     "story.enter_the_nether": "ow",
     "nether.find_bastion": "nether",
     "nether.find_fortress": "bastion",
-    "projectelo..blind_travel": "fortress",
+    "projectelo.timeline.blind_travel": "fortress",
     "story.follow_ender_eye": "blind",
     "story.enter_the_end": "stronghold",
 }
@@ -100,14 +100,23 @@ async def find_disparity():
             items="eloRate, timeline",
             match_id=id
         )
-        match_elo = (run_1[0] + run_2[0]) / 2 if run_1[0] and run_2[0] else None
-        timeline_1 = json.loads(run_1[1])
-        timeline_2 = json.loads(run_2[1])
+        match_elo = int((run_1[0] + run_2[0]) / 2) if run_1[0] and run_2[0] else None
+        timeline_1 = reversed(json.loads(run_1[1]))
+        timeline_2 = reversed(json.loads(run_2[1]))
+        previous_1 = 0
+        previous_2 = 0
         for split in SPLIT_MAP:
-            time_1 = timeline_1.get(split)
-            time_2 = timeline_2.get(split)
-            difference = abs(time_1 - time_2) if time_1 and time_2 else None
+            time_1 = next((event["time"] for event in timeline_1 if event["type"] == split), None)
+            time_2 = next((event["time"] for event in timeline_2 if event["type"] == split), None)
+            if not (time_1 and time_2):
+                difference = None
+                break
+            split_1 = time_1 - previous_1
+            split_2 = time_2 - previous_2
+            difference = abs(split_1 - split_2)
             disparity[SPLIT_MAP[split]] = difference
+            previous_1 = time_1
+            previous_2 = time_2
 
         all_matches[id] = {
             "elo": match_elo,
@@ -116,16 +125,21 @@ async def find_disparity():
             **disparity
         }
 
-    return all_matches
+    return list(all_matches.values())
 
 
-def main():
-    total_time, all_matches = asyncio.run(find_completions())
-    with open(ROOT_DIR / "playoffs_segment_2" / "data" / "completions.csv", mode="w", newline="") as csv_file:
-        writer = csv.DictWriter(csv_file, fieldnames=["date", "time", "elo", "bastion", "ow"])
+def main(data_type):
+    with open(ROOT_DIR / "playoffs_segment_2" / "data" / f"{data_type}.csv", mode="w", newline="") as csv_file:
+        if data_type == "completions":
+            total_time, all_matches = asyncio.run(find_completions())
+            print(f"Total time: {total_time} days")
+            writer = csv.DictWriter(csv_file, fieldnames=["date", "time", "elo", "bastion", "ow"])
+        else:
+            all_matches = asyncio.run(find_disparity())
+            writer = csv.DictWriter(csv_file, fieldnames=["elo", "b_type", "o_type", "ow", "nether", "bastion", "fortress", "blind", "stronghold"])
         writer.writeheader()
         writer.writerows(all_matches)
-    print(f"Total time: {total_time} days")
 
 if __name__ == "__main__":
-    main()
+    data_type = "completions" if len(sys.argv) > 1 else "disparity"
+    main(data_type)

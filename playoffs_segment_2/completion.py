@@ -88,6 +88,13 @@ class Plot(Scene):
         # Title
         title = Text("Completion Times Throughout Ranked History", font_size=24)
         title.move_to(ORIGIN).shift(UP * 2.2)
+        # Subtitles
+        rank_title = Text("By Rank", font_size=16)
+        rank_title.next_to(title, DOWN, buff=0.2)
+        bastion_title = Text("By Bastion Type", font_size=16)
+        bastion_title.next_to(title, DOWN, buff=0.2)
+        ow_title = Text("By Seed Type", font_size=16)
+        ow_title.next_to(title, DOWN, buff=0.2)
 
         # Axes
         plane = NumberPlane(
@@ -318,20 +325,17 @@ class Plot(Scene):
         self.play(Write(dots), run_time=1)
         self.play(Write(line), run_time=4)
         self.wait()
-        self.play(*[FadeOut(rank_dots[max_elo]) for max_elo in rank_lines if max_elo != 3000], FadeOut(unranked_dots), Unwrite(line))
+        self.play(*[FadeOut(rank_dots[max_elo]) for max_elo in rank_lines if max_elo != 3000], FadeOut(unranked_dots), Unwrite(line), Write(rank_title))
         self.play(Write(rank_lines[3000]), run_time=4)
         self.wait()
         self.play(*[FadeIn(rank_dots[max_elo]) for max_elo in rank_lines if max_elo != 3000], FadeIn(unranked_dots))
         self.play(*[Write(rank_lines[max_elo]) for max_elo in rank_lines], run_time=4)
         self.wait()
-        self.play(*[Unwrite(rank_lines[max_elo]) for max_elo in rank_lines])
-        self.play(*[Write(ow_lines[ow]) for ow in ow_lines], run_time=4)
+        self.play(*[Unwrite(rank_lines[max_elo]) for max_elo in rank_lines], Unwrite(rank_title))
+        self.play(*[Write(ow_lines[ow]) for ow in ow_lines], Write(ow_title), run_time=4)
         self.wait()
-        self.play(*[Unwrite(ow_lines[ow]) for ow in ow_lines])
-        self.play(FadeOut(dots))
-        self.wait()
-        self.play(*[FadeIn(bastion_dots[bastion]) for bastion in bastion_lines])
-        self.play(*[Write(bastion_lines[bastion]) for bastion in bastion_lines], run_time=6)
+        self.play(*[Unwrite(ow_lines[ow]) for ow in ow_lines], Unwrite(ow_title))
+        self.play(*[Write(bastion_lines[bastion]) for bastion in bastion_lines], Write(bastion_title), run_time=6)
 
 
 if __name__ == "__main__":
