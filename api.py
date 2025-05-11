@@ -184,8 +184,10 @@ class RecentMatches(Matches):
         excludedecay: bool = True,
         before: Optional[int] = None,
         after: Optional[int] = None,
+        tag: Optional[str] = None,
     ):
         self.excludedecay = excludedecay
+        self.tag = tag
         super().__init__(
             directory="matches",
             page=page,
@@ -195,7 +197,7 @@ class RecentMatches(Matches):
             before=before,
             after=after,
         )
-        self.append(excludedecay=self.excludedecay)
+        self.append(excludedecay=self.excludedecay, tag=self.tag)
 
 
 class UserMatches(Matches):

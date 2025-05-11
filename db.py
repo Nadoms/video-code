@@ -139,16 +139,17 @@ INSERT OR IGNORE INTO players (
             )
         )
 
-    for change in match["changes"]:
+    for player in match["players"]:
         timeline = [
             {
                 "time": event.get("time"),
                 "type": event.get("type"),
             }
             for event in match["timelines"]
-            if event.get("uuid") == change.get("uuid")
+            if event.get("uuid") == player.get("uuid")
         ]
         timeline_json = json.dumps(timeline)
+        change = next((change for change in match["changes"] if change.get("uuid") == player.get("uuid")), {})
         cursor.execute(
             """
 INSERT INTO runs (
@@ -161,7 +162,7 @@ INSERT INTO runs (
             """,
             (
                 match.get("id"),
-                change.get("uuid"),
+                player.get("uuid"),
                 change.get("change"),
                 change.get("eloRate"),
                 timeline_json,
