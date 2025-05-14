@@ -19,7 +19,6 @@ X_STEP = 10
 class Plot(Scene):
 
     def construct(self):
-        DEFAULT_STROKE_WIDTH = 3
         # Data
         split_data_points = {
             "overworld": [],
@@ -53,14 +52,9 @@ class Plot(Scene):
         }
         with open(DATA_DIR / "disparity.json", "r") as f:
             averages = json.load(f)
-        ranked_average = sum(
-            averages["ranked"][split] for split in averages["ranked"]
-        ) / len(averages["ranked"])
-        po_average = sum(
-            averages["po"][split] for split in averages["po"]
-        ) / len(averages["po"])
-        ranked_scaling = {key: ranked_average / value for key, value in averages["ranked"].items()}
-        po_scaling = {key: po_average / value for key, value in averages["po"].items()}
+        ranked_average = averages["ranked"]
+        po_average = averages["po"]
+
         data_file = DATA_DIR / "disparity.csv"
         data_points = pd.read_csv(data_file).values.tolist()
         for elo, _, _, overworld, nether, bastion, fortress, blind, stronghold, fort_blind in data_points:
@@ -71,22 +65,22 @@ class Plot(Scene):
                 po_split_data_points["fortress"].append(fortress / 1000) if not isnan(fortress) else None
                 po_split_data_points["blind"].append(blind / 1000) if not isnan(blind) else None
                 po_split_data_points["stronghold"].append(stronghold / 1000) if not isnan(stronghold) else None
-                scaled_po_split_data_points["overworld"].append(overworld / 1000 * po_scaling["ow"]) if not isnan(overworld) else None
-                scaled_po_split_data_points["nether"].append(nether / 1000 * po_scaling["nether"]) if not isnan(nether) else None
-                scaled_po_split_data_points["bastion"].append(bastion / 1000 * po_scaling["bastion"]) if not isnan(bastion) else None
-                scaled_po_split_data_points["fort-blind"].append(fort_blind / 1000 * po_scaling["fort-blind"]) if not isnan(fort_blind) else None
-                scaled_po_split_data_points["stronghold"].append(stronghold / 1000 * po_scaling["stronghold"]) if not isnan(stronghold) else None
+                scaled_po_split_data_points["overworld"].append(overworld / 1000 * 2 / po_average["ow"]) if not isnan(overworld) else None
+                scaled_po_split_data_points["nether"].append(nether / 1000 * 2 / po_average["nether"]) if not isnan(nether) else None
+                scaled_po_split_data_points["bastion"].append(bastion / 1000 * 2 / po_average["bastion"]) if not isnan(bastion) else None
+                scaled_po_split_data_points["fort-blind"].append(fort_blind / 1000 * 2 / po_average["fort-blind"]) if not isnan(fort_blind) else None
+                scaled_po_split_data_points["stronghold"].append(stronghold / 1000 * 2 / po_average["stronghold"]) if not isnan(stronghold) else None
             split_data_points["overworld"].append(overworld / 1000) if not isnan(overworld) else None
             split_data_points["nether"].append(nether / 1000) if not isnan(nether) else None
             split_data_points["bastion"].append(bastion / 1000) if not isnan(bastion) else None
             split_data_points["fortress"].append(fortress / 1000) if not isnan(fortress) else None
             split_data_points["blind"].append(blind / 1000) if not isnan(blind) else None
             split_data_points["stronghold"].append(stronghold / 1000) if not isnan(stronghold) else None
-            scaled_split_data_points["overworld"].append(overworld / 1000 * ranked_scaling["ow"]) if not isnan(overworld) else None
-            scaled_split_data_points["nether"].append(nether / 1000 * ranked_scaling["nether"]) if not isnan(nether) else None
-            scaled_split_data_points["bastion"].append(bastion / 1000 * ranked_scaling["bastion"]) if not isnan(bastion) else None
-            scaled_split_data_points["fort-blind"].append(fort_blind / 1000 * ranked_scaling["fort-blind"]) if not isnan(fort_blind) else None
-            scaled_split_data_points["stronghold"].append(stronghold / 1000 * ranked_scaling["stronghold"]) if not isnan(stronghold) else None
+            scaled_split_data_points["overworld"].append(overworld / 1000 * 2 / ranked_average["ow"]) if not isnan(overworld) else None
+            scaled_split_data_points["nether"].append(nether / 1000 * 2 / ranked_average["nether"]) if not isnan(nether) else None
+            scaled_split_data_points["bastion"].append(bastion / 1000 * 2 / ranked_average["bastion"]) if not isnan(bastion) else None
+            scaled_split_data_points["fort-blind"].append(fort_blind / 1000 * 2 / ranked_average["fort-blind"]) if not isnan(fort_blind) else None
+            scaled_split_data_points["stronghold"].append(stronghold / 1000 * 2 / ranked_average["stronghold"]) if not isnan(stronghold) else None
 
         split_box_plot = {
             split: [
@@ -128,6 +122,19 @@ class Plot(Scene):
             ] if scaled_po_split_data_points[split] else None
             for split in scaled_po_split_data_points
         }
+        with open(DATA_DIR / "box_disparity") as f:
+            json.dump(
+                {
+                    "absolute": {
+                        "ranked": split_box_plot,
+                        "playoffs": po_split_box_plot,
+                    },
+                    "proportion": {
+                        "ranked": scaled_split_box_plot,
+                        "playoffs": scaled_po_split_box_plot,
+                    }
+                }
+            )
 
         # Title
         Text.set_default(font="Minecraft")
