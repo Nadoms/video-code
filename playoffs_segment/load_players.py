@@ -19,10 +19,10 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (X11; Linux i686; rv:110.0) Gecko/20100101 Firefox/110.0.",
     "API-Key": API_KEY,
 }
-SEASON_START = 1724198400
-SEASON_END = 1734741040
+SEASON_START = 1734739200
+SEASON_END = 1745194600
 DAY = 86400
-SEASON = 6
+SEASON = 7
 
 
 def get_player_data(nick):
@@ -149,12 +149,12 @@ def get_history(nick, season=6, start_day=0):
 
 def main():
     response_data = requests.get(
-        f"{API_URL}/phase-leaderboard?season=6",
+        f"{API_URL}/phase-leaderboard?season=7",
         headers=HEADERS,
     ).json()["data"]
-    top_nicks = [player["nickname"] for player in response_data["users"][:12]]
+    top_nicks = [player["nickname"] for player in response_data["users"][:5]]
     extras = ["ELO_PLUMBER4444", "TUDORULE", "Erikfzf", "dandannyboy"]
-    nicks = top_nicks + extras
+    nicks = top_nicks #  + extras
     player_data = {}
 
     for nick in nicks:

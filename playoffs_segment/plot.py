@@ -77,6 +77,7 @@ class Plot(Scene):
         # Line plot
         line_plots = VGroup()
         for i, player in enumerate(players):
+            print(f"{player} is {COLOURS[i]}")
             valid_data = data[player].dropna()
             x_values = valid_data.index.tolist()
             y_values = valid_data.values.tolist()
