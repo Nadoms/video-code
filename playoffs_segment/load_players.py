@@ -27,6 +27,7 @@ HEADERS = {
 SEASON_START = 1734739200
 SEASON_END = 1745194600
 DAY = 86400
+SEASON_LENGTH = (SEASON_END - SEASON_START) // DAY
 SEASON = 7
 
 
@@ -111,11 +112,10 @@ def get_history(nick, season=7, start_day=0):
 
     last_id = 10000000
     while True:
-        response_data = api.UserMatches(nick, before=last_id, season=season, type=2).get()
+        response_data = api.UserMatches(nick, before=last_id, season=season, type=2, excludedecay=False).get()
         if response_data == []:
-            if day - last_day >= 1:
-                for _ in range(day - last_day - 1):
-                    history.append(None)
+            for _ in range(SEASON_LENGTH - len(history)):
+                history.append(None)
             break
         last_id = response_data[-1]["id"]
 

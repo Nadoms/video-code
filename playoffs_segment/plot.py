@@ -11,25 +11,25 @@ import requests
 ROOT = Path(__file__).parent
 ASSETS_DIR = ROOT / "assets"
 DATA_DIR = ROOT / "data"
-Y_MIN = 1000
+Y_MIN = 1400
 Y_MAX = 2600
 Y_STEP = 200
 X_MIN = 0
 X_MAX = 122
 X_STEP = 10
 COLOURS = [
-    BLUE,
-    RED,
-    GREEN,
-    PURPLE,
+    BLUE_B,
+    RED_D,
+    GREEN_B,
+    PURPLE_D,
+    DARK_BROWN,
+    YELLOW,
     ORANGE,
     PINK,
-    YELLOW,
     TEAL,
     LIGHT_BROWN,
     LIGHT_PINK,
     LIGHT_GREY,
-    DARK_BROWN,
     DARK_BLUE,
     DARK_GREY,
     GOLD,
@@ -43,6 +43,17 @@ class Plot(Scene):
         data_file = DATA_DIR / "history_False.csv"
         data = pd.read_csv(data_file)
         players = data.columns[1:]
+
+        # Data processing
+        days_no_1 = {}
+        for index, row in data.iterrows():
+            top_player = row[1:].idxmax()
+            if top_player not in days_no_1:
+                days_no_1[top_player] = 0
+            days_no_1[top_player] += 1
+        print(f"Days spent as No.1:\n{days_no_1}")
+        with open(DATA_DIR / "no_1.json", "w") as f:
+            json.dump(days_no_1, f, indent=4)
 
         # Axes
         axes = Axes(
@@ -65,7 +76,7 @@ class Plot(Scene):
 
         # Horizontal grid lines
         lines = VGroup()
-        for y in range(Y_MIN, Y_MAX, Y_STEP):
+        for y in range(Y_MIN, Y_MAX+1, Y_STEP):
             line = Line(
                 start=axes.c2p(0, y),
                 end=axes.c2p(X_MAX, y),
@@ -76,7 +87,7 @@ class Plot(Scene):
 
         # Line plot
         line_plots = VGroup()
-        for i, player in enumerate(players):
+        for i, player in enumerate(days_no_1.keys()):
             print(f"{player} is {COLOURS[i]}")
             valid_data = data[player].dropna()
             x_values = valid_data.index.tolist()
@@ -98,11 +109,6 @@ class Plot(Scene):
             line_plot.set(clip=axes)
             line_plots.add(line_plot)
 
-        # Player icons
-        # player_icon = ImageMobject(ASSETS_DIR / f"{player}.png")
-        # player_icon.scale(0.4).next_to(bar, DOWN)
-        # player_icons.add(player_icon)
-
         # Animation
         self.add(axes, labels, lines, *line_plots)
         # self.play(Write(axes))
@@ -112,4 +118,4 @@ class Plot(Scene):
 
 if __name__ == "__main__":
     name = os.path.basename(__file__)[:-3]
-    os.system(rf"manim -qk -v WARNING -p --disable_caching -r 2880,1080 -o {name}.mp4 {name}.py {name.capitalize()}")
+    os.system(rf"manim -qk -v WARNING -p --disable_caching -r 2880,1080 -o {name} {name}.py {name.capitalize()}")

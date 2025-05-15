@@ -65,22 +65,22 @@ class Plot(Scene):
                 po_split_data_points["fortress"].append(fortress / 1000) if not isnan(fortress) else None
                 po_split_data_points["blind"].append(blind / 1000) if not isnan(blind) else None
                 po_split_data_points["stronghold"].append(stronghold / 1000) if not isnan(stronghold) else None
-                scaled_po_split_data_points["overworld"].append(overworld / 1000 * 2 / po_average["ow"]) if not isnan(overworld) else None
-                scaled_po_split_data_points["nether"].append(nether / 1000 * 2 / po_average["nether"]) if not isnan(nether) else None
-                scaled_po_split_data_points["bastion"].append(bastion / 1000 * 2 / po_average["bastion"]) if not isnan(bastion) else None
-                scaled_po_split_data_points["fort-blind"].append(fort_blind / 1000 * 2 / po_average["fort-blind"]) if not isnan(fort_blind) else None
-                scaled_po_split_data_points["stronghold"].append(stronghold / 1000 * 2 / po_average["stronghold"]) if not isnan(stronghold) else None
+                scaled_po_split_data_points["overworld"].append(round(overworld * 200 / po_average["ow"], 3)) if not isnan(overworld) else None
+                scaled_po_split_data_points["nether"].append(round(nether * 200 / po_average["nether"], 3)) if not isnan(nether) else None
+                scaled_po_split_data_points["bastion"].append(round(bastion * 200 / po_average["bastion"], 3)) if not isnan(bastion) else None
+                scaled_po_split_data_points["fort-blind"].append(round(fort_blind * 200 / po_average["fort-blind"], 3)) if not isnan(fort_blind) else None
+                scaled_po_split_data_points["stronghold"].append(round(stronghold * 200 / po_average["stronghold"], 3)) if not isnan(stronghold) else None
             split_data_points["overworld"].append(overworld / 1000) if not isnan(overworld) else None
             split_data_points["nether"].append(nether / 1000) if not isnan(nether) else None
             split_data_points["bastion"].append(bastion / 1000) if not isnan(bastion) else None
             split_data_points["fortress"].append(fortress / 1000) if not isnan(fortress) else None
             split_data_points["blind"].append(blind / 1000) if not isnan(blind) else None
             split_data_points["stronghold"].append(stronghold / 1000) if not isnan(stronghold) else None
-            scaled_split_data_points["overworld"].append(overworld / 1000 * 2 / ranked_average["ow"]) if not isnan(overworld) else None
-            scaled_split_data_points["nether"].append(nether / 1000 * 2 / ranked_average["nether"]) if not isnan(nether) else None
-            scaled_split_data_points["bastion"].append(bastion / 1000 * 2 / ranked_average["bastion"]) if not isnan(bastion) else None
-            scaled_split_data_points["fort-blind"].append(fort_blind / 1000 * 2 / ranked_average["fort-blind"]) if not isnan(fort_blind) else None
-            scaled_split_data_points["stronghold"].append(stronghold / 1000 * 2 / ranked_average["stronghold"]) if not isnan(stronghold) else None
+            scaled_split_data_points["overworld"].append(round(overworld * 200 / ranked_average["ow"], 3)) if not isnan(overworld) else None
+            scaled_split_data_points["nether"].append(round(nether * 200 / ranked_average["nether"], 3)) if not isnan(nether) else None
+            scaled_split_data_points["bastion"].append(round(bastion * 200 / ranked_average["bastion"], 3)) if not isnan(bastion) else None
+            scaled_split_data_points["fort-blind"].append(round(fort_blind * 200 / ranked_average["fort-blind"], 3)) if not isnan(fort_blind) else None
+            scaled_split_data_points["stronghold"].append(round(stronghold * 200 / ranked_average["stronghold"], 3)) if not isnan(stronghold) else None
 
         split_box_plot = {
             split: [
@@ -122,7 +122,7 @@ class Plot(Scene):
             ] if scaled_po_split_data_points[split] else None
             for split in scaled_po_split_data_points
         }
-        with open(DATA_DIR / "box_disparity") as f:
+        with open(DATA_DIR / "box_disparity.json", "w") as f:
             json.dump(
                 {
                     "absolute": {
@@ -133,7 +133,9 @@ class Plot(Scene):
                         "ranked": scaled_split_box_plot,
                         "playoffs": scaled_po_split_box_plot,
                     }
-                }
+                },
+                f,
+                indent=4
             )
 
         # Title
