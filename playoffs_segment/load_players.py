@@ -1,4 +1,5 @@
 import math
+import sys
 from dotenv import load_dotenv
 from io import BytesIO
 import json
@@ -7,6 +8,10 @@ import pandas as pd
 from PIL import Image
 import requests
 from pathlib import Path
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+sys.path.append(str(ROOT_DIR))
+import api
 
 
 load_dotenv()
@@ -26,10 +31,7 @@ SEASON = 7
 
 
 def get_player_data(nick):
-    response_data = requests.get(
-        f"{API_URL}/users/{nick}?season=6",
-        headers=HEADERS,
-    ).json()["data"]
+    response_data = api.User(nick, season=7).get()
     season_data = response_data["statistics"]["season"]
     stats = {
         "uuid": response_data["uuid"],
@@ -105,17 +107,14 @@ def get_history(nick, season=6, start_day=0):
     day = -1
     history = []
     response_data = None
-    uuid = requests.get(
-        f"{API_URL}/users/{nick}",
-        headers=HEADERS,
-    ).json()["data"]["uuid"]
+    uuid = api.User(nick, season=season).get()["uuid"]
 
-    while response_data != []:
-        url = f"{API_URL}/users/{nick}/matches?page={i}&season={season}&type=2&count=50"
-        response_data = requests.get(
-            url,
-            headers=HEADERS,
-        ).json()["data"]
+    last_id = 10000000
+    while True:
+        response_data = api.UserMatches(nick, before=last_id, season=season, type=2).get()
+        if response_data == []:
+            break
+        last_id = response_data[-1]["id"]
 
         for match in response_data:
             assert match["date"] <= SEASON_END
@@ -152,11 +151,11 @@ def main():
         f"{API_URL}/phase-leaderboard?season=7",
         headers=HEADERS,
     ).json()["data"]
-    top_nicks = [player["nickname"] for player in response_data["users"][:5]]
+    top_nicks = [player["nickname"] for player in response_data["users"][:16]]
     extras = ["ELO_PLUMBER4444", "TUDORULE", "Erikfzf", "dandannyboy"]
     nicks = top_nicks #  + extras
     player_data = {}
-
+    print("ayu[]")
     for nick in nicks:
         player_data[nick] = get_player_data(nick)
         save_head(nick, player_data[nick]["uuid"])
