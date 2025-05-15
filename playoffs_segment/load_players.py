@@ -96,12 +96,12 @@ def save_history(nicks, full=False):
             print(mega_history)
         else:
             mega_history = get_history(nick)
-        history_df[nick] = pd.Series(mega_history)
+        history_df[nick] = pd.Series(reversed(mega_history))
 
     history_df.to_csv(DATA_DIR / f"history_{full}.csv")
 
 
-def get_history(nick, season=6, start_day=0):
+def get_history(nick, season=7, start_day=0):
     i = 0
     last_day = -1
     day = -1
@@ -113,6 +113,9 @@ def get_history(nick, season=6, start_day=0):
     while True:
         response_data = api.UserMatches(nick, before=last_id, season=season, type=2).get()
         if response_data == []:
+            if day - last_day >= 1:
+                for _ in range(day - last_day - 1):
+                    history.append(None)
             break
         last_id = response_data[-1]["id"]
 
@@ -137,7 +140,7 @@ def get_history(nick, season=6, start_day=0):
         i += 1
         print(f"day {day}")
 
-    last_elo = -1
+    last_elo = None
     for i in reversed(range(len(history))):
         if history[i] is None:
             history[i] = last_elo
@@ -155,13 +158,12 @@ def main():
     extras = ["ELO_PLUMBER4444", "TUDORULE", "Erikfzf", "dandannyboy"]
     nicks = top_nicks #  + extras
     player_data = {}
-    print("ayu[]")
     for nick in nicks:
         player_data[nick] = get_player_data(nick)
         save_head(nick, player_data[nick]["uuid"])
 
     # save_versus(nicks)
-    save_history(nicks, True)
+    save_history(nicks, False)
 
     with open(DATA_DIR / "players.json", "w") as f:
         json.dump(player_data, f, indent=4)

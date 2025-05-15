@@ -12,7 +12,7 @@ ROOT = Path(__file__).parent
 ASSETS_DIR = ROOT / "assets"
 DATA_DIR = ROOT / "data"
 Y_MIN = 1000
-Y_MAX = 2500
+Y_MAX = 2600
 Y_STEP = 200
 X_MIN = 0
 X_MAX = 122
@@ -40,7 +40,7 @@ class Plot(Scene):
 
     def construct(self):
         # Data
-        data_file = DATA_DIR / "history.csv"
+        data_file = DATA_DIR / "history_False.csv"
         data = pd.read_csv(data_file)
         players = data.columns[1:]
 
@@ -104,9 +104,10 @@ class Plot(Scene):
         # player_icons.add(player_icon)
 
         # Animation
-        self.play(Write(axes))
-        self.play(Write(labels), Write(lines))
-        self.play(*[Write(line_plot) for line_plot in line_plots], run_time=25)
+        self.add(axes, labels, lines, *line_plots)
+        # self.play(Write(axes))
+        # self.play(Write(labels), Write(lines))
+        # self.play(*[Write(line_plot) for line_plot in line_plots], run_time=25)
 
 
 if __name__ == "__main__":
