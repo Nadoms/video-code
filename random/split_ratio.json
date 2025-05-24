@@ -1,0 +1,197 @@
+{
+    "split_ratio": {
+        "ow": 0.168,
+        "nether": 0.05,
+        "bastion": 0.25,
+        "fortress": 0.14,
+        "blind": 0.167,
+        "stronghold": 0.083,
+        "end": 0.143
+    },
+    "split_samples": {
+        "ow": 127941,
+        "nether": 127908,
+        "bastion": 126020,
+        "fortress": 126003,
+        "blind": 125999,
+        "stronghold": 125979,
+        "end": 127971
+    },
+    "split_avg": {
+        "ow": 151566,
+        "nether": 45447,
+        "bastion": 229592,
+        "fortress": 128165,
+        "blind": 152924,
+        "stronghold": 76308,
+        "end": 128893
+    },
+    "ranked_split_ratio": {
+        "600": {
+            "ow": 0.154,
+            "nether": 0.04,
+            "bastion": 0.23,
+            "fortress": 0.129,
+            "blind": 0.203,
+            "stronghold": 0.088,
+            "end": 0.156
+        },
+        "900": {
+            "ow": 0.152,
+            "nether": 0.046,
+            "bastion": 0.239,
+            "fortress": 0.12,
+            "blind": 0.195,
+            "stronghold": 0.101,
+            "end": 0.149
+        },
+        "1200": {
+            "ow": 0.161,
+            "nether": 0.049,
+            "bastion": 0.246,
+            "fortress": 0.131,
+            "blind": 0.175,
+            "stronghold": 0.091,
+            "end": 0.147
+        },
+        "1500": {
+            "ow": 0.172,
+            "nether": 0.051,
+            "bastion": 0.253,
+            "fortress": 0.146,
+            "blind": 0.159,
+            "stronghold": 0.079,
+            "end": 0.142
+        },
+        "2000": {
+            "ow": 0.18,
+            "nether": 0.055,
+            "bastion": 0.259,
+            "fortress": 0.152,
+            "blind": 0.153,
+            "stronghold": 0.069,
+            "end": 0.134
+        },
+        "3000": {
+            "ow": 0.187,
+            "nether": 0.058,
+            "bastion": 0.265,
+            "fortress": 0.156,
+            "blind": 0.151,
+            "stronghold": 0.062,
+            "end": 0.122
+        }
+    },
+    "ranked_split_samples": {
+        "600": {
+            "ow": 134,
+            "nether": 134,
+            "bastion": 131,
+            "fortress": 131,
+            "blind": 131,
+            "stronghold": 131,
+            "end": 134
+        },
+        "900": {
+            "ow": 5381,
+            "nether": 5377,
+            "bastion": 5284,
+            "fortress": 5282,
+            "blind": 5282,
+            "stronghold": 5282,
+            "end": 5385
+        },
+        "1200": {
+            "ow": 39473,
+            "nether": 39457,
+            "bastion": 38829,
+            "fortress": 38824,
+            "blind": 38823,
+            "stronghold": 38810,
+            "end": 39491
+        },
+        "1500": {
+            "ow": 46579,
+            "nether": 46571,
+            "bastion": 45932,
+            "fortress": 45924,
+            "blind": 45922,
+            "stronghold": 45918,
+            "end": 46585
+        },
+        "2000": {
+            "ow": 29771,
+            "nether": 29768,
+            "bastion": 29350,
+            "fortress": 29349,
+            "blind": 29348,
+            "stronghold": 29345,
+            "end": 29773
+        },
+        "3000": {
+            "ow": 3932,
+            "nether": 3932,
+            "bastion": 3878,
+            "fortress": 3878,
+            "blind": 3878,
+            "stronghold": 3878,
+            "end": 3932
+        }
+    },
+    "ranked_split_avg": {
+        "600": {
+            "ow": 228275,
+            "nether": 58979,
+            "bastion": 347775,
+            "fortress": 195154,
+            "blind": 307364,
+            "stronghold": 133038,
+            "end": 230993
+        },
+        "900": {
+            "ow": 208636,
+            "nether": 62591,
+            "bastion": 333684,
+            "fortress": 168131,
+            "blind": 272133,
+            "stronghold": 141772,
+            "end": 204088
+        },
+        "1200": {
+            "ow": 176624,
+            "nether": 53219,
+            "bastion": 274580,
+            "fortress": 146618,
+            "blind": 195579,
+            "stronghold": 102073,
+            "end": 161232
+        },
+        "1500": {
+            "ow": 143239,
+            "nether": 42320,
+            "bastion": 213709,
+            "fortress": 123875,
+            "blind": 134512,
+            "stronghold": 66598,
+            "end": 118370
+        },
+        "2000": {
+            "ow": 124107,
+            "nether": 37613,
+            "bastion": 180651,
+            "fortress": 105949,
+            "blind": 106813,
+            "stronghold": 48523,
+            "end": 92103
+        },
+        "3000": {
+            "ow": 113492,
+            "nether": 34918,
+            "bastion": 163176,
+            "fortress": 95859,
+            "blind": 92851,
+            "stronghold": 38114,
+            "end": 73851
+        }
+    }
+}
