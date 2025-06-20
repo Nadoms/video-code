@@ -1,8 +1,27 @@
 from datetime import timedelta
+import json
+import numpy as np
 import requests
+
+from pathlib import Path
+import sys
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+sys.path.append(str(ROOT_DIR))
+import db
 
 
 API_URL = "https://mcsrranked.com/api"
+
+PB_SPLITS = {
+    "story.enter_the_nether": 90791,
+    "nether.find_bastion": 106197,
+    "nether.find_fortress": 242145,
+    "projectelo.timeline.blind_travel": 308734,
+    "story.follow_ender_eye": 370861,
+    "story.enter_the_end": 389095,
+    "completion": 441909,
+}
 
 
 def combine_lbs():
@@ -54,12 +73,111 @@ def digital(raw_time):
     return time
 
 
-def main():
+def get_altoid_stats():
+    conn, cursor = db.start("mega_ranked.db")
+    altoid_splits = {
+        "story.enter_the_nether": [],
+        "nether.find_bastion": [],
+        "nether.find_fortress": [],
+        "projectelo.timeline.blind_travel": [],
+        "story.follow_ender_eye": [],
+        "story.enter_the_end": [],
+        "completion": [],
+    }
+    all_splits = {
+        "story.enter_the_nether": [],
+        "nether.find_bastion": [],
+        "nether.find_fortress": [],
+        "projectelo.timeline.blind_travel": [],
+        "story.follow_ender_eye": [],
+        "story.enter_the_end": [],
+        "completion": [],
+    }
+    matches = db.query_db(
+        cursor,
+        table="matches",
+        items="id, time, forfeited, result_uuid",
+        type=2,
+        season=7,
+        decayed=False
+    ) + db.query_db(
+        cursor,
+        table="matches",
+        items="id, time, forfeited, result_uuid",
+        type=2,
+        season=8,
+        decayed=False
+    )
+    for match_id, time, forfeited, result_uuid in matches:
+        runs = db.query_db(
+            cursor,
+            table="runs",
+            items="timeline, player_uuid",
+            match_id=match_id,
+        )
+        if match_id % 100 == 0:
+            print(match_id)
+        for timeline, uuid in runs:
+            timeline = json.loads(timeline)
+            splits = timeline_to_splits(timeline)
+            splits["completion"] = time if forfeited == False and result_uuid == uuid else None
+            for split in splits:
+                if splits[split]:
+                    all_splits[split].append(splits[split])
+            if uuid == "d7d0b271136647fea7398a444ab51c13":
+                for split in splits:
+                    if splits[split]:
+                        altoid_splits[split].append(splits[split])
+
+    all_placements = {}
+    all_length = {}
+    all_performance = {}
+    altoid_placements = {}
+    altoid_length = {}
+    altoid_performance = {}
+
+    for split in all_splits:
+        all_splits[split].sort()
+        altoid_splits[split].sort()
+
+        all_placements[split] = np.searchsorted(all_splits[split], PB_SPLITS[split])
+        all_length[split] = len(all_splits[split])
+        all_performance[split] = round(all_placements[split] / all_length[split] * 100, 3)
+        altoid_placements[split] = np.searchsorted(altoid_splits[split], PB_SPLITS[split])
+        altoid_length[split] = len(altoid_splits[split])
+        altoid_performance[split] = round(altoid_placements[split] / altoid_length[split] * 100, 3)
+
+    return all_placements, all_length, all_performance, altoid_placements, altoid_length, altoid_performance
+
+
+def timeline_to_splits(timeline):
+    return {
+        "story.enter_the_nether": next((event["time"] for event in timeline if event["type"] == "story.enter_the_nether"), None),
+        "nether.find_bastion": next((event["time"] for event in timeline if event["type"] == "nether.find_bastion"), None),
+        "nether.find_fortress": next((event["time"] for event in timeline if event["type"] == "nether.find_fortress"), None),
+        "projectelo.timeline.blind_travel": next((event["time"] for event in timeline if event["type"] == "projectelo.timeline.blind_travel"), None),
+        "story.follow_ender_eye": next((event["time"] for event in timeline if event["type"] == "story.follow_ender_eye"), None),
+        "story.enter_the_end": next((event["time"] for event in timeline if event["type"] == "story.enter_the_end"), None)
+    }
+
+
+def main_1():
     # Get stats in json form https://docs.mcsrranked.com/#users-identifier
     player_times = combine_lbs()
     for i, (player, time) in enumerate(player_times):
         print(f"#{i+1}: {digital(time)} // {player}")
 
 
+def main_2():
+    all_placements, all_length, all_performance, altoid_placements, altoid_length, altoid_performance = get_altoid_stats()
+    print("Comparing to all runs since season 7")
+    for split in all_placements:
+        print(f"{split}: {all_placements[split]} / {all_length[split]} are faster than {digital(PB_SPLITS[split])} (Top {all_performance[split]}%)")
+
+    print("Comparing to Altoid runs since season 7")
+    for split in altoid_placements:
+        print(f"{split}: {altoid_placements[split]} / {altoid_length[split]} are faster than {digital(PB_SPLITS[split])} (Top {altoid_performance[split]}%)")
+
+
 if __name__ == "__main__":
-    main()
+    main_2()
