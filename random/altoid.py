@@ -99,15 +99,17 @@ def get_altoid_stats():
         items="id, time, forfeited, result_uuid",
         type=2,
         season=7,
-        decayed=False
+        decayed=False,
     ) + db.query_db(
         cursor,
         table="matches",
         items="id, time, forfeited, result_uuid",
         type=2,
         season=8,
-        decayed=False
+        decayed=False,
     )
+    full_lb = requests.get(f"{API_URL}/record-leaderboard").json()["data"]
+    lb_ids = [match["id"] for match in full_lb]
     for match_id, time, forfeited, result_uuid in matches:
         runs = db.query_db(
             cursor,
@@ -115,6 +117,9 @@ def get_altoid_stats():
             items="timeline, player_uuid",
             match_id=match_id,
         )
+        if match_id not in lb_ids and time < 429000 and not forfeited:
+            print("Skipping cheated run", match_id, time)
+            continue
         if match_id % 100 == 0:
             print(match_id)
         for timeline, uuid in runs:
