@@ -7,8 +7,7 @@ import sys
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.append(str(ROOT_DIR))
-import db
-import api
+from rankedutils import db, api
 
 
 START_ID = 101000

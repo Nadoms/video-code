@@ -6,7 +6,7 @@ import sys
 ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.append(str(ROOT_DIR))
 
-import db
+from rankedutils import db
 
 BASTIONS = ["bridge", "housing", "stables", "treasure"]
 RANKS = ["coal", "iron", "gold", "emerald", "diamond", "netherite"]

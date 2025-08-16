@@ -8,7 +8,7 @@ import sys
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.append(str(ROOT_DIR))
-import db
+from rankedutils import db
 
 
 API_URL = "https://mcsrranked.com/api"

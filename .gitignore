@@ -4,3 +4,4 @@ venv
 .env
 *.db
 minecraft_font.ttf
+.vscode

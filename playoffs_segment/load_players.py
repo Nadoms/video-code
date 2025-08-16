@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.append(str(ROOT_DIR))
-import api
+from rankedutils import api
 
 
 load_dotenv()
