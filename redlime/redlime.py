@@ -6,14 +6,11 @@ import sys
 ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.append(str(ROOT_DIR))
 import numpy as np
-from rankedutils import api
+from rankedutils import api, constants, insight
 
 
-START_ID = 101000
 INCREMENT = 500
 BATCH = 50
-CURRENT_SEASON = 8
-LAST_MATCHES = [0, 338896, 519261, 674675, 909751, 1168207, 1499236, 1970844, 2800000]
 RANKS = {
     "coal": {
         1: 0,
@@ -69,7 +66,7 @@ async def get_completion_sample(id, season):
         total_games += 1
         if match["forfeited"] is True:
             match["result"]["time"] = None
-        if match["id"] + INCREMENT > LAST_MATCHES[season] or id > LAST_MATCHES[season]:
+        if match["id"] + INCREMENT > constants.FINAL_MATCHES[season] or id > constants.FINAL_MATCHES[season]:
             global eos
             eos = True
         winner_uuid = match["result"]["uuid"]
@@ -92,7 +89,7 @@ async def get_completion_sample(id, season):
 
 
 async def find_completions():
-    current_id = START_ID
+    current_id = constants.FIRST_MATCHES[1]
     season = 1
     all_matches = {}
     reached_end = False
@@ -113,7 +110,7 @@ async def find_completions():
                 season += 1
                 current_id -= BATCH * INCREMENT
                 eos = False
-                if season > CURRENT_SEASON:
+                if season > constants.SEASON:
                     reached_end = True
             all_matches.update(matches)
         current_id += BATCH * INCREMENT
@@ -133,7 +130,7 @@ def analyse(all_matches):
                 ]
             )
             for rank in RANKS for division in RANKS[rank]
-        } for season in range(1, CURRENT_SEASON + 1)
+        } for season in range(1, constants.SEASON + 1)
     }
     completions = {
         f"season {season}": {
@@ -147,7 +144,7 @@ def analyse(all_matches):
                 ]
             )
             for rank in RANKS for division in RANKS[rank]
-        } for season in range(1, CURRENT_SEASON + 1)
+        } for season in range(1, constants.SEASON + 1)
     }
     avg_completion = {
         f"season {season}": {
@@ -161,7 +158,7 @@ def analyse(all_matches):
                 ]
             )) if completions[f"season {season}"][f"{rank} {division}"] else None
             for rank in RANKS for division in RANKS[rank]
-        } for season in range(1, CURRENT_SEASON + 1)
+        } for season in range(1, constants.SEASON + 1)
     }
     med_completion = {
         f"season {season}": {
@@ -175,7 +172,7 @@ def analyse(all_matches):
                 ]
             )) if completions[f"season {season}"][f"{rank} {division}"] else None
             for rank in RANKS for division in RANKS[rank]
-        } for season in range(1, CURRENT_SEASON + 1)
+        } for season in range(1, constants.SEASON + 1)
     }
 
     with open(ROOT_DIR / "redlime" / "redlime.json", "w") as f:

@@ -1,586 +1,4096 @@
 {
     "games": {
         "season 1": {
-            "coal 1": 1,
-            "coal 2": 58,
-            "coal 3": 482,
-            "iron 1": 1702,
-            "iron 2": 3743,
-            "iron 3": 5198,
-            "gold 1": 5987,
-            "gold 2": 6042,
-            "gold 3": 5417,
-            "emerald 1": 4595,
-            "emerald 2": 3761,
-            "emerald 3": 2869,
-            "diamond 1": 2765,
-            "diamond 2": 1144,
-            "diamond 3": 697,
-            "netherite 1": 233
+            "coal 1": 0,
+            "coal 2": 0,
+            "coal 3": 0,
+            "iron 1": 0,
+            "iron 2": 0,
+            "iron 3": 0,
+            "gold 1": 0,
+            "gold 2": 0,
+            "gold 3": 0,
+            "emerald 1": 0,
+            "emerald 2": 0,
+            "emerald 3": 0,
+            "diamond 1": 0,
+            "diamond 2": 0,
+            "diamond 3": 0,
+            "netherite 1": 0
         },
         "season 2": {
             "coal 1": 0,
-            "coal 2": 13,
-            "coal 3": 173,
-            "iron 1": 815,
-            "iron 2": 2504,
-            "iron 3": 4018,
-            "gold 1": 5190,
-            "gold 2": 4994,
-            "gold 3": 4180,
-            "emerald 1": 3561,
-            "emerald 2": 2779,
-            "emerald 3": 2381,
-            "diamond 1": 1968,
-            "diamond 2": 673,
-            "diamond 3": 278,
-            "netherite 1": 30
+            "coal 2": 0,
+            "coal 3": 0,
+            "iron 1": 0,
+            "iron 2": 0,
+            "iron 3": 0,
+            "gold 1": 0,
+            "gold 2": 0,
+            "gold 3": 0,
+            "emerald 1": 0,
+            "emerald 2": 0,
+            "emerald 3": 0,
+            "diamond 1": 0,
+            "diamond 2": 0,
+            "diamond 3": 0,
+            "netherite 1": 0
         },
         "season 3": {
-            "coal 1": 2,
-            "coal 2": 7,
-            "coal 3": 90,
-            "iron 1": 481,
-            "iron 2": 1361,
-            "iron 3": 2558,
-            "gold 1": 3321,
-            "gold 2": 3639,
-            "gold 3": 3586,
-            "emerald 1": 3375,
-            "emerald 2": 3192,
-            "emerald 3": 2661,
-            "diamond 1": 2593,
-            "diamond 2": 1337,
-            "diamond 3": 852,
-            "netherite 1": 370
+            "coal 1": 0,
+            "coal 2": 0,
+            "coal 3": 0,
+            "iron 1": 0,
+            "iron 2": 0,
+            "iron 3": 0,
+            "gold 1": 0,
+            "gold 2": 0,
+            "gold 3": 0,
+            "emerald 1": 0,
+            "emerald 2": 0,
+            "emerald 3": 0,
+            "diamond 1": 0,
+            "diamond 2": 0,
+            "diamond 3": 0,
+            "netherite 1": 0
         },
         "season 4": {
             "coal 1": 0,
-            "coal 2": 28,
-            "coal 3": 347,
-            "iron 1": 1331,
-            "iron 2": 2744,
-            "iron 3": 4411,
-            "gold 1": 5544,
-            "gold 2": 5648,
-            "gold 3": 5378,
-            "emerald 1": 4673,
-            "emerald 2": 4238,
-            "emerald 3": 3374,
-            "diamond 1": 3446,
-            "diamond 2": 1925,
-            "diamond 3": 1311,
-            "netherite 1": 496
+            "coal 2": 0,
+            "coal 3": 0,
+            "iron 1": 0,
+            "iron 2": 0,
+            "iron 3": 0,
+            "gold 1": 0,
+            "gold 2": 0,
+            "gold 3": 0,
+            "emerald 1": 0,
+            "emerald 2": 0,
+            "emerald 3": 0,
+            "diamond 1": 0,
+            "diamond 2": 0,
+            "diamond 3": 0,
+            "netherite 1": 0
         },
         "season 5": {
-            "coal 1": 15,
-            "coal 2": 128,
-            "coal 3": 632,
-            "iron 1": 1714,
-            "iron 2": 2990,
-            "iron 3": 4622,
-            "gold 1": 6499,
-            "gold 2": 6850,
-            "gold 3": 5836,
-            "emerald 1": 5064,
-            "emerald 2": 4218,
-            "emerald 3": 3437,
-            "diamond 1": 3477,
-            "diamond 2": 1926,
-            "diamond 3": 1262,
-            "netherite 1": 671
+            "coal 1": 21,
+            "coal 2": 146,
+            "coal 3": 617,
+            "iron 1": 1662,
+            "iron 2": 2819,
+            "iron 3": 4686,
+            "gold 1": 5844,
+            "gold 2": 6668,
+            "gold 3": 6162,
+            "emerald 1": 4943,
+            "emerald 2": 4510,
+            "emerald 3": 3429,
+            "diamond 1": 3453,
+            "diamond 2": 2052,
+            "diamond 3": 1290,
+            "netherite 1": 571
         },
         "season 6": {
-            "coal 1": 31,
-            "coal 2": 191,
-            "coal 3": 814,
-            "iron 1": 1953,
-            "iron 2": 3841,
-            "iron 3": 6074,
-            "gold 1": 7275,
-            "gold 2": 8159,
-            "gold 3": 7481,
-            "emerald 1": 6221,
-            "emerald 2": 5521,
-            "emerald 3": 4391,
-            "diamond 1": 4895,
-            "diamond 2": 3077,
-            "diamond 3": 2282,
-            "netherite 1": 1428
+            "coal 1": 41,
+            "coal 2": 186,
+            "coal 3": 779,
+            "iron 1": 1814,
+            "iron 2": 3600,
+            "iron 3": 5749,
+            "gold 1": 7231,
+            "gold 2": 7863,
+            "gold 3": 7211,
+            "emerald 1": 6230,
+            "emerald 2": 5176,
+            "emerald 3": 4118,
+            "diamond 1": 4727,
+            "diamond 2": 2843,
+            "diamond 3": 2207,
+            "netherite 1": 1246
         },
         "season 7": {
-            "coal 1": 160,
-            "coal 2": 404,
-            "coal 3": 1499,
-            "iron 1": 3423,
-            "iron 2": 5893,
-            "iron 3": 8778,
-            "gold 1": 11181,
-            "gold 2": 12583,
-            "gold 3": 11511,
-            "emerald 1": 9758,
-            "emerald 2": 7629,
-            "emerald 3": 5669,
-            "diamond 1": 5611,
-            "diamond 2": 3403,
-            "diamond 3": 2184,
-            "netherite 1": 1215
+            "coal 1": 162,
+            "coal 2": 425,
+            "coal 3": 1429,
+            "iron 1": 3312,
+            "iron 2": 5811,
+            "iron 3": 8691,
+            "gold 1": 11011,
+            "gold 2": 12572,
+            "gold 3": 11577,
+            "emerald 1": 9615,
+            "emerald 2": 7814,
+            "emerald 3": 5565,
+            "diamond 1": 5437,
+            "diamond 2": 3388,
+            "diamond 3": 2253,
+            "netherite 1": 1057
         },
         "season 8": {
-            "coal 1": 438,
-            "coal 2": 1276,
-            "coal 3": 2991,
-            "iron 1": 6274,
-            "iron 2": 9887,
-            "iron 3": 15092,
-            "gold 1": 19577,
-            "gold 2": 20777,
-            "gold 3": 17920,
-            "emerald 1": 13673,
-            "emerald 2": 10514,
-            "emerald 3": 7160,
-            "diamond 1": 6949,
-            "diamond 2": 3576,
-            "diamond 3": 2062,
-            "netherite 1": 893
+            "coal 1": 569,
+            "coal 2": 1406,
+            "coal 3": 3288,
+            "iron 1": 6872,
+            "iron 2": 11075,
+            "iron 3": 16964,
+            "gold 1": 21424,
+            "gold 2": 22921,
+            "gold 3": 19729,
+            "emerald 1": 15637,
+            "emerald 2": 11898,
+            "emerald 3": 8367,
+            "diamond 1": 7795,
+            "diamond 2": 4238,
+            "diamond 3": 2501,
+            "netherite 1": 1150
         }
     },
     "completions": {
         "season 1": {
             "coal 1": 0,
-            "coal 2": 1,
-            "coal 3": 1,
-            "iron 1": 16,
-            "iron 2": 58,
-            "iron 3": 204,
-            "gold 1": 545,
-            "gold 2": 1086,
-            "gold 3": 1591,
-            "emerald 1": 1753,
-            "emerald 2": 1714,
-            "emerald 3": 1538,
-            "diamond 1": 1617,
-            "diamond 2": 752,
-            "diamond 3": 490,
-            "netherite 1": 152
+            "coal 2": 0,
+            "coal 3": 0,
+            "iron 1": 0,
+            "iron 2": 0,
+            "iron 3": 0,
+            "gold 1": 0,
+            "gold 2": 0,
+            "gold 3": 0,
+            "emerald 1": 0,
+            "emerald 2": 0,
+            "emerald 3": 0,
+            "diamond 1": 0,
+            "diamond 2": 0,
+            "diamond 3": 0,
+            "netherite 1": 0
         },
         "season 2": {
             "coal 1": 0,
             "coal 2": 0,
-            "coal 3": 3,
-            "iron 1": 3,
-            "iron 2": 34,
-            "iron 3": 180,
-            "gold 1": 477,
-            "gold 2": 968,
-            "gold 3": 1313,
-            "emerald 1": 1480,
-            "emerald 2": 1346,
-            "emerald 3": 1346,
-            "diamond 1": 1228,
-            "diamond 2": 462,
-            "diamond 3": 197,
-            "netherite 1": 17
+            "coal 3": 0,
+            "iron 1": 0,
+            "iron 2": 0,
+            "iron 3": 0,
+            "gold 1": 0,
+            "gold 2": 0,
+            "gold 3": 0,
+            "emerald 1": 0,
+            "emerald 2": 0,
+            "emerald 3": 0,
+            "diamond 1": 0,
+            "diamond 2": 0,
+            "diamond 3": 0,
+            "netherite 1": 0
         },
         "season 3": {
             "coal 1": 0,
             "coal 2": 0,
-            "coal 3": 1,
-            "iron 1": 7,
-            "iron 2": 56,
-            "iron 3": 200,
-            "gold 1": 501,
-            "gold 2": 869,
-            "gold 3": 1291,
-            "emerald 1": 1506,
-            "emerald 2": 1601,
-            "emerald 3": 1567,
-            "diamond 1": 1642,
-            "diamond 2": 920,
-            "diamond 3": 629,
-            "netherite 1": 292
+            "coal 3": 0,
+            "iron 1": 0,
+            "iron 2": 0,
+            "iron 3": 0,
+            "gold 1": 0,
+            "gold 2": 0,
+            "gold 3": 0,
+            "emerald 1": 0,
+            "emerald 2": 0,
+            "emerald 3": 0,
+            "diamond 1": 0,
+            "diamond 2": 0,
+            "diamond 3": 0,
+            "netherite 1": 0
         },
         "season 4": {
             "coal 1": 0,
-            "coal 2": 1,
-            "coal 3": 5,
-            "iron 1": 32,
-            "iron 2": 145,
-            "iron 3": 417,
-            "gold 1": 914,
-            "gold 2": 1559,
-            "gold 3": 1963,
-            "emerald 1": 2148,
-            "emerald 2": 2275,
-            "emerald 3": 2022,
-            "diamond 1": 2265,
-            "diamond 2": 1407,
-            "diamond 3": 983,
-            "netherite 1": 391
+            "coal 2": 0,
+            "coal 3": 0,
+            "iron 1": 0,
+            "iron 2": 0,
+            "iron 3": 0,
+            "gold 1": 0,
+            "gold 2": 0,
+            "gold 3": 0,
+            "emerald 1": 0,
+            "emerald 2": 0,
+            "emerald 3": 0,
+            "diamond 1": 0,
+            "diamond 2": 0,
+            "diamond 3": 0,
+            "netherite 1": 0
         },
         "season 5": {
             "coal 1": 0,
             "coal 2": 1,
-            "coal 3": 10,
-            "iron 1": 38,
-            "iron 2": 101,
-            "iron 3": 372,
-            "gold 1": 1064,
-            "gold 2": 1859,
-            "gold 3": 2253,
-            "emerald 1": 2316,
-            "emerald 2": 2249,
-            "emerald 3": 2069,
-            "diamond 1": 2327,
-            "diamond 2": 1384,
-            "diamond 3": 982,
-            "netherite 1": 536
+            "coal 3": 7,
+            "iron 1": 29,
+            "iron 2": 126,
+            "iron 3": 472,
+            "gold 1": 1061,
+            "gold 2": 1895,
+            "gold 3": 2363,
+            "emerald 1": 2337,
+            "emerald 2": 2444,
+            "emerald 3": 2051,
+            "diamond 1": 2324,
+            "diamond 2": 1498,
+            "diamond 3": 923,
+            "netherite 1": 473
         },
         "season 6": {
             "coal 1": 0,
-            "coal 2": 3,
-            "coal 3": 12,
-            "iron 1": 65,
-            "iron 2": 166,
-            "iron 3": 546,
-            "gold 1": 1201,
-            "gold 2": 2145,
-            "gold 3": 2693,
-            "emerald 1": 2692,
-            "emerald 2": 2859,
-            "emerald 3": 2527,
-            "diamond 1": 3075,
-            "diamond 2": 2135,
-            "diamond 3": 1724,
-            "netherite 1": 1173
+            "coal 2": 0,
+            "coal 3": 7,
+            "iron 1": 73,
+            "iron 2": 213,
+            "iron 3": 603,
+            "gold 1": 1172,
+            "gold 2": 2127,
+            "gold 3": 2629,
+            "emerald 1": 2663,
+            "emerald 2": 2671,
+            "emerald 3": 2338,
+            "diamond 1": 2947,
+            "diamond 2": 1990,
+            "diamond 3": 1619,
+            "netherite 1": 1039
         },
         "season 7": {
-            "coal 1": 1,
-            "coal 2": 5,
-            "coal 3": 26,
-            "iron 1": 114,
-            "iron 2": 389,
-            "iron 3": 985,
-            "gold 1": 2135,
-            "gold 2": 3766,
-            "gold 3": 4613,
-            "emerald 1": 4675,
-            "emerald 2": 4250,
-            "emerald 3": 3430,
-            "diamond 1": 3730,
-            "diamond 2": 2509,
-            "diamond 3": 1714,
-            "netherite 1": 1009
+            "coal 1": 4,
+            "coal 2": 9,
+            "coal 3": 30,
+            "iron 1": 109,
+            "iron 2": 329,
+            "iron 3": 986,
+            "gold 1": 2162,
+            "gold 2": 3762,
+            "gold 3": 4619,
+            "emerald 1": 4619,
+            "emerald 2": 4314,
+            "emerald 3": 3392,
+            "diamond 1": 3580,
+            "diamond 2": 2480,
+            "diamond 3": 1756,
+            "netherite 1": 892
         },
         "season 8": {
-            "coal 1": 6,
-            "coal 2": 27,
-            "coal 3": 74,
-            "iron 1": 216,
-            "iron 2": 602,
-            "iron 3": 1600,
-            "gold 1": 3676,
-            "gold 2": 6375,
-            "gold 3": 7397,
-            "emerald 1": 6694,
-            "emerald 2": 5972,
-            "emerald 3": 4501,
-            "diamond 1": 4800,
-            "diamond 2": 2732,
-            "diamond 3": 1670,
-            "netherite 1": 735
+            "coal 1": 5,
+            "coal 2": 20,
+            "coal 3": 69,
+            "iron 1": 230,
+            "iron 2": 672,
+            "iron 3": 1858,
+            "gold 1": 4235,
+            "gold 2": 7130,
+            "gold 3": 8106,
+            "emerald 1": 7769,
+            "emerald 2": 6699,
+            "emerald 3": 5151,
+            "diamond 1": 5283,
+            "diamond 2": 3144,
+            "diamond 3": 2023,
+            "netherite 1": 985
         }
     },
     "mean_completion": {
         "season 1": {
             "coal 1": null,
-            "coal 2": 2679037,
-            "coal 3": 1912959,
-            "iron 1": 1705126,
-            "iron 2": 1778623,
-            "iron 3": 1650784,
-            "gold 1": 1507822,
-            "gold 2": 1346465,
-            "gold 3": 1225353,
-            "emerald 1": 1100724,
-            "emerald 2": 1022796,
-            "emerald 3": 951332,
-            "diamond 1": 902281,
-            "diamond 2": 838332,
-            "diamond 3": 797296,
-            "netherite 1": 743959
+            "coal 2": null,
+            "coal 3": null,
+            "iron 1": null,
+            "iron 2": null,
+            "iron 3": null,
+            "gold 1": null,
+            "gold 2": null,
+            "gold 3": null,
+            "emerald 1": null,
+            "emerald 2": null,
+            "emerald 3": null,
+            "diamond 1": null,
+            "diamond 2": null,
+            "diamond 3": null,
+            "netherite 1": null
         },
         "season 2": {
             "coal 1": null,
             "coal 2": null,
-            "coal 3": 2524549,
-            "iron 1": 2181989,
-            "iron 2": 2133016,
-            "iron 3": 1715281,
-            "gold 1": 1614178,
-            "gold 2": 1418034,
-            "gold 3": 1268000,
-            "emerald 1": 1152530,
-            "emerald 2": 1027582,
-            "emerald 3": 953658,
-            "diamond 1": 893343,
-            "diamond 2": 818511,
-            "diamond 3": 766622,
-            "netherite 1": 721409
+            "coal 3": null,
+            "iron 1": null,
+            "iron 2": null,
+            "iron 3": null,
+            "gold 1": null,
+            "gold 2": null,
+            "gold 3": null,
+            "emerald 1": null,
+            "emerald 2": null,
+            "emerald 3": null,
+            "diamond 1": null,
+            "diamond 2": null,
+            "diamond 3": null,
+            "netherite 1": null
         },
         "season 3": {
             "coal 1": null,
             "coal 2": null,
-            "coal 3": 748328,
-            "iron 1": 1478404,
-            "iron 2": 1514568,
-            "iron 3": 1547949,
-            "gold 1": 1423887,
-            "gold 2": 1301633,
-            "gold 3": 1185866,
-            "emerald 1": 1065981,
-            "emerald 2": 972971,
-            "emerald 3": 908347,
-            "diamond 1": 843038,
-            "diamond 2": 787568,
-            "diamond 3": 743471,
-            "netherite 1": 698942
+            "coal 3": null,
+            "iron 1": null,
+            "iron 2": null,
+            "iron 3": null,
+            "gold 1": null,
+            "gold 2": null,
+            "gold 3": null,
+            "emerald 1": null,
+            "emerald 2": null,
+            "emerald 3": null,
+            "diamond 1": null,
+            "diamond 2": null,
+            "diamond 3": null,
+            "netherite 1": null
         },
         "season 4": {
             "coal 1": null,
-            "coal 2": 1184802,
-            "coal 3": 1958720,
-            "iron 1": 1859751,
-            "iron 2": 1549485,
-            "iron 3": 1466982,
-            "gold 1": 1377503,
-            "gold 2": 1249005,
-            "gold 3": 1115140,
-            "emerald 1": 1010691,
-            "emerald 2": 934761,
-            "emerald 3": 869997,
-            "diamond 1": 812461,
-            "diamond 2": 749796,
-            "diamond 3": 705247,
-            "netherite 1": 663251
+            "coal 2": null,
+            "coal 3": null,
+            "iron 1": null,
+            "iron 2": null,
+            "iron 3": null,
+            "gold 1": null,
+            "gold 2": null,
+            "gold 3": null,
+            "emerald 1": null,
+            "emerald 2": null,
+            "emerald 3": null,
+            "diamond 1": null,
+            "diamond 2": null,
+            "diamond 3": null,
+            "netherite 1": null
         },
         "season 5": {
             "coal 1": null,
-            "coal 2": 1634999,
-            "coal 3": 1661674,
-            "iron 1": 1916554,
-            "iron 2": 1512159,
-            "iron 3": 1431319,
-            "gold 1": 1332969,
-            "gold 2": 1197718,
-            "gold 3": 1084077,
-            "emerald 1": 968671,
-            "emerald 2": 886079,
-            "emerald 3": 821718,
-            "diamond 1": 778728,
-            "diamond 2": 728655,
-            "diamond 3": 683841,
-            "netherite 1": 652074
+            "coal 2": 2386684,
+            "coal 3": 1655308,
+            "iron 1": 1392181,
+            "iron 2": 1555265,
+            "iron 3": 1426942,
+            "gold 1": 1324687,
+            "gold 2": 1181233,
+            "gold 3": 1064875,
+            "emerald 1": 962236,
+            "emerald 2": 877240,
+            "emerald 3": 828278,
+            "diamond 1": 777152,
+            "diamond 2": 722931,
+            "diamond 3": 681103,
+            "netherite 1": 659016
         },
         "season 6": {
             "coal 1": null,
-            "coal 2": 1490167,
-            "coal 3": 1392957,
-            "iron 1": 1498878,
-            "iron 2": 1445721,
-            "iron 3": 1421887,
-            "gold 1": 1315918,
-            "gold 2": 1182370,
-            "gold 3": 1060493,
-            "emerald 1": 953212,
-            "emerald 2": 855872,
-            "emerald 3": 797638,
-            "diamond 1": 743624,
-            "diamond 2": 699043,
-            "diamond 3": 672992,
-            "netherite 1": 637756
+            "coal 2": null,
+            "coal 3": 1803563,
+            "iron 1": 1489767,
+            "iron 2": 1507456,
+            "iron 3": 1398838,
+            "gold 1": 1310374,
+            "gold 2": 1158089,
+            "gold 3": 1041426,
+            "emerald 1": 936128,
+            "emerald 2": 850758,
+            "emerald 3": 793060,
+            "diamond 1": 748171,
+            "diamond 2": 698388,
+            "diamond 3": 663290,
+            "netherite 1": 642042
         },
         "season 7": {
-            "coal 1": 950788,
-            "coal 2": 1432642,
-            "coal 3": 1515493,
-            "iron 1": 1406278,
-            "iron 2": 1386142,
-            "iron 3": 1359425,
-            "gold 1": 1239450,
-            "gold 2": 1136435,
-            "gold 3": 1008354,
-            "emerald 1": 900301,
-            "emerald 2": 819822,
-            "emerald 3": 762785,
-            "diamond 1": 715922,
-            "diamond 2": 678585,
-            "diamond 3": 644318,
-            "netherite 1": 608288
+            "coal 1": 1256499,
+            "coal 2": 1384408,
+            "coal 3": 1496164,
+            "iron 1": 1467770,
+            "iron 2": 1344589,
+            "iron 3": 1360354,
+            "gold 1": 1233947,
+            "gold 2": 1111961,
+            "gold 3": 989670,
+            "emerald 1": 886856,
+            "emerald 2": 818706,
+            "emerald 3": 765458,
+            "diamond 1": 718078,
+            "diamond 2": 673391,
+            "diamond 3": 648260,
+            "netherite 1": 611476
         },
         "season 8": {
-            "coal 1": 1496649,
-            "coal 2": 1354943,
-            "coal 3": 1512044,
-            "iron 1": 1389149,
-            "iron 2": 1411955,
-            "iron 3": 1407883,
-            "gold 1": 1319634,
-            "gold 2": 1162458,
-            "gold 3": 1016544,
-            "emerald 1": 901321,
-            "emerald 2": 812146,
-            "emerald 3": 757216,
-            "diamond 1": 714659,
-            "diamond 2": 674504,
-            "diamond 3": 634751,
-            "netherite 1": 611522
+            "coal 1": 1561573,
+            "coal 2": 1599436,
+            "coal 3": 1446064,
+            "iron 1": 1472865,
+            "iron 2": 1406693,
+            "iron 3": 1375043,
+            "gold 1": 1311015,
+            "gold 2": 1159463,
+            "gold 3": 1012436,
+            "emerald 1": 901596,
+            "emerald 2": 811500,
+            "emerald 3": 757385,
+            "diamond 1": 711075,
+            "diamond 2": 670698,
+            "diamond 3": 641285,
+            "netherite 1": 608008
         }
     },
     "median_completion": {
         "season 1": {
             "coal 1": null,
-            "coal 2": 2679037,
-            "coal 3": 1912959,
-            "iron 1": 1782541,
-            "iron 2": 1665675,
-            "iron 3": 1503595,
-            "gold 1": 1393643,
-            "gold 2": 1250457,
-            "gold 3": 1152206,
-            "emerald 1": 1048425,
-            "emerald 2": 985162,
-            "emerald 3": 914846,
-            "diamond 1": 879328,
-            "diamond 2": 816955,
-            "diamond 3": 780742,
-            "netherite 1": 726625
+            "coal 2": null,
+            "coal 3": null,
+            "iron 1": null,
+            "iron 2": null,
+            "iron 3": null,
+            "gold 1": null,
+            "gold 2": null,
+            "gold 3": null,
+            "emerald 1": null,
+            "emerald 2": null,
+            "emerald 3": null,
+            "diamond 1": null,
+            "diamond 2": null,
+            "diamond 3": null,
+            "netherite 1": null
         },
         "season 2": {
             "coal 1": null,
             "coal 2": null,
-            "coal 3": 2225307,
-            "iron 1": 1890927,
-            "iron 2": 1682585,
-            "iron 3": 1626279,
-            "gold 1": 1490771,
-            "gold 2": 1332018,
-            "gold 3": 1204332,
-            "emerald 1": 1093250,
-            "emerald 2": 993835,
-            "emerald 3": 925870,
-            "diamond 1": 864482,
-            "diamond 2": 800690,
-            "diamond 3": 743486,
-            "netherite 1": 670721
+            "coal 3": null,
+            "iron 1": null,
+            "iron 2": null,
+            "iron 3": null,
+            "gold 1": null,
+            "gold 2": null,
+            "gold 3": null,
+            "emerald 1": null,
+            "emerald 2": null,
+            "emerald 3": null,
+            "diamond 1": null,
+            "diamond 2": null,
+            "diamond 3": null,
+            "netherite 1": null
         },
         "season 3": {
             "coal 1": null,
             "coal 2": null,
-            "coal 3": 748328,
-            "iron 1": 1472673,
-            "iron 2": 1484185,
-            "iron 3": 1390493,
-            "gold 1": 1322663,
-            "gold 2": 1204354,
-            "gold 3": 1117617,
-            "emerald 1": 1025038,
-            "emerald 2": 939097,
-            "emerald 3": 877088,
-            "diamond 1": 818244,
-            "diamond 2": 770015,
-            "diamond 3": 727061,
-            "netherite 1": 679036
+            "coal 3": null,
+            "iron 1": null,
+            "iron 2": null,
+            "iron 3": null,
+            "gold 1": null,
+            "gold 2": null,
+            "gold 3": null,
+            "emerald 1": null,
+            "emerald 2": null,
+            "emerald 3": null,
+            "diamond 1": null,
+            "diamond 2": null,
+            "diamond 3": null,
+            "netherite 1": null
         },
         "season 4": {
             "coal 1": null,
-            "coal 2": 1184802,
-            "coal 3": 1943916,
-            "iron 1": 1556478,
-            "iron 2": 1439416,
-            "iron 3": 1390022,
-            "gold 1": 1283970,
-            "gold 2": 1176708,
-            "gold 3": 1057048,
-            "emerald 1": 969894,
-            "emerald 2": 897394,
-            "emerald 3": 847473,
-            "diamond 1": 786443,
-            "diamond 2": 732573,
-            "diamond 3": 692517,
-            "netherite 1": 646212
+            "coal 2": null,
+            "coal 3": null,
+            "iron 1": null,
+            "iron 2": null,
+            "iron 3": null,
+            "gold 1": null,
+            "gold 2": null,
+            "gold 3": null,
+            "emerald 1": null,
+            "emerald 2": null,
+            "emerald 3": null,
+            "diamond 1": null,
+            "diamond 2": null,
+            "diamond 3": null,
+            "netherite 1": null
         },
         "season 5": {
             "coal 1": null,
-            "coal 2": 1634999,
-            "coal 3": 1616502,
-            "iron 1": 1635525,
-            "iron 2": 1363225,
-            "iron 3": 1345226,
-            "gold 1": 1240377,
-            "gold 2": 1133812,
-            "gold 3": 1034720,
-            "emerald 1": 931264,
-            "emerald 2": 856458,
-            "emerald 3": 798194,
-            "diamond 1": 758222,
-            "diamond 2": 712320,
-            "diamond 3": 669202,
-            "netherite 1": 640600
+            "coal 2": 2386684,
+            "coal 3": 1393525,
+            "iron 1": 1277916,
+            "iron 2": 1440053,
+            "iron 3": 1351169,
+            "gold 1": 1239273,
+            "gold 2": 1114889,
+            "gold 3": 1011947,
+            "emerald 1": 925786,
+            "emerald 2": 846456,
+            "emerald 3": 805362,
+            "diamond 1": 750373,
+            "diamond 2": 702427,
+            "diamond 3": 665930,
+            "netherite 1": 645376
         },
         "season 6": {
             "coal 1": null,
-            "coal 2": 1457850,
-            "coal 3": 1266588,
-            "iron 1": 1371160,
-            "iron 2": 1338965,
-            "iron 3": 1320872,
-            "gold 1": 1222221,
-            "gold 2": 1108521,
-            "gold 3": 1008542,
-            "emerald 1": 906745,
-            "emerald 2": 830139,
-            "emerald 3": 773680,
-            "diamond 1": 723985,
-            "diamond 2": 678958,
-            "diamond 3": 653079,
-            "netherite 1": 622367
+            "coal 2": null,
+            "coal 3": 1761446,
+            "iron 1": 1324947,
+            "iron 2": 1324224,
+            "iron 3": 1271815,
+            "gold 1": 1202565,
+            "gold 2": 1071742,
+            "gold 3": 996220,
+            "emerald 1": 896521,
+            "emerald 2": 819555,
+            "emerald 3": 770156,
+            "diamond 1": 727877,
+            "diamond 2": 681703,
+            "diamond 3": 638851,
+            "netherite 1": 626983
         },
         "season 7": {
-            "coal 1": 950788,
-            "coal 2": 1316194,
-            "coal 3": 1317189,
-            "iron 1": 1210881,
-            "iron 2": 1246739,
-            "iron 3": 1275666,
-            "gold 1": 1165798,
-            "gold 2": 1071108,
-            "gold 3": 959128,
-            "emerald 1": 865116,
-            "emerald 2": 793342,
-            "emerald 3": 741583,
-            "diamond 1": 699289,
-            "diamond 2": 660494,
-            "diamond 3": 628075,
-            "netherite 1": 590127
+            "coal 1": 1281779,
+            "coal 2": 1618876,
+            "coal 3": 1416825,
+            "iron 1": 1357806,
+            "iron 2": 1302574,
+            "iron 3": 1250910,
+            "gold 1": 1138323,
+            "gold 2": 1047340,
+            "gold 3": 947474,
+            "emerald 1": 859448,
+            "emerald 2": 790715,
+            "emerald 3": 743134,
+            "diamond 1": 699390,
+            "diamond 2": 656662,
+            "diamond 3": 631140,
+            "netherite 1": 598966
         },
         "season 8": {
-            "coal 1": 1509443,
-            "coal 2": 1343437,
-            "coal 3": 1434947,
-            "iron 1": 1260588,
-            "iron 2": 1341669,
-            "iron 3": 1318300,
-            "gold 1": 1220989,
-            "gold 2": 1091734,
-            "gold 3": 971378,
-            "emerald 1": 868766,
-            "emerald 2": 785640,
-            "emerald 3": 735808,
-            "diamond 1": 696385,
-            "diamond 2": 654641,
-            "diamond 3": 616589,
-            "netherite 1": 597475
+            "coal 1": 1189096,
+            "coal 2": 1397538,
+            "coal 3": 1421866,
+            "iron 1": 1338172,
+            "iron 2": 1353866,
+            "iron 3": 1303111,
+            "gold 1": 1229452,
+            "gold 2": 1092292,
+            "gold 3": 968000,
+            "emerald 1": 868393,
+            "emerald 2": 782918,
+            "emerald 3": 736094,
+            "diamond 1": 691958,
+            "diamond 2": 655325,
+            "diamond 3": 624620,
+            "netherite 1": 590177
+        }
+    },
+    "split_completed": {
+        "season 1": {
+            "coal 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "coal 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "coal 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "iron 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "iron 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "iron 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "gold 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "gold 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "gold 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "emerald 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "emerald 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "emerald 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "diamond 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "diamond 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "diamond 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "netherite 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            }
+        },
+        "season 2": {
+            "coal 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "coal 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "coal 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "iron 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "iron 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "iron 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "gold 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "gold 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "gold 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "emerald 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "emerald 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "emerald 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "diamond 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "diamond 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "diamond 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "netherite 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            }
+        },
+        "season 3": {
+            "coal 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "coal 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "coal 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "iron 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "iron 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "iron 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "gold 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "gold 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "gold 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "emerald 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "emerald 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "emerald 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "diamond 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "diamond 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "diamond 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "netherite 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            }
+        },
+        "season 4": {
+            "coal 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "coal 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "coal 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "iron 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "iron 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "iron 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "gold 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "gold 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "gold 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "emerald 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "emerald 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "emerald 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "diamond 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "diamond 2": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "diamond 3": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "netherite 1": {
+                "ow": 0,
+                "nether": 0,
+                "bastion": 0,
+                "fortress": 0,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            }
+        },
+        "season 5": {
+            "coal 1": {
+                "ow": 10,
+                "nether": 9,
+                "bastion": 3,
+                "fortress": 1,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "coal 2": {
+                "ow": 102,
+                "nether": 79,
+                "bastion": 20,
+                "fortress": 11,
+                "blind": 2,
+                "stronghold": 2,
+                "end": 0
+            },
+            "coal 3": {
+                "ow": 476,
+                "nether": 375,
+                "bastion": 80,
+                "fortress": 47,
+                "blind": 20,
+                "stronghold": 14,
+                "end": 3
+            },
+            "iron 1": {
+                "ow": 1304,
+                "nether": 1034,
+                "bastion": 271,
+                "fortress": 164,
+                "blind": 68,
+                "stronghold": 44,
+                "end": 10
+            },
+            "iron 2": {
+                "ow": 2341,
+                "nether": 1934,
+                "bastion": 658,
+                "fortress": 439,
+                "blind": 228,
+                "stronghold": 149,
+                "end": 65
+            },
+            "iron 3": {
+                "ow": 4093,
+                "nether": 3571,
+                "bastion": 1527,
+                "fortress": 1087,
+                "blind": 632,
+                "stronghold": 443,
+                "end": 217
+            },
+            "gold 1": {
+                "ow": 5417,
+                "nether": 4883,
+                "bastion": 2537,
+                "fortress": 1926,
+                "blind": 1244,
+                "stronghold": 913,
+                "end": 518
+            },
+            "gold 2": {
+                "ow": 6346,
+                "nether": 5910,
+                "bastion": 3625,
+                "fortress": 2913,
+                "blind": 2032,
+                "stronghold": 1567,
+                "end": 941
+            },
+            "gold 3": {
+                "ow": 5910,
+                "nether": 5602,
+                "bastion": 3932,
+                "fortress": 3265,
+                "blind": 2441,
+                "stronghold": 1953,
+                "end": 1176
+            },
+            "emerald 1": {
+                "ow": 4811,
+                "nether": 4644,
+                "bastion": 3520,
+                "fortress": 3051,
+                "blind": 2340,
+                "stronghold": 1887,
+                "end": 1161
+            },
+            "emerald 2": {
+                "ow": 4400,
+                "nether": 4251,
+                "bastion": 3427,
+                "fortress": 3042,
+                "blind": 2402,
+                "stronghold": 1963,
+                "end": 1196
+            },
+            "emerald 3": {
+                "ow": 3371,
+                "nether": 3279,
+                "bastion": 2730,
+                "fortress": 2484,
+                "blind": 2072,
+                "stronghold": 1747,
+                "end": 1053
+            },
+            "diamond 1": {
+                "ow": 3385,
+                "nether": 3310,
+                "bastion": 2919,
+                "fortress": 2684,
+                "blind": 2294,
+                "stronghold": 1952,
+                "end": 1205
+            },
+            "diamond 2": {
+                "ow": 2015,
+                "nether": 1984,
+                "bastion": 1789,
+                "fortress": 1663,
+                "blind": 1442,
+                "stronghold": 1225,
+                "end": 766
+            },
+            "diamond 3": {
+                "ow": 1275,
+                "nether": 1252,
+                "bastion": 1121,
+                "fortress": 1034,
+                "blind": 874,
+                "stronghold": 743,
+                "end": 486
+            },
+            "netherite 1": {
+                "ow": 564,
+                "nether": 557,
+                "bastion": 528,
+                "fortress": 502,
+                "blind": 457,
+                "stronghold": 425,
+                "end": 264
+            }
+        },
+        "season 6": {
+            "coal 1": {
+                "ow": 29,
+                "nether": 22,
+                "bastion": 3,
+                "fortress": 1,
+                "blind": 0,
+                "stronghold": 0,
+                "end": 0
+            },
+            "coal 2": {
+                "ow": 137,
+                "nether": 103,
+                "bastion": 17,
+                "fortress": 16,
+                "blind": 1,
+                "stronghold": 0,
+                "end": 0
+            },
+            "coal 3": {
+                "ow": 616,
+                "nether": 460,
+                "bastion": 85,
+                "fortress": 49,
+                "blind": 15,
+                "stronghold": 9,
+                "end": 3
+            },
+            "iron 1": {
+                "ow": 1475,
+                "nether": 1194,
+                "bastion": 352,
+                "fortress": 220,
+                "blind": 100,
+                "stronghold": 68,
+                "end": 26
+            },
+            "iron 2": {
+                "ow": 3077,
+                "nether": 2648,
+                "bastion": 891,
+                "fortress": 625,
+                "blind": 325,
+                "stronghold": 208,
+                "end": 107
+            },
+            "iron 3": {
+                "ow": 5123,
+                "nether": 4531,
+                "bastion": 1921,
+                "fortress": 1403,
+                "blind": 759,
+                "stronghold": 549,
+                "end": 279
+            },
+            "gold 1": {
+                "ow": 6651,
+                "nether": 5977,
+                "bastion": 2975,
+                "fortress": 2288,
+                "blind": 1387,
+                "stronghold": 1011,
+                "end": 568
+            },
+            "gold 2": {
+                "ow": 7465,
+                "nether": 6933,
+                "bastion": 4089,
+                "fortress": 3231,
+                "blind": 2238,
+                "stronghold": 1775,
+                "end": 1058
+            },
+            "gold 3": {
+                "ow": 6951,
+                "nether": 6593,
+                "bastion": 4429,
+                "fortress": 3653,
+                "blind": 2718,
+                "stronghold": 2157,
+                "end": 1301
+            },
+            "emerald 1": {
+                "ow": 5986,
+                "nether": 5754,
+                "bastion": 4207,
+                "fortress": 3606,
+                "blind": 2759,
+                "stronghold": 2253,
+                "end": 1346
+            },
+            "emerald 2": {
+                "ow": 5036,
+                "nether": 4853,
+                "bastion": 3813,
+                "fortress": 3285,
+                "blind": 2619,
+                "stronghold": 2169,
+                "end": 1342
+            },
+            "emerald 3": {
+                "ow": 4025,
+                "nether": 3921,
+                "bastion": 3190,
+                "fortress": 2842,
+                "blind": 2333,
+                "stronghold": 1919,
+                "end": 1137
+            },
+            "diamond 1": {
+                "ow": 4629,
+                "nether": 4507,
+                "bastion": 3814,
+                "fortress": 3479,
+                "blind": 2974,
+                "stronghold": 2549,
+                "end": 1542
+            },
+            "diamond 2": {
+                "ow": 2790,
+                "nether": 2729,
+                "bastion": 2397,
+                "fortress": 2222,
+                "blind": 1943,
+                "stronghold": 1662,
+                "end": 1006
+            },
+            "diamond 3": {
+                "ow": 2166,
+                "nether": 2120,
+                "bastion": 1905,
+                "fortress": 1765,
+                "blind": 1559,
+                "stronghold": 1328,
+                "end": 803
+            },
+            "netherite 1": {
+                "ow": 1224,
+                "nether": 1210,
+                "bastion": 1141,
+                "fortress": 1094,
+                "blind": 995,
+                "stronghold": 902,
+                "end": 586
+            }
+        },
+        "season 7": {
+            "coal 1": {
+                "ow": 107,
+                "nether": 75,
+                "bastion": 17,
+                "fortress": 9,
+                "blind": 4,
+                "stronghold": 3,
+                "end": 2
+            },
+            "coal 2": {
+                "ow": 337,
+                "nether": 266,
+                "bastion": 65,
+                "fortress": 45,
+                "blind": 13,
+                "stronghold": 10,
+                "end": 4
+            },
+            "coal 3": {
+                "ow": 1145,
+                "nether": 958,
+                "bastion": 241,
+                "fortress": 147,
+                "blind": 56,
+                "stronghold": 36,
+                "end": 14
+            },
+            "iron 1": {
+                "ow": 2733,
+                "nether": 2254,
+                "bastion": 687,
+                "fortress": 452,
+                "blind": 212,
+                "stronghold": 121,
+                "end": 51
+            },
+            "iron 2": {
+                "ow": 5089,
+                "nether": 4440,
+                "bastion": 1549,
+                "fortress": 1055,
+                "blind": 529,
+                "stronghold": 361,
+                "end": 154
+            },
+            "iron 3": {
+                "ow": 7813,
+                "nether": 6933,
+                "bastion": 3047,
+                "fortress": 2234,
+                "blind": 1309,
+                "stronghold": 950,
+                "end": 459
+            },
+            "gold 1": {
+                "ow": 10177,
+                "nether": 9302,
+                "bastion": 4958,
+                "fortress": 3897,
+                "blind": 2522,
+                "stronghold": 1939,
+                "end": 1056
+            },
+            "gold 2": {
+                "ow": 11901,
+                "nether": 11149,
+                "bastion": 7000,
+                "fortress": 5690,
+                "blind": 3973,
+                "stronghold": 3151,
+                "end": 1902
+            },
+            "gold 3": {
+                "ow": 11104,
+                "nether": 10519,
+                "bastion": 7272,
+                "fortress": 6107,
+                "blind": 4595,
+                "stronghold": 3767,
+                "end": 2292
+            },
+            "emerald 1": {
+                "ow": 9306,
+                "nether": 8941,
+                "bastion": 6788,
+                "fortress": 5864,
+                "blind": 4609,
+                "stronghold": 3758,
+                "end": 2326
+            },
+            "emerald 2": {
+                "ow": 7627,
+                "nether": 7396,
+                "bastion": 5939,
+                "fortress": 5226,
+                "blind": 4290,
+                "stronghold": 3539,
+                "end": 2159
+            },
+            "emerald 3": {
+                "ow": 5440,
+                "nether": 5269,
+                "bastion": 4389,
+                "fortress": 3963,
+                "blind": 3326,
+                "stronghold": 2843,
+                "end": 1748
+            },
+            "diamond 1": {
+                "ow": 5328,
+                "nether": 5206,
+                "bastion": 4403,
+                "fortress": 4033,
+                "blind": 3493,
+                "stronghold": 2984,
+                "end": 1793
+            },
+            "diamond 2": {
+                "ow": 3339,
+                "nether": 3266,
+                "bastion": 2891,
+                "fortress": 2670,
+                "blind": 2334,
+                "stronghold": 2032,
+                "end": 1283
+            },
+            "diamond 3": {
+                "ow": 2221,
+                "nether": 2191,
+                "bastion": 1969,
+                "fortress": 1844,
+                "blind": 1612,
+                "stronghold": 1413,
+                "end": 881
+            },
+            "netherite 1": {
+                "ow": 1048,
+                "nether": 1036,
+                "bastion": 966,
+                "fortress": 913,
+                "blind": 822,
+                "stronghold": 742,
+                "end": 493
+            }
+        },
+        "season 8": {
+            "coal 1": {
+                "ow": 450,
+                "nether": 342,
+                "bastion": 53,
+                "fortress": 32,
+                "blind": 9,
+                "stronghold": 2,
+                "end": 1
+            },
+            "coal 2": {
+                "ow": 1168,
+                "nether": 913,
+                "bastion": 215,
+                "fortress": 127,
+                "blind": 63,
+                "stronghold": 35,
+                "end": 10
+            },
+            "coal 3": {
+                "ow": 2791,
+                "nether": 2273,
+                "bastion": 606,
+                "fortress": 378,
+                "blind": 152,
+                "stronghold": 105,
+                "end": 32
+            },
+            "iron 1": {
+                "ow": 5946,
+                "nether": 5012,
+                "bastion": 1518,
+                "fortress": 965,
+                "blind": 462,
+                "stronghold": 286,
+                "end": 101
+            },
+            "iron 2": {
+                "ow": 9972,
+                "nether": 8723,
+                "bastion": 3262,
+                "fortress": 2245,
+                "blind": 1130,
+                "stronghold": 771,
+                "end": 353
+            },
+            "iron 3": {
+                "ow": 15592,
+                "nether": 13924,
+                "bastion": 6144,
+                "fortress": 4460,
+                "blind": 2613,
+                "stronghold": 1858,
+                "end": 907
+            },
+            "gold 1": {
+                "ow": 20308,
+                "nether": 18820,
+                "bastion": 10248,
+                "fortress": 7873,
+                "blind": 5033,
+                "stronghold": 3760,
+                "end": 2118
+            },
+            "gold 2": {
+                "ow": 22130,
+                "nether": 21025,
+                "bastion": 13480,
+                "fortress": 10891,
+                "blind": 7679,
+                "stronghold": 6003,
+                "end": 3575
+            },
+            "gold 3": {
+                "ow": 19256,
+                "nether": 18563,
+                "bastion": 13279,
+                "fortress": 11095,
+                "blind": 8241,
+                "stronghold": 6600,
+                "end": 4017
+            },
+            "emerald 1": {
+                "ow": 15296,
+                "nether": 14902,
+                "bastion": 11475,
+                "fortress": 9859,
+                "blind": 7651,
+                "stronghold": 6266,
+                "end": 3866
+            },
+            "emerald 2": {
+                "ow": 11673,
+                "nether": 11385,
+                "bastion": 9260,
+                "fortress": 8195,
+                "blind": 6645,
+                "stronghold": 5563,
+                "end": 3399
+            },
+            "emerald 3": {
+                "ow": 8240,
+                "nether": 8069,
+                "bastion": 6756,
+                "fortress": 6015,
+                "blind": 5020,
+                "stronghold": 4249,
+                "end": 2574
+            },
+            "diamond 1": {
+                "ow": 7706,
+                "nether": 7578,
+                "bastion": 6550,
+                "fortress": 5930,
+                "blind": 5058,
+                "stronghold": 4303,
+                "end": 2690
+            },
+            "diamond 2": {
+                "ow": 4190,
+                "nether": 4129,
+                "bastion": 3694,
+                "fortress": 3405,
+                "blind": 2962,
+                "stronghold": 2530,
+                "end": 1580
+            },
+            "diamond 3": {
+                "ow": 2489,
+                "nether": 2463,
+                "bastion": 2264,
+                "fortress": 2115,
+                "blind": 1874,
+                "stronghold": 1635,
+                "end": 1056
+            },
+            "netherite 1": {
+                "ow": 1142,
+                "nether": 1135,
+                "bastion": 1080,
+                "fortress": 1016,
+                "blind": 922,
+                "stronghold": 828,
+                "end": 569
+            }
+        }
+    },
+    "mean_split": {
+        "season 1": {
+            "coal 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "netherite 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            }
+        },
+        "season 2": {
+            "coal 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "netherite 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            }
+        },
+        "season 3": {
+            "coal 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "netherite 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            }
+        },
+        "season 4": {
+            "coal 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "netherite 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            }
+        },
+        "season 5": {
+            "coal 1": {
+                "ow": 397801,
+                "nether": 84679,
+                "bastion": 509862,
+                "fortress": 140323,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 2": {
+                "ow": 304632,
+                "nether": 87325,
+                "bastion": 471897,
+                "fortress": 187349,
+                "blind": 263852,
+                "stronghold": 167707,
+                "end": null
+            },
+            "coal 3": {
+                "ow": 294410,
+                "nether": 88733,
+                "bastion": 424583,
+                "fortress": 212104,
+                "blind": 386157,
+                "stronghold": 201910,
+                "end": 535917
+            },
+            "iron 1": {
+                "ow": 283361,
+                "nether": 90727,
+                "bastion": 433600,
+                "fortress": 188693,
+                "blind": 403258,
+                "stronghold": 214870,
+                "end": 166239
+            },
+            "iron 2": {
+                "ow": 275340,
+                "nether": 87649,
+                "bastion": 415722,
+                "fortress": 195371,
+                "blind": 392371,
+                "stronghold": 199390,
+                "end": 186679
+            },
+            "iron 3": {
+                "ow": 252680,
+                "nether": 79839,
+                "bastion": 399175,
+                "fortress": 188785,
+                "blind": 320429,
+                "stronghold": 152369,
+                "end": 170519
+            },
+            "gold 1": {
+                "ow": 222968,
+                "nether": 69698,
+                "bastion": 352350,
+                "fortress": 170846,
+                "blind": 283021,
+                "stronghold": 144522,
+                "end": 168576
+            },
+            "gold 2": {
+                "ow": 195308,
+                "nether": 62229,
+                "bastion": 313733,
+                "fortress": 159971,
+                "blind": 234115,
+                "stronghold": 115528,
+                "end": 155247
+            },
+            "gold 3": {
+                "ow": 175281,
+                "nether": 54794,
+                "bastion": 285287,
+                "fortress": 150983,
+                "blind": 202788,
+                "stronghold": 98293,
+                "end": 148284
+            },
+            "emerald 1": {
+                "ow": 157615,
+                "nether": 50515,
+                "bastion": 257987,
+                "fortress": 140294,
+                "blind": 183237,
+                "stronghold": 84493,
+                "end": 135138
+            },
+            "emerald 2": {
+                "ow": 144954,
+                "nether": 46484,
+                "bastion": 242046,
+                "fortress": 129785,
+                "blind": 157345,
+                "stronghold": 76366,
+                "end": 121427
+            },
+            "emerald 3": {
+                "ow": 137581,
+                "nether": 43959,
+                "bastion": 226848,
+                "fortress": 124743,
+                "blind": 142917,
+                "stronghold": 70497,
+                "end": 111377
+            },
+            "diamond 1": {
+                "ow": 129499,
+                "nether": 42603,
+                "bastion": 216552,
+                "fortress": 116386,
+                "blind": 132707,
+                "stronghold": 62576,
+                "end": 105660
+            },
+            "diamond 2": {
+                "ow": 122829,
+                "nether": 39700,
+                "bastion": 203494,
+                "fortress": 111347,
+                "blind": 122192,
+                "stronghold": 55600,
+                "end": 91261
+            },
+            "diamond 3": {
+                "ow": 119409,
+                "nether": 37569,
+                "bastion": 190394,
+                "fortress": 107162,
+                "blind": 112570,
+                "stronghold": 48879,
+                "end": 90986
+            },
+            "netherite 1": {
+                "ow": 116084,
+                "nether": 38259,
+                "bastion": 190047,
+                "fortress": 104579,
+                "blind": 105245,
+                "stronghold": 47770,
+                "end": 74703
+            }
+        },
+        "season 6": {
+            "coal 1": {
+                "ow": 324094,
+                "nether": 101044,
+                "bastion": 286302,
+                "fortress": 15978,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 2": {
+                "ow": 289250,
+                "nether": 84398,
+                "bastion": 339375,
+                "fortress": 155667,
+                "blind": 326770,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 3": {
+                "ow": 280793,
+                "nether": 78557,
+                "bastion": 451497,
+                "fortress": 173005,
+                "blind": 400675,
+                "stronghold": 326738,
+                "end": 106795
+            },
+            "iron 1": {
+                "ow": 271895,
+                "nether": 80565,
+                "bastion": 402198,
+                "fortress": 179136,
+                "blind": 343179,
+                "stronghold": 162770,
+                "end": 165773
+            },
+            "iron 2": {
+                "ow": 255612,
+                "nether": 76891,
+                "bastion": 395502,
+                "fortress": 186431,
+                "blind": 338153,
+                "stronghold": 171422,
+                "end": 201106
+            },
+            "iron 3": {
+                "ow": 240651,
+                "nether": 73796,
+                "bastion": 372460,
+                "fortress": 178455,
+                "blind": 306974,
+                "stronghold": 141614,
+                "end": 220225
+            },
+            "gold 1": {
+                "ow": 218508,
+                "nether": 66840,
+                "bastion": 348722,
+                "fortress": 166467,
+                "blind": 271964,
+                "stronghold": 141403,
+                "end": 169978
+            },
+            "gold 2": {
+                "ow": 194871,
+                "nether": 60703,
+                "bastion": 308600,
+                "fortress": 159586,
+                "blind": 229982,
+                "stronghold": 111602,
+                "end": 155894
+            },
+            "gold 3": {
+                "ow": 178070,
+                "nether": 55041,
+                "bastion": 279675,
+                "fortress": 145269,
+                "blind": 195033,
+                "stronghold": 91549,
+                "end": 141459
+            },
+            "emerald 1": {
+                "ow": 158102,
+                "nether": 47895,
+                "bastion": 250960,
+                "fortress": 135504,
+                "blind": 168936,
+                "stronghold": 84232,
+                "end": 129186
+            },
+            "emerald 2": {
+                "ow": 144709,
+                "nether": 45073,
+                "bastion": 232836,
+                "fortress": 127743,
+                "blind": 147770,
+                "stronghold": 70511,
+                "end": 117426
+            },
+            "emerald 3": {
+                "ow": 134875,
+                "nether": 42480,
+                "bastion": 220158,
+                "fortress": 120979,
+                "blind": 135332,
+                "stronghold": 63084,
+                "end": 106917
+            },
+            "diamond 1": {
+                "ow": 128936,
+                "nether": 39857,
+                "bastion": 208192,
+                "fortress": 113223,
+                "blind": 122436,
+                "stronghold": 56901,
+                "end": 99453
+            },
+            "diamond 2": {
+                "ow": 125105,
+                "nether": 37823,
+                "bastion": 197595,
+                "fortress": 108187,
+                "blind": 113453,
+                "stronghold": 49604,
+                "end": 91595
+            },
+            "diamond 3": {
+                "ow": 120298,
+                "nether": 37061,
+                "bastion": 186725,
+                "fortress": 105810,
+                "blind": 106326,
+                "stronghold": 45147,
+                "end": 80856
+            },
+            "netherite 1": {
+                "ow": 118919,
+                "nether": 36867,
+                "bastion": 181252,
+                "fortress": 101418,
+                "blind": 101127,
+                "stronghold": 41217,
+                "end": 77903
+            }
+        },
+        "season 7": {
+            "coal 1": {
+                "ow": 269145,
+                "nether": 64705,
+                "bastion": 340112,
+                "fortress": 218234,
+                "blind": 350212,
+                "stronghold": 102042,
+                "end": 135347
+            },
+            "coal 2": {
+                "ow": 272133,
+                "nether": 64317,
+                "bastion": 354729,
+                "fortress": 229374,
+                "blind": 304565,
+                "stronghold": 77794,
+                "end": 142502
+            },
+            "coal 3": {
+                "ow": 274583,
+                "nether": 75819,
+                "bastion": 424839,
+                "fortress": 177800,
+                "blind": 405839,
+                "stronghold": 148209,
+                "end": 252630
+            },
+            "iron 1": {
+                "ow": 257400,
+                "nether": 76382,
+                "bastion": 402034,
+                "fortress": 192564,
+                "blind": 349159,
+                "stronghold": 177161,
+                "end": 141728
+            },
+            "iron 2": {
+                "ow": 243691,
+                "nether": 74009,
+                "bastion": 390446,
+                "fortress": 179499,
+                "blind": 331904,
+                "stronghold": 163132,
+                "end": 164635
+            },
+            "iron 3": {
+                "ow": 231835,
+                "nether": 70192,
+                "bastion": 371298,
+                "fortress": 170271,
+                "blind": 295153,
+                "stronghold": 157670,
+                "end": 172943
+            },
+            "gold 1": {
+                "ow": 207943,
+                "nether": 64306,
+                "bastion": 334724,
+                "fortress": 162111,
+                "blind": 254174,
+                "stronghold": 129113,
+                "end": 173732
+            },
+            "gold 2": {
+                "ow": 188339,
+                "nether": 57428,
+                "bastion": 300472,
+                "fortress": 150356,
+                "blind": 209566,
+                "stronghold": 107727,
+                "end": 148157
+            },
+            "gold 3": {
+                "ow": 171593,
+                "nether": 53174,
+                "bastion": 273038,
+                "fortress": 140401,
+                "blind": 177812,
+                "stronghold": 86037,
+                "end": 135100
+            },
+            "emerald 1": {
+                "ow": 156404,
+                "nether": 47179,
+                "bastion": 242236,
+                "fortress": 132524,
+                "blind": 152794,
+                "stronghold": 75359,
+                "end": 120242
+            },
+            "emerald 2": {
+                "ow": 145060,
+                "nether": 43379,
+                "bastion": 225785,
+                "fortress": 123532,
+                "blind": 136010,
+                "stronghold": 66786,
+                "end": 107862
+            },
+            "emerald 3": {
+                "ow": 137845,
+                "nether": 41278,
+                "bastion": 212543,
+                "fortress": 118118,
+                "blind": 124238,
+                "stronghold": 59873,
+                "end": 99700
+            },
+            "diamond 1": {
+                "ow": 131276,
+                "nether": 40211,
+                "bastion": 201718,
+                "fortress": 110876,
+                "blind": 114294,
+                "stronghold": 51610,
+                "end": 91869
+            },
+            "diamond 2": {
+                "ow": 124359,
+                "nether": 37525,
+                "bastion": 190207,
+                "fortress": 105170,
+                "blind": 108447,
+                "stronghold": 46137,
+                "end": 80579
+            },
+            "diamond 3": {
+                "ow": 119902,
+                "nether": 37854,
+                "bastion": 183164,
+                "fortress": 101898,
+                "blind": 102679,
+                "stronghold": 44788,
+                "end": 77812
+            },
+            "netherite 1": {
+                "ow": 114844,
+                "nether": 36508,
+                "bastion": 175621,
+                "fortress": 96962,
+                "blind": 93818,
+                "stronghold": 39652,
+                "end": 66410
+            }
+        },
+        "season 8": {
+            "coal 1": {
+                "ow": 282626,
+                "nether": 79269,
+                "bastion": 402043,
+                "fortress": 211838,
+                "blind": 429559,
+                "stronghold": 339227,
+                "end": 466393
+            },
+            "coal 2": {
+                "ow": 270851,
+                "nether": 78553,
+                "bastion": 390879,
+                "fortress": 192558,
+                "blind": 348887,
+                "stronghold": 156112,
+                "end": 156619
+            },
+            "coal 3": {
+                "ow": 268120,
+                "nether": 74664,
+                "bastion": 392311,
+                "fortress": 181447,
+                "blind": 351277,
+                "stronghold": 158836,
+                "end": 166542
+            },
+            "iron 1": {
+                "ow": 252392,
+                "nether": 76680,
+                "bastion": 399671,
+                "fortress": 184518,
+                "blind": 352163,
+                "stronghold": 168687,
+                "end": 226374
+            },
+            "iron 2": {
+                "ow": 238708,
+                "nether": 73766,
+                "bastion": 392082,
+                "fortress": 178001,
+                "blind": 315404,
+                "stronghold": 165152,
+                "end": 179025
+            },
+            "iron 3": {
+                "ow": 232923,
+                "nether": 75019,
+                "bastion": 383799,
+                "fortress": 175958,
+                "blind": 304884,
+                "stronghold": 152827,
+                "end": 176123
+            },
+            "gold 1": {
+                "ow": 212466,
+                "nether": 67683,
+                "bastion": 358196,
+                "fortress": 167682,
+                "blind": 272973,
+                "stronghold": 138196,
+                "end": 174588
+            },
+            "gold 2": {
+                "ow": 189773,
+                "nether": 61129,
+                "bastion": 314734,
+                "fortress": 153431,
+                "blind": 223675,
+                "stronghold": 114597,
+                "end": 161294
+            },
+            "gold 3": {
+                "ow": 170540,
+                "nether": 54548,
+                "bastion": 275960,
+                "fortress": 142733,
+                "blind": 184418,
+                "stronghold": 92087,
+                "end": 138419
+            },
+            "emerald 1": {
+                "ow": 153760,
+                "nether": 48560,
+                "bastion": 247832,
+                "fortress": 131456,
+                "blind": 157069,
+                "stronghold": 79830,
+                "end": 121298
+            },
+            "emerald 2": {
+                "ow": 142048,
+                "nether": 44727,
+                "bastion": 225753,
+                "fortress": 122824,
+                "blind": 136383,
+                "stronghold": 66952,
+                "end": 107213
+            },
+            "emerald 3": {
+                "ow": 134196,
+                "nether": 42537,
+                "bastion": 210580,
+                "fortress": 117576,
+                "blind": 124040,
+                "stronghold": 59615,
+                "end": 95444
+            },
+            "diamond 1": {
+                "ow": 127312,
+                "nether": 40746,
+                "bastion": 201098,
+                "fortress": 111449,
+                "blind": 114363,
+                "stronghold": 52259,
+                "end": 90547
+            },
+            "diamond 2": {
+                "ow": 122187,
+                "nether": 39507,
+                "bastion": 190006,
+                "fortress": 107297,
+                "blind": 107149,
+                "stronghold": 47121,
+                "end": 82606
+            },
+            "diamond 3": {
+                "ow": 117580,
+                "nether": 38343,
+                "bastion": 181137,
+                "fortress": 100865,
+                "blind": 102822,
+                "stronghold": 45076,
+                "end": 75413
+            },
+            "netherite 1": {
+                "ow": 111216,
+                "nether": 35661,
+                "bastion": 172780,
+                "fortress": 96357,
+                "blind": 96565,
+                "stronghold": 39926,
+                "end": 70105
+            }
+        }
+    },
+    "median_split": {
+        "season 1": {
+            "coal 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "netherite 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            }
+        },
+        "season 2": {
+            "coal 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "netherite 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            }
+        },
+        "season 3": {
+            "coal 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "netherite 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            }
+        },
+        "season 4": {
+            "coal 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "iron 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "gold 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "emerald 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 2": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "diamond 3": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "netherite 1": {
+                "ow": null,
+                "nether": null,
+                "bastion": null,
+                "fortress": null,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            }
+        },
+        "season 5": {
+            "coal 1": {
+                "ow": 302740,
+                "nether": 56632,
+                "bastion": 507312,
+                "fortress": 140323,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 2": {
+                "ow": 269192,
+                "nether": 68038,
+                "bastion": 416367,
+                "fortress": 174701,
+                "blind": 263852,
+                "stronghold": 167707,
+                "end": null
+            },
+            "coal 3": {
+                "ow": 274620,
+                "nether": 67841,
+                "bastion": 380674,
+                "fortress": 205627,
+                "blind": 304040,
+                "stronghold": 177960,
+                "end": 178480
+            },
+            "iron 1": {
+                "ow": 263001,
+                "nether": 69095,
+                "bastion": 385982,
+                "fortress": 172281,
+                "blind": 389626,
+                "stronghold": 117642,
+                "end": 161745
+            },
+            "iron 2": {
+                "ow": 246859,
+                "nether": 63487,
+                "bastion": 364973,
+                "fortress": 169123,
+                "blind": 362794,
+                "stronghold": 126548,
+                "end": 157983
+            },
+            "iron 3": {
+                "ow": 230022,
+                "nether": 59834,
+                "bastion": 338997,
+                "fortress": 164313,
+                "blind": 284298,
+                "stronghold": 107378,
+                "end": 140678
+            },
+            "gold 1": {
+                "ow": 207605,
+                "nether": 53672,
+                "bastion": 308540,
+                "fortress": 153614,
+                "blind": 247479,
+                "stronghold": 101104,
+                "end": 138646
+            },
+            "gold 2": {
+                "ow": 184862,
+                "nether": 49324,
+                "bastion": 277020,
+                "fortress": 145202,
+                "blind": 200352,
+                "stronghold": 82814,
+                "end": 133396
+            },
+            "gold 3": {
+                "ow": 167902,
+                "nether": 45893,
+                "bastion": 251945,
+                "fortress": 134863,
+                "blind": 175049,
+                "stronghold": 71379,
+                "end": 125364
+            },
+            "emerald 1": {
+                "ow": 151161,
+                "nether": 42343,
+                "bastion": 226800,
+                "fortress": 127913,
+                "blind": 160016,
+                "stronghold": 63133,
+                "end": 115362
+            },
+            "emerald 2": {
+                "ow": 138993,
+                "nether": 38148,
+                "bastion": 214676,
+                "fortress": 121284,
+                "blind": 140510,
+                "stronghold": 55123,
+                "end": 106223
+            },
+            "emerald 3": {
+                "ow": 131860,
+                "nether": 36890,
+                "bastion": 203006,
+                "fortress": 114939,
+                "blind": 130094,
+                "stronghold": 50468,
+                "end": 97315
+            },
+            "diamond 1": {
+                "ow": 124561,
+                "nether": 36511,
+                "bastion": 194040,
+                "fortress": 110548,
+                "blind": 121727,
+                "stronghold": 43776,
+                "end": 90876
+            },
+            "diamond 2": {
+                "ow": 118560,
+                "nether": 33825,
+                "bastion": 184351,
+                "fortress": 103780,
+                "blind": 111971,
+                "stronghold": 39921,
+                "end": 67706
+            },
+            "diamond 3": {
+                "ow": 115948,
+                "nether": 33746,
+                "bastion": 174248,
+                "fortress": 101397,
+                "blind": 103692,
+                "stronghold": 36060,
+                "end": 61502
+            },
+            "netherite 1": {
+                "ow": 113553,
+                "nether": 34425,
+                "bastion": 170781,
+                "fortress": 98348,
+                "blind": 97382,
+                "stronghold": 32242,
+                "end": 56406
+            }
+        },
+        "season 6": {
+            "coal 1": {
+                "ow": 271480,
+                "nether": 60426,
+                "bastion": 303288,
+                "fortress": 15978,
+                "blind": null,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 2": {
+                "ow": 269575,
+                "nether": 58814,
+                "bastion": 273993,
+                "fortress": 129938,
+                "blind": 326770,
+                "stronghold": null,
+                "end": null
+            },
+            "coal 3": {
+                "ow": 261692,
+                "nether": 57302,
+                "bastion": 373014,
+                "fortress": 183541,
+                "blind": 320082,
+                "stronghold": 98870,
+                "end": 108082
+            },
+            "iron 1": {
+                "ow": 253240,
+                "nether": 61939,
+                "bastion": 350480,
+                "fortress": 162911,
+                "blind": 291952,
+                "stronghold": 109263,
+                "end": 121068
+            },
+            "iron 2": {
+                "ow": 236367,
+                "nether": 58289,
+                "bastion": 344162,
+                "fortress": 162248,
+                "blind": 285479,
+                "stronghold": 111290,
+                "end": 170946
+            },
+            "iron 3": {
+                "ow": 221097,
+                "nether": 56316,
+                "bastion": 325152,
+                "fortress": 158313,
+                "blind": 261998,
+                "stronghold": 98622,
+                "end": 154780
+            },
+            "gold 1": {
+                "ow": 204638,
+                "nether": 52154,
+                "bastion": 305396,
+                "fortress": 150436,
+                "blind": 228989,
+                "stronghold": 88008,
+                "end": 139012
+            },
+            "gold 2": {
+                "ow": 185161,
+                "nether": 48201,
+                "bastion": 270619,
+                "fortress": 143342,
+                "blind": 191492,
+                "stronghold": 77018,
+                "end": 130454
+            },
+            "gold 3": {
+                "ow": 171405,
+                "nether": 45181,
+                "bastion": 248996,
+                "fortress": 133398,
+                "blind": 169267,
+                "stronghold": 67843,
+                "end": 122767
+            },
+            "emerald 1": {
+                "ow": 150712,
+                "nether": 40402,
+                "bastion": 223726,
+                "fortress": 125277,
+                "blind": 148982,
+                "stronghold": 59345,
+                "end": 113665
+            },
+            "emerald 2": {
+                "ow": 138503,
+                "nether": 37487,
+                "bastion": 208545,
+                "fortress": 119365,
+                "blind": 131412,
+                "stronghold": 50847,
+                "end": 100363
+            },
+            "emerald 3": {
+                "ow": 129366,
+                "nether": 36106,
+                "bastion": 198377,
+                "fortress": 113173,
+                "blind": 122184,
+                "stronghold": 45278,
+                "end": 90387
+            },
+            "diamond 1": {
+                "ow": 124776,
+                "nether": 34328,
+                "bastion": 187048,
+                "fortress": 108850,
+                "blind": 110702,
+                "stronghold": 41018,
+                "end": 80268
+            },
+            "diamond 2": {
+                "ow": 121045,
+                "nether": 32811,
+                "bastion": 180852,
+                "fortress": 102896,
+                "blind": 104259,
+                "stronghold": 35175,
+                "end": 61714
+            },
+            "diamond 3": {
+                "ow": 116043,
+                "nether": 32825,
+                "bastion": 170481,
+                "fortress": 101291,
+                "blind": 97546,
+                "stronghold": 32643,
+                "end": 57522
+            },
+            "netherite 1": {
+                "ow": 114454,
+                "nether": 32123,
+                "bastion": 166009,
+                "fortress": 96595,
+                "blind": 91417,
+                "stronghold": 29738,
+                "end": 56157
+            }
+        },
+        "season 7": {
+            "coal 1": {
+                "ow": 254779,
+                "nether": 49140,
+                "bastion": 311625,
+                "fortress": 156897,
+                "blind": 396416,
+                "stronghold": 97079,
+                "end": 135347
+            },
+            "coal 2": {
+                "ow": 251580,
+                "nether": 52478,
+                "bastion": 302115,
+                "fortress": 190760,
+                "blind": 244801,
+                "stronghold": 45736,
+                "end": 149316
+            },
+            "coal 3": {
+                "ow": 248862,
+                "nether": 58634,
+                "bastion": 371407,
+                "fortress": 153121,
+                "blind": 310626,
+                "stronghold": 114956,
+                "end": 170050
+            },
+            "iron 1": {
+                "ow": 240289,
+                "nether": 58578,
+                "bastion": 346939,
+                "fortress": 164954,
+                "blind": 289895,
+                "stronghold": 126897,
+                "end": 126067
+            },
+            "iron 2": {
+                "ow": 226914,
+                "nether": 55443,
+                "bastion": 348517,
+                "fortress": 156549,
+                "blind": 288036,
+                "stronghold": 114202,
+                "end": 147400
+            },
+            "iron 3": {
+                "ow": 216035,
+                "nether": 54019,
+                "bastion": 323250,
+                "fortress": 152054,
+                "blind": 252848,
+                "stronghold": 99315,
+                "end": 137350
+            },
+            "gold 1": {
+                "ow": 197122,
+                "nether": 50197,
+                "bastion": 294812,
+                "fortress": 143747,
+                "blind": 213635,
+                "stronghold": 87833,
+                "end": 141768
+            },
+            "gold 2": {
+                "ow": 181521,
+                "nether": 47005,
+                "bastion": 266253,
+                "fortress": 138855,
+                "blind": 180385,
+                "stronghold": 73966,
+                "end": 125409
+            },
+            "gold 3": {
+                "ow": 167161,
+                "nether": 44041,
+                "bastion": 242106,
+                "fortress": 130733,
+                "blind": 154453,
+                "stronghold": 61424,
+                "end": 117951
+            },
+            "emerald 1": {
+                "ow": 153309,
+                "nether": 40045,
+                "bastion": 217447,
+                "fortress": 123479,
+                "blind": 134122,
+                "stronghold": 54201,
+                "end": 105514
+            },
+            "emerald 2": {
+                "ow": 142524,
+                "nether": 37688,
+                "bastion": 202104,
+                "fortress": 117386,
+                "blind": 121159,
+                "stronghold": 46716,
+                "end": 92449
+            },
+            "emerald 3": {
+                "ow": 136176,
+                "nether": 35694,
+                "bastion": 192848,
+                "fortress": 111786,
+                "blind": 111607,
+                "stronghold": 42658,
+                "end": 76460
+            },
+            "diamond 1": {
+                "ow": 129879,
+                "nether": 35811,
+                "bastion": 182999,
+                "fortress": 106775,
+                "blind": 103933,
+                "stronghold": 37346,
+                "end": 60894
+            },
+            "diamond 2": {
+                "ow": 123101,
+                "nether": 33916,
+                "bastion": 173996,
+                "fortress": 100677,
+                "blind": 100135,
+                "stronghold": 32892,
+                "end": 56500
+            },
+            "diamond 3": {
+                "ow": 118816,
+                "nether": 33527,
+                "bastion": 167305,
+                "fortress": 96219,
+                "blind": 94916,
+                "stronghold": 32190,
+                "end": 55223
+            },
+            "netherite 1": {
+                "ow": 114922,
+                "nether": 33146,
+                "bastion": 162895,
+                "fortress": 92838,
+                "blind": 85561,
+                "stronghold": 29159,
+                "end": 53463
+            }
+        },
+        "season 8": {
+            "coal 1": {
+                "ow": 265984,
+                "nether": 58859,
+                "bastion": 349988,
+                "fortress": 159987,
+                "blind": 407216,
+                "stronghold": 339227,
+                "end": 466393
+            },
+            "coal 2": {
+                "ow": 251324,
+                "nether": 61728,
+                "bastion": 355987,
+                "fortress": 169390,
+                "blind": 293624,
+                "stronghold": 104865,
+                "end": 168889
+            },
+            "coal 3": {
+                "ow": 251102,
+                "nether": 57105,
+                "bastion": 348008,
+                "fortress": 166778,
+                "blind": 300078,
+                "stronghold": 103807,
+                "end": 175280
+            },
+            "iron 1": {
+                "ow": 238236,
+                "nether": 58681,
+                "bastion": 351794,
+                "fortress": 162368,
+                "blind": 302709,
+                "stronghold": 110609,
+                "end": 168675
+            },
+            "iron 2": {
+                "ow": 225800,
+                "nether": 57475,
+                "bastion": 348302,
+                "fortress": 159767,
+                "blind": 268650,
+                "stronghold": 109705,
+                "end": 151347
+            },
+            "iron 3": {
+                "ow": 218880,
+                "nether": 57179,
+                "bastion": 336702,
+                "fortress": 157109,
+                "blind": 259017,
+                "stronghold": 102843,
+                "end": 154331
+            },
+            "gold 1": {
+                "ow": 202237,
+                "nether": 52766,
+                "bastion": 313349,
+                "fortress": 149028,
+                "blind": 230327,
+                "stronghold": 94077,
+                "end": 143317
+            },
+            "gold 2": {
+                "ow": 183148,
+                "nether": 48941,
+                "bastion": 275994,
+                "fortress": 140102,
+                "blind": 190931,
+                "stronghold": 80807,
+                "end": 130675
+            },
+            "gold 3": {
+                "ow": 166760,
+                "nether": 45042,
+                "bastion": 244301,
+                "fortress": 131269,
+                "blind": 159661,
+                "stronghold": 67269,
+                "end": 119050
+            },
+            "emerald 1": {
+                "ow": 150790,
+                "nether": 40901,
+                "bastion": 220999,
+                "fortress": 122375,
+                "blind": 137686,
+                "stronghold": 57018,
+                "end": 104859
+            },
+            "emerald 2": {
+                "ow": 140063,
+                "nether": 38201,
+                "bastion": 202000,
+                "fortress": 115594,
+                "blind": 121836,
+                "stronghold": 48034,
+                "end": 90904
+            },
+            "emerald 3": {
+                "ow": 132606,
+                "nether": 36748,
+                "bastion": 190008,
+                "fortress": 111009,
+                "blind": 112854,
+                "stronghold": 41684,
+                "end": 65943
+            },
+            "diamond 1": {
+                "ow": 126630,
+                "nether": 34524,
+                "bastion": 182001,
+                "fortress": 105920,
+                "blind": 103792,
+                "stronghold": 37012,
+                "end": 59723
+            },
+            "diamond 2": {
+                "ow": 121168,
+                "nether": 34449,
+                "bastion": 172835,
+                "fortress": 102096,
+                "blind": 98272,
+                "stronghold": 34084,
+                "end": 56064
+            },
+            "diamond 3": {
+                "ow": 117585,
+                "nether": 32851,
+                "bastion": 165718,
+                "fortress": 96164,
+                "blind": 93092,
+                "stronghold": 31939,
+                "end": 54256
+            },
+            "netherite 1": {
+                "ow": 111889,
+                "nether": 32656,
+                "bastion": 159020,
+                "fortress": 92166,
+                "blind": 88873,
+                "stronghold": 29199,
+                "end": 52919
+            }
         }
     }
 }
