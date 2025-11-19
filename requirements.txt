@@ -39,7 +39,7 @@ Pygments==2.19.1
 python-dateutil==2.9.0.post0
 python-dotenv==1.1.0
 pytz==2025.2
-rankedutils @ file:///home/nadoms/pers_repos/ranked-utils
+rankedutils @ git+https://github.com/Nadoms/ranked-utils.git
 requests==2.32.3
 rich==14.0.0
 scipy==1.15.2
