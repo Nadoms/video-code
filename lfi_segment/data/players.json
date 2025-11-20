@@ -1,0 +1,90 @@
+{
+    "v_strid": {
+        "uuid": "388533d5a2ad4b349a31db4738670a4b",
+        "games": 2444,
+        "completions": 1173,
+        "win_loss": 1.2644859813084113,
+        "sb": 390818,
+        "playtime": 1411095220,
+        "peak_elo": 2450,
+        "elo": 2382,
+        "avg": 611445
+    },
+    "Kxpow": {
+        "uuid": "7447dd83b8bc4b7fb97d3ec316f529dc",
+        "games": 101,
+        "completions": 45,
+        "win_loss": 1.2790697674418605,
+        "sb": 481064,
+        "playtime": 57763358,
+        "peak_elo": 1832,
+        "elo": 1675,
+        "avg": 640469
+    },
+    "NOHACKSJUSTTIGER": {
+        "uuid": "0b6c44a481e14c7e88ac836c92499ff4",
+        "games": 640,
+        "completions": 293,
+        "win_loss": 1.2078853046594982,
+        "sb": 415471,
+        "playtime": 368133768,
+        "peak_elo": 2209,
+        "elo": 2209,
+        "avg": 624919
+    },
+    "BeefSalad": {
+        "uuid": "3b01d4b4fef14f178b75f05c04dd34ef",
+        "games": 1691,
+        "completions": 822,
+        "win_loss": 1.3333333333333333,
+        "sb": 366383,
+        "playtime": 930828331,
+        "peak_elo": 2413,
+        "elo": 2344,
+        "avg": 577701
+    },
+    "silverrruns": {
+        "uuid": "17e787d1d6374f818b294f2319db370d",
+        "games": 303,
+        "completions": 148,
+        "win_loss": 1.4786324786324787,
+        "sb": 432317,
+        "playtime": 169126126,
+        "peak_elo": 2384,
+        "elo": 2215,
+        "avg": 577526
+    },
+    "bing_pigs": {
+        "uuid": "92b63a39b36a445fa94c77ae212dcea3",
+        "games": 909,
+        "completions": 480,
+        "win_loss": 1.7881619937694704,
+        "sb": 401786,
+        "playtime": 515421733,
+        "peak_elo": 2506,
+        "elo": 2315,
+        "avg": 585760
+    },
+    "hackingnoises": {
+        "uuid": "7c92678742eb4e819f3122017697ae3d",
+        "games": 141,
+        "completions": 86,
+        "win_loss": 2.159090909090909,
+        "sb": 428120,
+        "playtime": 80048260,
+        "peak_elo": 2163,
+        "elo": 1998,
+        "avg": 581853
+    },
+    "7rowl": {
+        "uuid": "70eb9286e3e24153a8b37c8f884f1292",
+        "games": 549,
+        "completions": 276,
+        "win_loss": 1.4026548672566372,
+        "sb": 400502,
+        "playtime": 303152005,
+        "peak_elo": 2314,
+        "elo": 2216,
+        "avg": 595816
+    }
+}

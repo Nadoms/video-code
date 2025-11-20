@@ -48,17 +48,18 @@ def save_head(nick, uuid):
     image.save(ASSETS_DIR / f"{nick}.png")
 
 
-async def get_history(uuid):
+def get_history(uuid):
     elo_history = []
     completion_history = []
-    matches = await games.get_matches(uuid, 9, False)
+    matches = games.get_matches(uuid, 9, False)
     for match in matches:
         elo = insight.get_match_elo(uuid, match)
         completion = insight.get_match_completion(uuid, match)
-        elo_history.append(elo)
-        completion_history.append(completion)
+        elo_history.append((elo, match["date"]))
+        if completion is not None:
+            completion_history.append(completion)
 
-    return elo_history, completion_history
+    return list(reversed(elo_history)), list(reversed(completion_history))
 
 
 async def main():
@@ -67,7 +68,7 @@ async def main():
     completion_histories = {}
     for i, nick in enumerate(PLAYERS):
         player_data[nick] = get_player_data(nick)
-        elo_histories[nick], completion_histories[nick] = await get_history(player_data[nick]["uuid"])
+        elo_histories[nick], completion_histories[nick] = get_history(player_data[nick]["uuid"])
         save_head(nick, player_data[nick]["uuid"])
 
     with open(DATA_DIR / "players.json", "w") as f:
