@@ -1,0 +1,58 @@
+{
+    "v_strid": {
+        "completion_win": 1173,
+        "completion_loss": 936,
+        "forfeit_win": 180,
+        "forfeit_loss": 154,
+        "draw": 0
+    },
+    "Kxpow": {
+        "completion_win": 45,
+        "completion_loss": 24,
+        "forfeit_win": 10,
+        "forfeit_loss": 22,
+        "draw": 0
+    },
+    "NOHACKSJUSTTIGER": {
+        "completion_win": 293,
+        "completion_loss": 212,
+        "forfeit_win": 44,
+        "forfeit_loss": 91,
+        "draw": 0
+    },
+    "BeefSalad": {
+        "completion_win": 825,
+        "completion_loss": 572,
+        "forfeit_win": 115,
+        "forfeit_loss": 189,
+        "draw": 0
+    },
+    "silverrruns": {
+        "completion_win": 148,
+        "completion_loss": 117,
+        "forfeit_win": 25,
+        "forfeit_loss": 13,
+        "draw": 0
+    },
+    "bing_pigs": {
+        "completion_win": 480,
+        "completion_loss": 320,
+        "forfeit_win": 94,
+        "forfeit_loss": 15,
+        "draw": 0
+    },
+    "hackingnoises": {
+        "completion_win": 86,
+        "completion_loss": 43,
+        "forfeit_win": 9,
+        "forfeit_loss": 3,
+        "draw": 0
+    },
+    "7rowl": {
+        "completion_win": 276,
+        "completion_loss": 181,
+        "forfeit_win": 41,
+        "forfeit_loss": 51,
+        "draw": 0
+    }
+}

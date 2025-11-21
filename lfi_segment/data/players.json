@@ -34,14 +34,14 @@
     },
     "BeefSalad": {
         "uuid": "3b01d4b4fef14f178b75f05c04dd34ef",
-        "games": 1691,
-        "completions": 822,
+        "games": 1699,
+        "completions": 825,
         "win_loss": 1.3333333333333333,
         "sb": 366383,
-        "playtime": 930828331,
+        "playtime": 934651968,
         "peak_elo": 2413,
-        "elo": 2344,
-        "avg": 577701
+        "elo": 2319,
+        "avg": 577595
     },
     "silverrruns": {
         "uuid": "17e787d1d6374f818b294f2319db370d",
@@ -62,7 +62,7 @@
         "sb": 401786,
         "playtime": 515421733,
         "peak_elo": 2506,
-        "elo": 2315,
+        "elo": 2310,
         "avg": 585760
     },
     "hackingnoises": {
@@ -73,7 +73,7 @@
         "sb": 428120,
         "playtime": 80048260,
         "peak_elo": 2163,
-        "elo": 1998,
+        "elo": 1993,
         "avg": 581853
     },
     "7rowl": {
@@ -84,7 +84,7 @@
         "sb": 400502,
         "playtime": 303152005,
         "peak_elo": 2314,
-        "elo": 2216,
+        "elo": 2211,
         "avg": 595816
     }
 }

@@ -52,23 +52,40 @@ def get_history(uuid):
     elo_history = []
     completion_history = []
     matches = games.get_matches(uuid, 9, False)
+    game_results = {
+        "completion_win": 0,
+        "completion_loss": 0,
+        "forfeit_win": 0,
+        "forfeit_loss": 0,
+        "draw": 0,
+    }
     for match in matches:
         elo = insight.get_match_elo(uuid, match)
         completion = insight.get_match_completion(uuid, match)
         elo_history.append((elo, match["date"]))
         if completion is not None:
             completion_history.append(completion)
+            game_results["completion_win"] += 1
+        elif match["forfeited"] is True and match["result"]["uuid"] is None:
+            game_results["draw"] += 1
+        elif match["forfeited"] is True and match["result"]["uuid"] == uuid:
+            game_results["forfeit_win"] += 1
+        elif match["forfeited"] is False and match["result"]["uuid"] != uuid:
+            game_results["completion_loss"] += 1
+        elif match["forfeited"] is True and match["result"]["uuid"] != uuid:
+            game_results["forfeit_loss"] += 1
 
-    return list(reversed(elo_history)), list(reversed(completion_history))
+    return list(reversed(elo_history)), list(reversed(completion_history)), game_results
 
 
 async def main():
     player_data = {}
     elo_histories = {}
     completion_histories = {}
+    game_results = {}
     for i, nick in enumerate(PLAYERS):
         player_data[nick] = get_player_data(nick)
-        elo_histories[nick], completion_histories[nick] = get_history(player_data[nick]["uuid"])
+        elo_histories[nick], completion_histories[nick], game_results[nick] = get_history(player_data[nick]["uuid"])
         save_head(nick, player_data[nick]["uuid"])
 
     with open(DATA_DIR / "players.json", "w") as f:
@@ -77,6 +94,8 @@ async def main():
         json.dump(elo_histories, f, indent=4)
     with open(DATA_DIR / "comp_history.json", "w") as f:
         json.dump(completion_histories, f, indent=4)
+    with open(DATA_DIR / "game_results.json", "w") as f:
+        json.dump(game_results, f, indent=4)
 
 if __name__ == '__main__':
     asyncio.run(main())
