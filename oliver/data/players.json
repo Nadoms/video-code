@@ -1,0 +1,1214 @@
+{
+    "Pinne": {
+        "uuid": "aa5a894a4d5340f49683fdfd1ea9c523",
+        "games": 122,
+        "completions": 68,
+        "winrate": 0.705,
+        "sb": 403708,
+        "sb_legible": "6:43",
+        "playtime": 64938658,
+        "playtime_legible": "18 hours",
+        "peak_elo": 2451,
+        "elo": 2421,
+        "avg": 552873,
+        "avg_legible": "9:12",
+        "seed_stats": {
+            "ow": {
+                "BURIED_TREASURE": {
+                    "wins": 21,
+                    "losses": 7,
+                    "winrate": 0.75,
+                    "total_completion_time": 10317352,
+                    "completions": 19,
+                    "avg": 543019,
+                    "avg_legible": "9:03"
+                },
+                "DESERT_TEMPLE": {
+                    "wins": 17,
+                    "losses": 9,
+                    "winrate": 0.654,
+                    "total_completion_time": 7043704,
+                    "completions": 13,
+                    "avg": 541823,
+                    "avg_legible": "9:01"
+                },
+                "RUINED_PORTAL": {
+                    "wins": 8,
+                    "losses": 6,
+                    "winrate": 0.571,
+                    "total_completion_time": 4360352,
+                    "completions": 8,
+                    "avg": 545044,
+                    "avg_legible": "9:05"
+                },
+                "SHIPWRECK": {
+                    "wins": 17,
+                    "losses": 4,
+                    "winrate": 0.81,
+                    "total_completion_time": 7965395,
+                    "completions": 14,
+                    "avg": 568957,
+                    "avg_legible": "9:28"
+                },
+                "VILLAGE": {
+                    "wins": 16,
+                    "losses": 7,
+                    "winrate": 0.696,
+                    "total_completion_time": 7908577,
+                    "completions": 14,
+                    "avg": 564898,
+                    "avg_legible": "9:24"
+                }
+            },
+            "bastion": {
+                "BRIDGE": {
+                    "wins": 20,
+                    "losses": 8,
+                    "winrate": 0.714,
+                    "total_completion_time": 8132972,
+                    "completions": 15,
+                    "avg": 542198,
+                    "avg_legible": "9:02"
+                },
+                "HOUSING": {
+                    "wins": 16,
+                    "losses": 9,
+                    "winrate": 0.64,
+                    "total_completion_time": 8178186,
+                    "completions": 15,
+                    "avg": 545212,
+                    "avg_legible": "9:05"
+                },
+                "STABLES": {
+                    "wins": 17,
+                    "losses": 7,
+                    "winrate": 0.708,
+                    "total_completion_time": 9094768,
+                    "completions": 16,
+                    "avg": 568423,
+                    "avg_legible": "9:28"
+                },
+                "TREASURE": {
+                    "wins": 26,
+                    "losses": 9,
+                    "winrate": 0.743,
+                    "total_completion_time": 12189454,
+                    "completions": 22,
+                    "avg": 554066,
+                    "avg_legible": "9:14"
+                }
+            }
+        }
+    },
+    "doogile": {
+        "uuid": "3c8757790ab0400b8b9e3936e0dd535b",
+        "games": 627,
+        "completions": 358,
+        "winrate": 0.641,
+        "sb": 392365,
+        "sb_legible": "6:32",
+        "playtime": 339220451,
+        "playtime_legible": "94 hours",
+        "peak_elo": 2611,
+        "elo": 2502,
+        "avg": 543077,
+        "avg_legible": "9:03",
+        "seed_stats": {
+            "ow": {
+                "BURIED_TREASURE": {
+                    "wins": 92,
+                    "losses": 44,
+                    "winrate": 0.676,
+                    "total_completion_time": 43546735,
+                    "completions": 82,
+                    "avg": 531058,
+                    "avg_legible": "8:51"
+                },
+                "DESERT_TEMPLE": {
+                    "wins": 81,
+                    "losses": 46,
+                    "winrate": 0.638,
+                    "total_completion_time": 40551389,
+                    "completions": 74,
+                    "avg": 547992,
+                    "avg_legible": "9:07"
+                },
+                "RUINED_PORTAL": {
+                    "wins": 65,
+                    "losses": 36,
+                    "winrate": 0.644,
+                    "total_completion_time": 33034301,
+                    "completions": 62,
+                    "avg": 532811,
+                    "avg_legible": "8:52"
+                },
+                "SHIPWRECK": {
+                    "wins": 65,
+                    "losses": 40,
+                    "winrate": 0.619,
+                    "total_completion_time": 32196334,
+                    "completions": 59,
+                    "avg": 545701,
+                    "avg_legible": "9:05"
+                },
+                "VILLAGE": {
+                    "wins": 86,
+                    "losses": 51,
+                    "winrate": 0.628,
+                    "total_completion_time": 45092822,
+                    "completions": 81,
+                    "avg": 556702,
+                    "avg_legible": "9:16"
+                }
+            },
+            "bastion": {
+                "BRIDGE": {
+                    "wins": 99,
+                    "losses": 56,
+                    "winrate": 0.639,
+                    "total_completion_time": 49479574,
+                    "completions": 92,
+                    "avg": 537821,
+                    "avg_legible": "8:57"
+                },
+                "HOUSING": {
+                    "wins": 99,
+                    "losses": 62,
+                    "winrate": 0.615,
+                    "total_completion_time": 48934137,
+                    "completions": 91,
+                    "avg": 537738,
+                    "avg_legible": "8:57"
+                },
+                "STABLES": {
+                    "wins": 91,
+                    "losses": 44,
+                    "winrate": 0.674,
+                    "total_completion_time": 44733911,
+                    "completions": 80,
+                    "avg": 559174,
+                    "avg_legible": "9:19"
+                },
+                "TREASURE": {
+                    "wins": 100,
+                    "losses": 55,
+                    "winrate": 0.645,
+                    "total_completion_time": 51273959,
+                    "completions": 95,
+                    "avg": 539726,
+                    "avg_legible": "8:59"
+                }
+            }
+        }
+    },
+    "Infume": {
+        "uuid": "a54e3bc4c6354b07a236b81efbcfe791",
+        "games": 988,
+        "completions": 626,
+        "winrate": 0.714,
+        "sb": 381259,
+        "sb_legible": "6:21",
+        "playtime": 530380483,
+        "playtime_legible": "147 hours",
+        "peak_elo": 2808,
+        "elo": 2773,
+        "avg": 544786,
+        "avg_legible": "9:04",
+        "seed_stats": {
+            "ow": {
+                "BURIED_TREASURE": {
+                    "wins": 158,
+                    "losses": 52,
+                    "winrate": 0.752,
+                    "total_completion_time": 75530618,
+                    "completions": 141,
+                    "avg": 535678,
+                    "avg_legible": "8:55"
+                },
+                "DESERT_TEMPLE": {
+                    "wins": 141,
+                    "losses": 66,
+                    "winrate": 0.681,
+                    "total_completion_time": 68880244,
+                    "completions": 127,
+                    "avg": 542364,
+                    "avg_legible": "9:02"
+                },
+                "RUINED_PORTAL": {
+                    "wins": 135,
+                    "losses": 54,
+                    "winrate": 0.714,
+                    "total_completion_time": 64929074,
+                    "completions": 124,
+                    "avg": 523622,
+                    "avg_legible": "8:43"
+                },
+                "SHIPWRECK": {
+                    "wins": 146,
+                    "losses": 59,
+                    "winrate": 0.712,
+                    "total_completion_time": 71860298,
+                    "completions": 127,
+                    "avg": 565829,
+                    "avg_legible": "9:25"
+                },
+                "VILLAGE": {
+                    "wins": 118,
+                    "losses": 48,
+                    "winrate": 0.711,
+                    "total_completion_time": 59835627,
+                    "completions": 107,
+                    "avg": 559211,
+                    "avg_legible": "9:19"
+                }
+            },
+            "bastion": {
+                "BRIDGE": {
+                    "wins": 188,
+                    "losses": 63,
+                    "winrate": 0.749,
+                    "total_completion_time": 90530366,
+                    "completions": 169,
+                    "avg": 535683,
+                    "avg_legible": "8:55"
+                },
+                "HOUSING": {
+                    "wins": 177,
+                    "losses": 75,
+                    "winrate": 0.702,
+                    "total_completion_time": 90072411,
+                    "completions": 167,
+                    "avg": 539356,
+                    "avg_legible": "8:59"
+                },
+                "STABLES": {
+                    "wins": 159,
+                    "losses": 73,
+                    "winrate": 0.685,
+                    "total_completion_time": 76275686,
+                    "completions": 137,
+                    "avg": 556757,
+                    "avg_legible": "9:16"
+                },
+                "TREASURE": {
+                    "wins": 174,
+                    "losses": 68,
+                    "winrate": 0.719,
+                    "total_completion_time": 84157398,
+                    "completions": 153,
+                    "avg": 550048,
+                    "avg_legible": "9:10"
+                }
+            }
+        }
+    },
+    "bing_pigs": {
+        "uuid": "92b63a39b36a445fa94c77ae212dcea3",
+        "games": 1201,
+        "completions": 648,
+        "winrate": 0.613,
+        "sb": 397915,
+        "sb_legible": "6:37",
+        "playtime": 672530486,
+        "playtime_legible": "187 hours",
+        "peak_elo": 2545,
+        "elo": 2481,
+        "avg": 579591,
+        "avg_legible": "9:39",
+        "seed_stats": {
+            "ow": {
+                "BURIED_TREASURE": {
+                    "wins": 168,
+                    "losses": 96,
+                    "winrate": 0.636,
+                    "total_completion_time": 82402719,
+                    "completions": 145,
+                    "avg": 568295,
+                    "avg_legible": "9:28"
+                },
+                "DESERT_TEMPLE": {
+                    "wins": 137,
+                    "losses": 104,
+                    "winrate": 0.568,
+                    "total_completion_time": 70724128,
+                    "completions": 120,
+                    "avg": 589368,
+                    "avg_legible": "9:49"
+                },
+                "RUINED_PORTAL": {
+                    "wins": 147,
+                    "losses": 83,
+                    "winrate": 0.639,
+                    "total_completion_time": 75277577,
+                    "completions": 136,
+                    "avg": 553512,
+                    "avg_legible": "9:13"
+                },
+                "SHIPWRECK": {
+                    "wins": 131,
+                    "losses": 89,
+                    "winrate": 0.595,
+                    "total_completion_time": 68433635,
+                    "completions": 116,
+                    "avg": 589945,
+                    "avg_legible": "9:49"
+                },
+                "VILLAGE": {
+                    "wins": 150,
+                    "losses": 87,
+                    "winrate": 0.633,
+                    "total_completion_time": 78736767,
+                    "completions": 131,
+                    "avg": 601044,
+                    "avg_legible": "10:01"
+                }
+            },
+            "bastion": {
+                "BRIDGE": {
+                    "wins": 201,
+                    "losses": 128,
+                    "winrate": 0.611,
+                    "total_completion_time": 98517313,
+                    "completions": 171,
+                    "avg": 576125,
+                    "avg_legible": "9:36"
+                },
+                "HOUSING": {
+                    "wins": 162,
+                    "losses": 117,
+                    "winrate": 0.581,
+                    "total_completion_time": 81597781,
+                    "completions": 144,
+                    "avg": 566651,
+                    "avg_legible": "9:26"
+                },
+                "STABLES": {
+                    "wins": 196,
+                    "losses": 119,
+                    "winrate": 0.622,
+                    "total_completion_time": 103227611,
+                    "completions": 177,
+                    "avg": 583207,
+                    "avg_legible": "9:43"
+                },
+                "TREASURE": {
+                    "wins": 174,
+                    "losses": 95,
+                    "winrate": 0.647,
+                    "total_completion_time": 92232121,
+                    "completions": 156,
+                    "avg": 591232,
+                    "avg_legible": "9:51"
+                }
+            }
+        }
+    },
+    "hackingnoises": {
+        "uuid": "7c92678742eb4e819f3122017697ae3d",
+        "games": 398,
+        "completions": 228,
+        "winrate": 0.676,
+        "sb": 399003,
+        "sb_legible": "6:39",
+        "playtime": 214003711,
+        "playtime_legible": "59 hours",
+        "peak_elo": 2590,
+        "elo": 2556,
+        "avg": 553318,
+        "avg_legible": "9:13",
+        "seed_stats": {
+            "ow": {
+                "BURIED_TREASURE": {
+                    "wins": 54,
+                    "losses": 26,
+                    "winrate": 0.675,
+                    "total_completion_time": 25199271,
+                    "completions": 46,
+                    "avg": 547810,
+                    "avg_legible": "9:07"
+                },
+                "DESERT_TEMPLE": {
+                    "wins": 54,
+                    "losses": 29,
+                    "winrate": 0.651,
+                    "total_completion_time": 26538915,
+                    "completions": 49,
+                    "avg": 541611,
+                    "avg_legible": "9:01"
+                },
+                "RUINED_PORTAL": {
+                    "wins": 38,
+                    "losses": 23,
+                    "winrate": 0.623,
+                    "total_completion_time": 18574143,
+                    "completions": 36,
+                    "avg": 515948,
+                    "avg_legible": "8:35"
+                },
+                "SHIPWRECK": {
+                    "wins": 47,
+                    "losses": 24,
+                    "winrate": 0.662,
+                    "total_completion_time": 20745956,
+                    "completions": 37,
+                    "avg": 560702,
+                    "avg_legible": "9:20"
+                },
+                "VILLAGE": {
+                    "wins": 74,
+                    "losses": 24,
+                    "winrate": 0.755,
+                    "total_completion_time": 35098274,
+                    "completions": 60,
+                    "avg": 584971,
+                    "avg_legible": "9:44"
+                }
+            },
+            "bastion": {
+                "BRIDGE": {
+                    "wins": 66,
+                    "losses": 31,
+                    "winrate": 0.68,
+                    "total_completion_time": 33150732,
+                    "completions": 60,
+                    "avg": 552512,
+                    "avg_legible": "9:12"
+                },
+                "HOUSING": {
+                    "wins": 76,
+                    "losses": 25,
+                    "winrate": 0.752,
+                    "total_completion_time": 34988396,
+                    "completions": 63,
+                    "avg": 555371,
+                    "avg_legible": "9:15"
+                },
+                "STABLES": {
+                    "wins": 57,
+                    "losses": 32,
+                    "winrate": 0.64,
+                    "total_completion_time": 24489243,
+                    "completions": 44,
+                    "avg": 556574,
+                    "avg_legible": "9:16"
+                },
+                "TREASURE": {
+                    "wins": 68,
+                    "losses": 38,
+                    "winrate": 0.642,
+                    "total_completion_time": 33528188,
+                    "completions": 61,
+                    "avg": 549642,
+                    "avg_legible": "9:09"
+                }
+            }
+        }
+    },
+    "Feinberg": {
+        "uuid": "9a8e24df4c8549d696a6951da84fa5c4",
+        "games": 945,
+        "completions": 514,
+        "winrate": 0.616,
+        "sb": 408296,
+        "sb_legible": "6:48",
+        "playtime": 527241616,
+        "playtime_legible": "146 hours",
+        "peak_elo": 2609,
+        "elo": 2584,
+        "avg": 578648,
+        "avg_legible": "9:38",
+        "seed_stats": {
+            "ow": {
+                "BURIED_TREASURE": {
+                    "wins": 98,
+                    "losses": 74,
+                    "winrate": 0.57,
+                    "total_completion_time": 51481108,
+                    "completions": 89,
+                    "avg": 578439,
+                    "avg_legible": "9:38"
+                },
+                "DESERT_TEMPLE": {
+                    "wins": 136,
+                    "losses": 63,
+                    "winrate": 0.683,
+                    "total_completion_time": 67830875,
+                    "completions": 119,
+                    "avg": 570007,
+                    "avg_legible": "9:30"
+                },
+                "RUINED_PORTAL": {
+                    "wins": 101,
+                    "losses": 79,
+                    "winrate": 0.561,
+                    "total_completion_time": 52167358,
+                    "completions": 94,
+                    "avg": 554972,
+                    "avg_legible": "9:14"
+                },
+                "SHIPWRECK": {
+                    "wins": 113,
+                    "losses": 73,
+                    "winrate": 0.608,
+                    "total_completion_time": 55838798,
+                    "completions": 95,
+                    "avg": 587777,
+                    "avg_legible": "9:47"
+                },
+                "VILLAGE": {
+                    "wins": 129,
+                    "losses": 72,
+                    "winrate": 0.642,
+                    "total_completion_time": 70106992,
+                    "completions": 117,
+                    "avg": 599205,
+                    "avg_legible": "9:59"
+                }
+            },
+            "bastion": {
+                "BRIDGE": {
+                    "wins": 149,
+                    "losses": 100,
+                    "winrate": 0.598,
+                    "total_completion_time": 75537451,
+                    "completions": 132,
+                    "avg": 572253,
+                    "avg_legible": "9:32"
+                },
+                "HOUSING": {
+                    "wins": 151,
+                    "losses": 88,
+                    "winrate": 0.632,
+                    "total_completion_time": 74433989,
+                    "completions": 132,
+                    "avg": 563894,
+                    "avg_legible": "9:23"
+                },
+                "STABLES": {
+                    "wins": 132,
+                    "losses": 77,
+                    "winrate": 0.632,
+                    "total_completion_time": 72289850,
+                    "completions": 122,
+                    "avg": 592540,
+                    "avg_legible": "9:52"
+                },
+                "TREASURE": {
+                    "wins": 145,
+                    "losses": 96,
+                    "winrate": 0.602,
+                    "total_completion_time": 75163841,
+                    "completions": 128,
+                    "avg": 587218,
+                    "avg_legible": "9:47"
+                }
+            }
+        }
+    },
+    "Aquacorde": {
+        "uuid": "253b53d832ab4bafb5ee0308d5164ccf",
+        "games": 966,
+        "completions": 471,
+        "winrate": 0.557,
+        "sb": 409217,
+        "sb_legible": "6:49",
+        "playtime": 530790553,
+        "playtime_legible": "147 hours",
+        "peak_elo": 2527,
+        "elo": 2459,
+        "avg": 562003,
+        "avg_legible": "9:22",
+        "seed_stats": {
+            "ow": {
+                "BURIED_TREASURE": {
+                    "wins": 131,
+                    "losses": 80,
+                    "winrate": 0.621,
+                    "total_completion_time": 64450806,
+                    "completions": 117,
+                    "avg": 550862,
+                    "avg_legible": "9:10"
+                },
+                "DESERT_TEMPLE": {
+                    "wins": 109,
+                    "losses": 88,
+                    "winrate": 0.553,
+                    "total_completion_time": 52582173,
+                    "completions": 93,
+                    "avg": 565400,
+                    "avg_legible": "9:25"
+                },
+                "RUINED_PORTAL": {
+                    "wins": 94,
+                    "losses": 85,
+                    "winrate": 0.525,
+                    "total_completion_time": 46101194,
+                    "completions": 85,
+                    "avg": 542367,
+                    "avg_legible": "9:02"
+                },
+                "SHIPWRECK": {
+                    "wins": 101,
+                    "losses": 84,
+                    "winrate": 0.546,
+                    "total_completion_time": 55287479,
+                    "completions": 96,
+                    "avg": 575911,
+                    "avg_legible": "9:35"
+                },
+                "VILLAGE": {
+                    "wins": 91,
+                    "losses": 77,
+                    "winrate": 0.542,
+                    "total_completion_time": 46281798,
+                    "completions": 80,
+                    "avg": 578522,
+                    "avg_legible": "9:38"
+                }
+            },
+            "bastion": {
+                "BRIDGE": {
+                    "wins": 136,
+                    "losses": 83,
+                    "winrate": 0.621,
+                    "total_completion_time": 66435199,
+                    "completions": 120,
+                    "avg": 553627,
+                    "avg_legible": "9:13"
+                },
+                "HOUSING": {
+                    "wins": 133,
+                    "losses": 113,
+                    "winrate": 0.541,
+                    "total_completion_time": 66156531,
+                    "completions": 118,
+                    "avg": 560649,
+                    "avg_legible": "9:20"
+                },
+                "STABLES": {
+                    "wins": 136,
+                    "losses": 92,
+                    "winrate": 0.596,
+                    "total_completion_time": 70878067,
+                    "completions": 124,
+                    "avg": 571597,
+                    "avg_legible": "9:31"
+                },
+                "TREASURE": {
+                    "wins": 121,
+                    "losses": 126,
+                    "winrate": 0.49,
+                    "total_completion_time": 61233653,
+                    "completions": 109,
+                    "avg": 561777,
+                    "avg_legible": "9:21"
+                }
+            }
+        }
+    },
+    "Ancoboyy": {
+        "uuid": "bc80af38933f4ae19b0494681a54422b",
+        "games": 968,
+        "completions": 460,
+        "winrate": 0.55,
+        "sb": 390896,
+        "sb_legible": "6:30",
+        "playtime": 518564639,
+        "playtime_legible": "144 hours",
+        "peak_elo": 2555,
+        "elo": 2342,
+        "avg": 572810,
+        "avg_legible": "9:32",
+        "seed_stats": {
+            "ow": {
+                "BURIED_TREASURE": {
+                    "wins": 112,
+                    "losses": 92,
+                    "winrate": 0.549,
+                    "total_completion_time": 56977827,
+                    "completions": 99,
+                    "avg": 575534,
+                    "avg_legible": "9:35"
+                },
+                "DESERT_TEMPLE": {
+                    "wins": 94,
+                    "losses": 81,
+                    "winrate": 0.537,
+                    "total_completion_time": 44394291,
+                    "completions": 78,
+                    "avg": 569158,
+                    "avg_legible": "9:29"
+                },
+                "RUINED_PORTAL": {
+                    "wins": 89,
+                    "losses": 84,
+                    "winrate": 0.514,
+                    "total_completion_time": 42951251,
+                    "completions": 80,
+                    "avg": 536891,
+                    "avg_legible": "8:56"
+                },
+                "SHIPWRECK": {
+                    "wins": 113,
+                    "losses": 84,
+                    "winrate": 0.574,
+                    "total_completion_time": 57965599,
+                    "completions": 98,
+                    "avg": 591486,
+                    "avg_legible": "9:51"
+                },
+                "VILLAGE": {
+                    "wins": 118,
+                    "losses": 83,
+                    "winrate": 0.587,
+                    "total_completion_time": 61203502,
+                    "completions": 105,
+                    "avg": 582890,
+                    "avg_legible": "9:42"
+                }
+            },
+            "bastion": {
+                "BRIDGE": {
+                    "wins": 158,
+                    "losses": 100,
+                    "winrate": 0.612,
+                    "total_completion_time": 80389500,
+                    "completions": 142,
+                    "avg": 566123,
+                    "avg_legible": "9:26"
+                },
+                "HOUSING": {
+                    "wins": 133,
+                    "losses": 98,
+                    "winrate": 0.576,
+                    "total_completion_time": 63487305,
+                    "completions": 113,
+                    "avg": 561835,
+                    "avg_legible": "9:21"
+                },
+                "STABLES": {
+                    "wins": 111,
+                    "losses": 115,
+                    "winrate": 0.491,
+                    "total_completion_time": 54942916,
+                    "completions": 95,
+                    "avg": 578346,
+                    "avg_legible": "9:38"
+                },
+                "TREASURE": {
+                    "wins": 124,
+                    "losses": 111,
+                    "winrate": 0.528,
+                    "total_completion_time": 64672749,
+                    "completions": 110,
+                    "avg": 587934,
+                    "avg_legible": "9:47"
+                }
+            }
+        }
+    },
+    "pavkin": {
+        "uuid": "bcb0f43558d745ee977841180b121267",
+        "games": 374,
+        "completions": 180,
+        "winrate": 0.571,
+        "sb": 375123,
+        "sb_legible": "6:15",
+        "playtime": 205376230,
+        "playtime_legible": "57 hours",
+        "peak_elo": 2515,
+        "elo": 2500,
+        "avg": 576478,
+        "avg_legible": "9:36",
+        "seed_stats": {
+            "ow": {
+                "BURIED_TREASURE": {
+                    "wins": 35,
+                    "losses": 34,
+                    "winrate": 0.507,
+                    "total_completion_time": 17518048,
+                    "completions": 32,
+                    "avg": 547439,
+                    "avg_legible": "9:07"
+                },
+                "DESERT_TEMPLE": {
+                    "wins": 50,
+                    "losses": 36,
+                    "winrate": 0.581,
+                    "total_completion_time": 23652133,
+                    "completions": 41,
+                    "avg": 576881,
+                    "avg_legible": "9:36"
+                },
+                "RUINED_PORTAL": {
+                    "wins": 34,
+                    "losses": 30,
+                    "winrate": 0.531,
+                    "total_completion_time": 17534941,
+                    "completions": 32,
+                    "avg": 547967,
+                    "avg_legible": "9:07"
+                },
+                "SHIPWRECK": {
+                    "wins": 36,
+                    "losses": 22,
+                    "winrate": 0.621,
+                    "total_completion_time": 18898818,
+                    "completions": 32,
+                    "avg": 590588,
+                    "avg_legible": "9:50"
+                },
+                "VILLAGE": {
+                    "wins": 51,
+                    "losses": 31,
+                    "winrate": 0.622,
+                    "total_completion_time": 26162071,
+                    "completions": 43,
+                    "avg": 608420,
+                    "avg_legible": "10:08"
+                }
+            },
+            "bastion": {
+                "BRIDGE": {
+                    "wins": 51,
+                    "losses": 33,
+                    "winrate": 0.607,
+                    "total_completion_time": 24789516,
+                    "completions": 44,
+                    "avg": 563398,
+                    "avg_legible": "9:23"
+                },
+                "HOUSING": {
+                    "wins": 60,
+                    "losses": 48,
+                    "winrate": 0.556,
+                    "total_completion_time": 31083735,
+                    "completions": 53,
+                    "avg": 586486,
+                    "avg_legible": "9:46"
+                },
+                "STABLES": {
+                    "wins": 54,
+                    "losses": 36,
+                    "winrate": 0.6,
+                    "total_completion_time": 26178537,
+                    "completions": 46,
+                    "avg": 569099,
+                    "avg_legible": "9:29"
+                },
+                "TREASURE": {
+                    "wins": 41,
+                    "losses": 36,
+                    "winrate": 0.532,
+                    "total_completion_time": 21714223,
+                    "completions": 37,
+                    "avg": 586871,
+                    "avg_legible": "9:46"
+                }
+            }
+        }
+    },
+    "MrBudgiee": {
+        "uuid": "0d0f007a376a462299bf23f2f713b0e5",
+        "games": 701,
+        "completions": 320,
+        "winrate": 0.531,
+        "sb": 430812,
+        "sb_legible": "7:10",
+        "playtime": 398456623,
+        "playtime_legible": "111 hours",
+        "peak_elo": 2292,
+        "elo": 2160,
+        "avg": 602726,
+        "avg_legible": "10:02",
+        "seed_stats": {
+            "ow": {
+                "BURIED_TREASURE": {
+                    "wins": 80,
+                    "losses": 64,
+                    "winrate": 0.556,
+                    "total_completion_time": 41374433,
+                    "completions": 70,
+                    "avg": 591063,
+                    "avg_legible": "9:51"
+                },
+                "DESERT_TEMPLE": {
+                    "wins": 80,
+                    "losses": 49,
+                    "winrate": 0.62,
+                    "total_completion_time": 43528174,
+                    "completions": 71,
+                    "avg": 613073,
+                    "avg_legible": "10:13"
+                },
+                "RUINED_PORTAL": {
+                    "wins": 49,
+                    "losses": 67,
+                    "winrate": 0.422,
+                    "total_completion_time": 25182818,
+                    "completions": 42,
+                    "avg": 599591,
+                    "avg_legible": "9:59"
+                },
+                "SHIPWRECK": {
+                    "wins": 71,
+                    "losses": 80,
+                    "winrate": 0.47,
+                    "total_completion_time": 38105045,
+                    "completions": 64,
+                    "avg": 595391,
+                    "avg_legible": "9:55"
+                },
+                "VILLAGE": {
+                    "wins": 85,
+                    "losses": 58,
+                    "winrate": 0.594,
+                    "total_completion_time": 44681959,
+                    "completions": 73,
+                    "avg": 612082,
+                    "avg_legible": "10:12"
+                }
+            },
+            "bastion": {
+                "BRIDGE": {
+                    "wins": 98,
+                    "losses": 90,
+                    "winrate": 0.521,
+                    "total_completion_time": 51395498,
+                    "completions": 87,
+                    "avg": 590753,
+                    "avg_legible": "9:50"
+                },
+                "HOUSING": {
+                    "wins": 89,
+                    "losses": 79,
+                    "winrate": 0.53,
+                    "total_completion_time": 47917064,
+                    "completions": 80,
+                    "avg": 598963,
+                    "avg_legible": "9:58"
+                },
+                "STABLES": {
+                    "wins": 85,
+                    "losses": 70,
+                    "winrate": 0.548,
+                    "total_completion_time": 46435707,
+                    "completions": 76,
+                    "avg": 610996,
+                    "avg_legible": "10:10"
+                },
+                "TREASURE": {
+                    "wins": 93,
+                    "losses": 79,
+                    "winrate": 0.541,
+                    "total_completion_time": 47124160,
+                    "completions": 77,
+                    "avg": 612002,
+                    "avg_legible": "10:12"
+                }
+            }
+        }
+    },
+    "silverrruns": {
+        "uuid": "17e787d1d6374f818b294f2319db370d",
+        "games": 585,
+        "completions": 287,
+        "winrate": 0.571,
+        "sb": 403296,
+        "sb_legible": "6:43",
+        "playtime": 329538286,
+        "playtime_legible": "92 hours",
+        "peak_elo": 2602,
+        "elo": 2562,
+        "avg": 575970,
+        "avg_legible": "9:35",
+        "seed_stats": {
+            "ow": {
+                "BURIED_TREASURE": {
+                    "wins": 52,
+                    "losses": 63,
+                    "winrate": 0.452,
+                    "total_completion_time": 25832080,
+                    "completions": 45,
+                    "avg": 574046,
+                    "avg_legible": "9:34"
+                },
+                "DESERT_TEMPLE": {
+                    "wins": 69,
+                    "losses": 41,
+                    "winrate": 0.627,
+                    "total_completion_time": 35213776,
+                    "completions": 62,
+                    "avg": 567964,
+                    "avg_legible": "9:27"
+                },
+                "RUINED_PORTAL": {
+                    "wins": 62,
+                    "losses": 45,
+                    "winrate": 0.579,
+                    "total_completion_time": 31512891,
+                    "completions": 56,
+                    "avg": 562730,
+                    "avg_legible": "9:22"
+                },
+                "SHIPWRECK": {
+                    "wins": 69,
+                    "losses": 51,
+                    "winrate": 0.575,
+                    "total_completion_time": 34711856,
+                    "completions": 59,
+                    "avg": 588337,
+                    "avg_legible": "9:48"
+                },
+                "VILLAGE": {
+                    "wins": 71,
+                    "losses": 42,
+                    "winrate": 0.628,
+                    "total_completion_time": 38032855,
+                    "completions": 65,
+                    "avg": 585121,
+                    "avg_legible": "9:45"
+                }
+            },
+            "bastion": {
+                "BRIDGE": {
+                    "wins": 83,
+                    "losses": 64,
+                    "winrate": 0.565,
+                    "total_completion_time": 43226237,
+                    "completions": 76,
+                    "avg": 568766,
+                    "avg_legible": "9:28"
+                },
+                "HOUSING": {
+                    "wins": 91,
+                    "losses": 56,
+                    "winrate": 0.619,
+                    "total_completion_time": 43191901,
+                    "completions": 77,
+                    "avg": 560934,
+                    "avg_legible": "9:20"
+                },
+                "STABLES": {
+                    "wins": 71,
+                    "losses": 57,
+                    "winrate": 0.555,
+                    "total_completion_time": 39594574,
+                    "completions": 67,
+                    "avg": 590964,
+                    "avg_legible": "9:50"
+                },
+                "TREASURE": {
+                    "wins": 78,
+                    "losses": 65,
+                    "winrate": 0.545,
+                    "total_completion_time": 39290746,
+                    "completions": 67,
+                    "avg": 586429,
+                    "avg_legible": "9:46"
+                }
+            }
+        }
+    },
+    "HDMICables": {
+        "uuid": "0c3cc22849a343b0964a89ac842fa3ca",
+        "games": 637,
+        "completions": 290,
+        "winrate": 0.543,
+        "sb": 364576,
+        "sb_legible": "6:04",
+        "playtime": 352856317,
+        "playtime_legible": "98 hours",
+        "peak_elo": 2374,
+        "elo": 2288,
+        "avg": 580765,
+        "avg_legible": "9:40",
+        "seed_stats": {
+            "ow": {
+                "BURIED_TREASURE": {
+                    "wins": 65,
+                    "losses": 51,
+                    "winrate": 0.56,
+                    "total_completion_time": 31792773,
+                    "completions": 55,
+                    "avg": 578050,
+                    "avg_legible": "9:38"
+                },
+                "DESERT_TEMPLE": {
+                    "wins": 69,
+                    "losses": 71,
+                    "winrate": 0.493,
+                    "total_completion_time": 35794241,
+                    "completions": 61,
+                    "avg": 586791,
+                    "avg_legible": "9:46"
+                },
+                "RUINED_PORTAL": {
+                    "wins": 71,
+                    "losses": 58,
+                    "winrate": 0.55,
+                    "total_completion_time": 33671278,
+                    "completions": 60,
+                    "avg": 561188,
+                    "avg_legible": "9:21"
+                },
+                "SHIPWRECK": {
+                    "wins": 57,
+                    "losses": 47,
+                    "winrate": 0.548,
+                    "total_completion_time": 28510609,
+                    "completions": 49,
+                    "avg": 581849,
+                    "avg_legible": "9:41"
+                },
+                "VILLAGE": {
+                    "wins": 73,
+                    "losses": 49,
+                    "winrate": 0.598,
+                    "total_completion_time": 38652989,
+                    "completions": 65,
+                    "avg": 594661,
+                    "avg_legible": "9:54"
+                }
+            },
+            "bastion": {
+                "BRIDGE": {
+                    "wins": 88,
+                    "losses": 63,
+                    "winrate": 0.583,
+                    "total_completion_time": 44648952,
+                    "completions": 77,
+                    "avg": 579857,
+                    "avg_legible": "9:39"
+                },
+                "HOUSING": {
+                    "wins": 90,
+                    "losses": 58,
+                    "winrate": 0.608,
+                    "total_completion_time": 45047136,
+                    "completions": 78,
+                    "avg": 577527,
+                    "avg_legible": "9:37"
+                },
+                "STABLES": {
+                    "wins": 77,
+                    "losses": 72,
+                    "winrate": 0.517,
+                    "total_completion_time": 40444609,
+                    "completions": 68,
+                    "avg": 594774,
+                    "avg_legible": "9:54"
+                },
+                "TREASURE": {
+                    "wins": 80,
+                    "losses": 83,
+                    "winrate": 0.491,
+                    "total_completion_time": 38281193,
+                    "completions": 67,
+                    "avg": 571361,
+                    "avg_legible": "9:31"
+                }
+            }
+        }
+    }
+}

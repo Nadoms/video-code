@@ -32,6 +32,9 @@ class Plot(Scene):
         with open(ROOT / "data" / "game_results.json", "r") as f:
             data = json.load(f)
 
+        # Title
+        title = Text(f"{PLAYER_OI.lower()} results").scale(0.7).to_edge(UP, buff=1)
+
         player_data = data[PLAYER_OI]
         labels = {
             "completion_win": "comp",
@@ -62,10 +65,11 @@ class Plot(Scene):
                 s.set_fill(colours[key], opacity=1)
                 s.set_stroke(WHITE, width=4)
                 dist = 1 if key in ["completion_win", "completion_loss"] else 1.5
+                
                 s_hid = Sector(radius=radius * dist, start_angle=mid_angle, angle=0)
                 s_text = Text(f"{player_data[key] / total * 100:.1f}%", color=BLACK).scale(0.40).move_to(s_hid.get_center())
                 slices.add(s)
-                if player_data[key] != 0:
+                if player_data[key] / total > 0.03:
                     slices.add(s_text)
             start_angle += angle
 
@@ -86,7 +90,7 @@ class Plot(Scene):
             legend.add(item)
         legend = legend.next_to(pie, RIGHT, buff=0.8)
 
-        self.add(outline, pie, legend)
+        self.add(outline, pie, legend, title)
 
 
 if __name__ == "__main__":
