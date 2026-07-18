@@ -5,3 +5,4 @@ venv
 *.db
 minecraft_font.ttf
 .vscode
+match_info.json
