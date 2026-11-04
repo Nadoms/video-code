@@ -1,3 +1,4 @@
+from collections import Counter, defaultdict
 import json
 from pathlib import Path
 import sys
@@ -6,15 +7,23 @@ ROOT_DIR = Path(__file__).resolve().parent
 sys.path.append(str(ROOT_DIR))
 from rankedutils import db, insight
 
+BASTION_KEYS = ("triples", "singles", "small_singles")
+ZERO_CYCLE = 60000
+IRON_STEP = 5000
+IRON_CAP = 120000
+DISCOVERY_STEP = 1000
+MIN_RECORD_RATE_SAMPLE = 50
+
 
 def get_seed_stats(cursor):
     print("Collecting matches...")
+    match_count = db.query_db(cursor, items="COUNT(*)", where="seed_id IS NOT NULL").fetchone()[0]
     matches = db.query_db(
-        cursor,
-        items="match_id, match_type, result_uuid, time, forfeited, date, seed_id",
+        cursor.connection.cursor(),
+        items="id, type, result_uuid, time, forfeited, date, seed_id",
         where="seed_id IS NOT NULL",
         order="id"
-    ).fetchall()
+    )
     print("Collecting seeds...")
     seeds = db.query_db(cursor, table="seeds").fetchall()
 
@@ -52,11 +61,12 @@ def get_seed_stats(cursor):
         seed_stats[seed_id] = {
             "rolls": 0,
             "ranked_plays": 0,
-            "acquire_iron": [],
+            "iron_times": [],
             "end_enters": 0,
             "end_chokes": 0,
             "end_splits": [],
             "completions": 0,
+            "completion_time": 0,
             "record_holder": None,
             "record_time": None,
             "discovered_id": None,
@@ -77,8 +87,8 @@ def get_seed_stats(cursor):
         }
 
     for i, match in enumerate(matches):
-        if i % 1000 == 0:
-            print(f"Gathering match data... ({i / 1000}/{int(len(matches) / 1000)})")
+        if i % 10000 == 0:
+            print(f"Gathering match data... ({i // 10000}/{match_count // 10000})", end="\r")
         (
             match_id,
             match_type,
@@ -103,7 +113,7 @@ def get_seed_stats(cursor):
                 player_stats[uuid] = {
                     "nickname": nick,
                     "play_count": 0,
-                    "seeds": [],
+                    "seeds": set(),
                     "repeats": 0,
                     "records": [],
                     "record_count": 0,
@@ -112,11 +122,11 @@ def get_seed_stats(cursor):
             if seed_id in player_stats[uuid]["seeds"]:
                 player_stats[uuid]["repeats"] += 1
             else:
-                player_stats[uuid]["seeds"].append(seed_id)
+                player_stats[uuid]["seeds"].add(seed_id)
 
             iron_time = next((event["time"] for event in timeline if event["type"] == "story.smelt_iron"), None)
             if iron_time is not None:
-                seed_stats[seed_id]["acquire_iron"].append(iron_time)
+                seed_stats[seed_id]["iron_times"].append(iron_time)
 
             death_events = ("projectelo.timeline.death", "projectelo.timeline.reset")
             end_enter = next((
@@ -137,6 +147,7 @@ def get_seed_stats(cursor):
             if not forfeited and result_uuid == uuid:
                 seed_stats[seed_id]["end_splits"].append(time - end_enter)
                 seed_stats[seed_id]["completions"] += 1
+                seed_stats[seed_id]["completion_time"] += time
 
                 if seed_stats[seed_id]["record_time"] is None or time < seed_stats[seed_id]["record_time"]:
                     seed_stats[seed_id]["record_time"] = time
@@ -145,6 +156,9 @@ def get_seed_stats(cursor):
         if seed_stats[seed_id]["discovered_id"] is None:
             seed_stats[seed_id]["discovered_id"] = match_id
             seed_stats[seed_id]["discovered_date"] = date
+
+    for player_stat in player_stats.values():
+        player_stat["seeds"] = sorted(player_stat["seeds"])
 
     print("Awarding records...")
     for seed_id, seed_stat in seed_stats.items():
@@ -188,21 +202,171 @@ def analyse_seeds(seed_stats, player_stats):
     - Info for distribution of biomes for village overworlds
     - Info for distribution of acquiring iron for each seed type, and all seed types
     - Info for graph of avg acquire iron time for each shipwreck overworld type (and their distributions ig)
+    - Info for graph of avg acquire iron time for each shipwreck variation (structure_type) and their distributions
     - Info for graph of number of seeds discovered / match ID (resolution of per 1000 match IDs)
     - Info for distribution of all seed scores with their sample sizes (in ordered list of tuples)
     - Info for graph of avg completion time per item in structure contents
     """
-    pass
+    most_played = {"seed_id": None, "plays": 0}
+    most_completed = {"seed_id": None, "completions": 0}
+    first_match = {"match_id": None, "date": None}
+    scored_seeds = []
+    playcounts = defaultdict(int)
+    o_levels = defaultdict(int)
+    bastion_counts = defaultdict(lambda: {key: defaultdict(int) for key in BASTION_KEYS})
+    o_level_ends = defaultdict(lambda: {"end_enters": 0, "end_chokes": 0, "completions": 0, "zero_cycles": 0})
+    village_biomes = defaultdict(int)
+    iron_all = defaultdict(int)
+    iron_overworld = defaultdict(lambda: defaultdict(int))
+    iron_shipwreck = defaultdict(lambda: defaultdict(int))
+    discoveries = defaultdict(int)
+    item_times = defaultdict(lambda: {"count": 0, "total": 0})
+
+    print("Extracting seed data...")
+    for seed_id, seed in seed_stats.items():
+        if seed["rolls"] == 0:
+            continue
+
+        if seed["rolls"] > most_played["plays"]:
+            most_played = {"seed_id": seed_id, "plays": seed["rolls"]}
+        if seed["completions"] > most_completed["completions"]:
+            most_completed = {"seed_id": seed_id, "completions": seed["completions"]}
+        if first_match["match_id"] is None or seed["discovered_id"] < first_match["match_id"]:
+            first_match = {"match_id": seed["discovered_id"], "date": seed["discovered_date"]}
+
+        if seed["score"]:
+            scored_seeds.append((seed["score"], seed["completions"], seed_id))
+        playcounts[seed["rolls"]] += 1
+        o_levels[seed["o_level"]] += 1
+        discoveries[seed["discovered_id"] // DISCOVERY_STEP * DISCOVERY_STEP] += 1
+
+        for key in BASTION_KEYS:
+            bastion_counts[seed["bastion"]][key][seed[key]] += 1
+
+        ends = o_level_ends[seed["o_level"]]
+        ends["end_enters"] += seed["end_enters"]
+        ends["end_chokes"] += seed["end_chokes"]
+        ends["completions"] += seed["completions"]
+        ends["zero_cycles"] += sum(split < ZERO_CYCLE for split in seed["end_splits"])
+
+        if seed["overworld"] == "village":
+            village_biomes[seed["structure_biome"]] += 1
+
+        for iron_time in seed["iron_times"]:
+            iron_band = min(iron_time, IRON_CAP) // IRON_STEP * IRON_STEP
+            iron_all[iron_band] += 1
+            iron_overworld[seed["overworld"]][iron_band] += 1
+            if seed["overworld"] == "shipwreck":
+                iron_shipwreck[seed["structure_type"]][iron_band] += 1
+
+        if seed["structure_contents"] is not None and seed["completions"] > 0:
+            avg_completion = seed["completion_time"] / seed["completions"]
+            for item in seed["structure_contents"]:
+                item_times[item]["count"] += 1
+                item_times[item]["total"] += avg_completion
+
+    scored_seeds.sort()
+    best_score, best_plays, best_seed = scored_seeds[-1]
+    worst_score, worst_plays, worst_seed = scored_seeds[0]
+
+    repeat_players = 0
+    most_records = {"nickname": None, "records": 0}
+    best_record_rate = {"nickname": None, "record_rate": 0}
+    repeat_points = []
+
+    print("Extracting record data...")
+    for player in player_stats.values():
+        repeat_players += player["repeats"] > 0
+        repeat_points.append((player["play_count"], player["repeats"]))
+
+        if player["record_count"] > most_records["records"]:
+            most_records = {"nickname": player["nickname"], "records": player["record_count"]}
+
+        unique_seeds = len(player["seeds"])
+        if unique_seeds > MIN_RECORD_RATE_SAMPLE:
+            record_rate = player["record_count"] / unique_seeds
+            if record_rate > best_record_rate["record_rate"]:
+                best_record_rate = {"nickname": player["nickname"], "record_rate": record_rate}
+
+    print("Constructing final insights...")
+    stats = {
+        "most_played_seed": most_played,
+        "most_completed_seed": most_completed,
+        "best_seed": {"seed_id": best_seed, "score": best_score, "sample_size": best_plays},
+        "worst_seed": {"seed_id": worst_seed, "score": worst_score, "sample_size": worst_plays},
+        "seed_count": len(scored_seeds),
+        "most_records": most_records,
+        "best_record_rate": best_record_rate,
+        "repeat_player_rate": ratio(repeat_players, len(player_stats)),
+        "player_count": len(player_stats),
+        "first_match": first_match,
+    }
+    distributions = {
+        "seed_playcount_distribution": sorted_stats(playcounts),
+        "o_level_distribution": sorted_stats(o_levels),
+        "bastion_distribution": {
+            bastion: {key: sorted_stats(counts[key]) for key in BASTION_KEYS}
+            for bastion, counts in bastion_counts.items()
+        },
+        "village_distribution": sorted_stats(village_biomes),
+        "iron_distribution": sorted_stats(iron_all),
+        "iron_overworld": {
+            overworld: sorted_stats(distribution)
+            for overworld, distribution in iron_overworld.items()
+        },
+        "iron_shipwreck": {
+            structure_type: sorted_stats(distribution)
+            for structure_type, distribution in iron_shipwreck.items()
+        },
+    }
+    graphs = {
+        "repeats_by_play_count": sorted(repeat_points),
+        "o_level_stats": {
+            o_level: {
+                "zero_cycle_rate": ratio(ends["zero_cycles"], ends["completions"]),
+                "end_choke_rate": ratio(ends["end_chokes"], ends["end_enters"]),
+            }
+            for o_level, ends in sorted_stats(o_level_ends).items()
+        },
+        "discovery_history": sorted_stats(discoveries),
+        "seed_scores": [(score, plays) for score, plays, _ in scored_seeds],
+        "avg_completion_per_item": {
+            item: ratio(times["total"], times["count"], dp=0)
+            for item, times in item_times.items()
+        },
+    }
+    return stats, distributions, graphs
 
 
-def main():
-    with db.connect() as c:
-        seed_stats, player_stats = get_seed_stats(c)
+def ratio(numerator, denominator, dp=3):
+    return round(numerator / denominator, dp) if denominator else None
 
-    with open(ROOT_DIR / "data" / "seeds.json", mode="w") as f:
-        json.dump(seed_stats, f, indent=4)
-    with open(ROOT_DIR / "data" / "players.json", mode="w") as f:
-        json.dump(player_stats, f, indent=4)
+
+def sorted_stats(stat):
+    return dict(sorted(stat.items(), key=lambda item: (item[0] is None, item[0])))
+
+
+def main(reload=True):
+    if reload:
+        with db.connect() as c:
+            seed_stats, player_stats = get_seed_stats(c)
+        with open(ROOT_DIR / "data" / "seeds.json", mode="w") as f:
+            json.dump(seed_stats, f, indent=4)
+        with open(ROOT_DIR / "data" / "players.json", mode="w") as f:
+            json.dump(player_stats, f, indent=4)
+    else:
+        with open(ROOT_DIR / "data" / "seeds.json", mode="r") as f:
+            seed_stats = json.load(f)
+        with open(ROOT_DIR / "data" / "players.json", mode="r") as f:
+            player_stats = json.load(f)
+
+    stats, distributions, graphs = analyse_seeds(seed_stats, player_stats)
+    with open(ROOT_DIR / "data" / "stats.json", mode="w") as f:
+        json.dump(stats, f, indent=4)
+    with open(ROOT_DIR / "data" / "distributions.json", mode="w") as f:
+        json.dump(distributions, f, indent=4)
+    with open(ROOT_DIR / "data" / "graphs.json", mode="w") as f:
+        json.dump(graphs, f, indent=4)
 
 if __name__ == "__main__":
-    main()
+    main(reload=False)
