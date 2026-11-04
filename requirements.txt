@@ -25,7 +25,7 @@ moderngl==5.12.0
 moderngl-window==3.1.1
 multidict==6.4.3
 networkx==3.4.2
-numpy==2.2.5
+numpy
 opencv-python==4.11.0.86
 pandas==2.2.3
 pillow==11.2.1
@@ -42,7 +42,7 @@ pytz==2025.2
 rankedutils @ git+https://github.com/Nadoms/ranked-utils.git
 requests==2.32.3
 rich==14.0.0
-scipy==1.15.2
+scipy
 screeninfo==0.8.1
 six==1.17.0
 skia-pathops==0.8.0.post2
